@@ -1,13 +1,61 @@
-<header class="site-header">
-  <div class="logo">
-    <a href="index.html">GN Print Shop</a>
-  </div>
-  <nav class="site-nav">
-    <ul>
-      <li><a href="index.html">Главная</a></li>
-      <li><a href="catalog.html">Каталог</a></li>
-      <li><a href="#order">Заказать</a></li>
-      <li><a href="#contacts">Контакты</a></li>
-    </ul>
-  </nav>
-</header>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GN Print Shop – Startseite</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="logo">
+      <a href="index.html">GN Print Shop</a>
+    </div>
+    <nav class="site-nav">
+      <ul>
+        <li><a href="index.html">Startseite</a></li>
+        <li><a href="catalog.html">Katalog</a></li>
+        <li><a href="#bestellen">Bestellen</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Produkt-Grid -->
+  <main>
+    <section class="product-grid">
+      <article class="product-card">
+        <a href="product.html">
+          <img src="assets/images/produkt1.jpg" alt="Produkt 1">
+          <h2>Produktname 1</h2>
+          <p>Kurze Beschreibung...</p>
+          <button>Details</button>
+        </a>
+      </article>
+      <!-- …weitere 3+ Produkte… -->
+    </section>
+  </main>
+
+  <!-- Bestellen -->
+  <section id="bestellen" class="order-section">
+    <h2>Jetzt bestellen</h2>
+    <div class="iframe-container">
+      <iframe
+        src="https://docs.google.com/forms/d/e/ВАШ_ID/viewform?embedded=true"
+        title="Bestellformular">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- Footer / Kontakt -->
+  <footer id="kontakt" class="site-footer">
+    <p>&copy; 2025 GN Print Shop</p>
+    <p>E-Mail: <a href="mailto:info@gn-printshop.de">info@gn-printshop.de</a></p>
+    <p>WhatsApp: <a href="https://wa.me/491234567890">+49 123 4567890</a></p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
