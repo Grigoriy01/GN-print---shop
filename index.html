@@ -7,11 +7,13 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-
-  <!-- Header -->
+  <!-- Шапка сайта -->
   <header class="site-header">
     <div class="logo">
-      <a href="index.html">GN Print Shop</a>
+      <!-- Вставьте сюда свой логотип блога -->
+      <a href="index.html">
+        <img src="assets/images/INFO LABEL_S_logo 1.png" alt="Логотип блога" class="logo-img">
+      </a>
     </div>
     <nav class="site-nav">
       <ul>
@@ -23,55 +25,36 @@
     </nav>
   </header>
 
-  <!-- Produkt-Grid -->
+  <!-- Основной контент -->
   <main>
+    <!-- Сетка товаров -->
     <section class="product-grid">
+      <!-- Карточка товара -->
       <article class="product-card">
         <a href="product.html">
-          <img src="assets/images/Cap-3_t.gif" alt="Produkt 1">
+          <img src="assets/images/Cap-3.png" alt="Produkt 1">
           <h2>Produktname 1</h2>
           <p>Kurze Beschreibung...</p>
           <button>Details</button>
         </a>
       </article>
-      <!-- …weitere 3+ Produkte… -->
+      <!-- TODO: повторить ещё 3–4 карточки -->
     </section>
     <section class="product-grid">
+      <!-- Карточка товара -->
       <article class="product-card">
         <a href="product.html">
-          <img src="assets/images/Ocu_1-3.png" alt="Produkt 2">
+          <img src="assets/images/Cap-3_t.gif" alt="Produkt 2">
           <h2>Produktname 2</h2>
           <p>Kurze Beschreibung...</p>
           <button>Details</button>
         </a>
       </article>
-      <!-- …weitere 3+ Produkte… -->
-    </section>
-    <section class="product-grid">
-      <article class="product-card">
-        <a href="product.html">
-          <img src="assets/images/Strag-1.png" alt="Produkt 3">
-          <h2>Produktname 3</h2>
-          <p>Kurze Beschreibung...</p>
-          <button>Details</button>
-        </a>
-      </article>
-      <!-- …weitere 3+ Produkte… -->
-    </section>
-    <section class="product-grid">
-      <article class="product-card">
-        <a href="product.html">
-          <img src="assets/images/Strag2-1.png" alt="Produkt 4">
-          <h2>Produktname 4</h2>
-          <p>Kurze Beschreibung...</p>
-          <button>Details</button>
-        </a>
-      </article>
-      <!-- …weitere 3+ Produkte… -->
+      <!-- TODO: повторить ещё 3–4 карточки -->
     </section>
   </main>
 
-  <!-- Bestellen -->
+  <!-- Блок «Bestellen» с Google Form -->
   <section id="bestellen" class="order-section">
     <h2>Jetzt bestellen</h2>
     <div class="iframe-container">
@@ -79,10 +62,11 @@
         src="https://docs.google.com/forms/d/e/1RhV6hCkfl8WHC-AxxlMAMoeJFjL8Tw9YGULsvRcHMxo/viewform?embedded=true"
         title="Bestellformular">
       </iframe>
+      <!-- Замените YOUR_FORM_ID на ваш ID формы -->
     </div>
   </section>
 
-  <!-- Footer / Kontakt -->
+  <!-- Подвал с контактами -->
   <footer id="kontakt" class="site-footer">
     <p>&copy; 2025 GN Print Shop</p>
     <p>E-Mail: <a href="mailto:info@gn-printshop.de">info@gn-printshop.de</a></p>

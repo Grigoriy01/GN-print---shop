@@ -1,8 +1,18 @@
-/* Базовые стили */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: Arial, sans-serif; color: #333; line-height: 1.5; }
+/* Сброс отступов и рамок */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-/* Header */
+/* Базовые стили */
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Шапка */
 .site-header {
   display: flex;
   justify-content: space-between;
@@ -11,17 +21,29 @@ body { font-family: Arial, sans-serif; color: #333; line-height: 1.5; }
   background: #fff;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
-.logo a { font-size: 1.5rem; font-weight: bold; text-decoration: none; color: #222; }
-.site-nav ul { display: flex; list-style: none; gap: 1.5rem; }
-.site-nav a { text-decoration: none; color: #222; font-weight: 500; }
-.site-nav a:hover { color: #0073e6; }
+.logo-img {
+  max-height: 50px; /* подберите высоту логотипа */
+}
+.site-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+.site-nav a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+}
+.site-nav a:hover {
+  color: #0073e6;
+}
 
-/* Produkt-Grid */
+/* Сетка товаров */
 .product-grid {
-  display: grid;
-  gap: 1rem;
+  display: grid;                              /* включаем grid */
+  grid-template-columns: repeat(4, 1fr);      /* 4 колонки на десктопе */
+  gap: 1rem;                                  /* отступы между карточками */
   padding: 2rem;
-  grid-template-columns: repeat(4, 1fr);
 }
 .product-card {
   background: #fff;
@@ -30,9 +52,19 @@ body { font-family: Arial, sans-serif; color: #333; line-height: 1.5; }
   overflow: hidden;
   text-align: center;
 }
-.product-card img { width: 100%; height: auto; display: block; }
-.product-card h2 { font-size: 1.1rem; margin: 0.5rem 0; }
-.product-card p { font-size: 0.9rem; color: #666; padding: 0 0.5rem; }
+.product-card img {
+  width: 100%;
+  display: block;
+}
+.product-card h2 {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+.product-card p {
+  font-size: 0.9rem;
+  color: #666;
+  padding: 0 0.5rem;
+}
 .product-card button {
   margin: 0.75rem;
   padding: 0.5rem 1rem;
@@ -42,35 +74,52 @@ body { font-family: Arial, sans-serif; color: #333; line-height: 1.5; }
   border-radius: 4px;
   cursor: pointer;
 }
-.product-card button:hover { background: #005bb5; }
+.product-card button:hover {
+  background: #005bb5;
+}
 
-/* Bestellen */
+/* Блок заказа */
 .order-section {
   padding: 2rem;
   background: #f9f9f9;
   text-align: center;
 }
-.iframe-container { max-width: 800px; margin: 0 auto; }
+.iframe-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
 .iframe-container iframe {
   width: 100%;
   height: 800px;
   border: none;
 }
 
-/* Footer */
+/* Подвал */
 .site-footer {
   padding: 1.5rem 2rem;
   background: #222;
   color: #fff;
   text-align: center;
 }
-.site-footer a { color: #fff; text-decoration: underline; }
-
-/* Адаптив */
-@media (max-width: 1024px) {
-  .product-grid { grid-template-columns: repeat(2, 1fr); }
+.site-footer a {
+  color: #fff;
+  text-decoration: underline;
 }
+
+/* Адаптивность */
+/* Планшет: 2 колонки */
+@media (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* Мобильный: 1 колонка */
 @media (max-width: 600px) {
-  .product-grid { grid-template-columns: 1fr; }
-  .site-header { flex-direction: column; gap: 1rem; }
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+  .site-header {
+    flex-direction: column;  /* шапка в столбик */
+    gap: 1rem;
+  }
 }
