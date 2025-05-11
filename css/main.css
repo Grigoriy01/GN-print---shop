@@ -5,6 +5,34 @@
   padding: 0;
 }
 
+/* Плавный скролл по якорям */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Кнопка «Наверх» */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  display: none;
+  width: 40px;
+  height: 40px;
+  background: #0073e6;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.back-to-top.show {
+  display: flex;
+}
+
+
 /* Базовые стили */
 body {
   font-family: Arial, sans-serif;
@@ -18,12 +46,55 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background: #fff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+/* Интро-блок под шапкой */
+.intro {
+  padding: 2rem;
+  text-align: center;
+  background-color: #f4f4f4; /* светлый фон для отделения */
+}
+.intro h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.intro p {
+  font-size: 1rem;
+  color: #555;
+}
+
 .logo-img {
-  max-height: 50px; /* подберите высоту логотипа */
+  max-height: 40px; /* подберите высоту логотипа */
 }
+
+.header-tagline {  /*text in barmenü*/
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0 1rem;
+}
+
+/* Навигация по категориям */
+.category-nav {
+  text-align: center;
+  padding: 1rem 0;
+  background: #fff;
+}
+.category-nav ul {
+  display: inline-flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+.category-nav a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #0073e6;
+}
+.category-nav a:hover {
+  text-decoration: underline;
+}
+
+
 .site-nav ul {
   display: flex;
   list-style: none;
@@ -37,17 +108,80 @@ body {
 .site-nav a:hover {
   color: #0073e6;
 }
+/* Кнопка-гамбургер — по умолчанию скрыта */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+/* Стили «сэндвича» */
+.hamburger, .hamburger::before, .hamburger::after {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: #333;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+.hamburger::before, .hamburger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+.hamburger::before { top: -8px; }
+.hamburger::after  { top: 8px; }
+
+.site-header {
+  position: relative; /* теперь .site-nav будет относительно этой шапки */
+  /* остальные ваши правила… */
+}
+
+
+/* Мобильные стили */
+@media (max-width: 600px) {
+  /* Показываем кнопку-гамбургер */
+  .nav-toggle {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  /* Скрываем список пунктов меню по умолчанию */
+  .site-nav ul {
+    display: none;
+    flex-direction: column; /* для раскрытия по вертикали */
+    background: #c7cdd2;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 10000;
+  }
+
+  /* При клике (класс .open на <nav>) показываем пункты */
+  .site-nav.open ul {
+    display: flex;
+  }
+}
+
+
+
 
 /* Сетка товаров */
 .product-grid {
   display: grid;                              /* включаем grid */
-  grid-template-columns: repeat(4, 1fr);      /* 4 колонки на десктопе */
+  grid-template-columns: repeat(6, 1fr);      /* 4 колонки на десктопе */
   gap: 1rem;                                  /* отступы между карточками */
   padding: 2rem;
 }
 .product-card {
-  background: #fff;
-  border: 1px solid #eee;
+  background: #ea9f9f;
+  border: 1px solid #2b2929;
   border-radius: 4px;
   overflow: hidden;
   text-align: center;
@@ -57,11 +191,11 @@ body {
   display: block;
 }
 .product-card h2 {
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   margin: 0.5rem 0;
 }
 .product-card p {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: #666;
   padding: 0 0.5rem;
 }
@@ -110,13 +244,13 @@ body {
 /* Планшет: 2 колонки */
 @media (max-width: 1024px) {
   .product-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 /* Мобильный: 1 колонка */
 @media (max-width: 600px) {
   .product-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
   .site-header {
     flex-direction: column;  /* шапка в столбик */
