@@ -4,6 +4,16 @@
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.querySelector(".nav-toggle");
   const nav    = document.querySelector(".site-nav");
+  // Переключение main-картинки по клику на миниатюру
+  const mainImg = document.querySelector(".gallery-main");
+  document.querySelectorAll(".gallery-thumbs img").forEach(thumb => {
+    thumb.style.cursor = "pointer";               // курсор «рука»
+    thumb.addEventListener("click", () => {
+      mainImg.src = thumb.src;                    // заменяем src
+      mainImg.alt = thumb.alt;                    // обновляем alt
+    });
+});
+
 
   toggle.addEventListener("click", () => {
     nav.classList.toggle("open");
