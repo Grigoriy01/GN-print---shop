@@ -261,7 +261,7 @@ body {
 /* Стили для страницы товара */
 .product-detail {
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
   padding: 2rem;
   align-items: start; /* выравниваем оба столбца по верху */
