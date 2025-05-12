@@ -172,54 +172,7 @@ body {
 
 
 
-/* Сетка товаров */
-.product-grid {
-  display: grid;                              /* включаем grid */
-  grid-template-columns: repeat(6, 1fr);      /* 4 колонки на десктопе */
-  gap: 1rem;                                  /* отступы между карточками */
-  padding: 2rem;
-}
-.product-card {
-  background: #ea9f9f;
-  border: 1px solid #2b2929;
-  border-radius: 4px;
-  overflow: hidden;
-  text-align: center;
-}
-.product-card img {
-  width: 100%;
-  display: block;
-}
-.product-card h2 {
-  font-size: 0.9rem;
-  margin: 0.5rem 0;
-}
-.product-card p {
-  font-size: 0.8rem;
-  color: #666;
-  padding: 0 0.5rem;
-}
-.product-card button {
-  margin: 0.75rem;
-  padding: 0.5rem 1rem;
-  border: none;
-  background: #0073e6;
-  color: #fff;
-  border-radius: 4px;
-  cursor: pointer;
-}
-.product-card button:hover {
-  background: #005bb5;
-}
-/* === Квадратные карточки === */
-.product-card {
-  aspect-ratio: 1/1;        /* соотношение ширины и высоты 1:1 */
-}
-.product-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;        /* обрезает лишнее, заполняя блок */
-}
+
 --------------------------------
 /* Блок заказа */
 .order-section {
@@ -267,91 +220,6 @@ body {
   }
 }
 ------------------------------------------------
-/* Стили для страницы товара */
-.product-detail {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  padding: 2rem;
-  align-items: start; /* выравниваем оба столбца по верху */
-}
-
-/* Жёстко фиксируем контейнер под большое изображение */
-.product-gallery {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 500px;
-}
-.gallery-main {
-  width: 100%;
-  height: 400px;        /* фиксированная высота */
-  object-fit: contain;  /* чтобы картинка вписывалась в рамки */
-}
-
-
-
-.gallery-thumbs {
-  display: flex;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-.gallery-thumbs img {
-  width: 60px;
-  height: 60px;
-  object-fit: cover;
-  cursor: pointer;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.product-info h1 {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-}
-/* === Страница товара: текст слева, изображение справа === */
-.product-detail {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas: "info gallery";
-  gap: 2rem;
-  align-items: start;       /* выравнивание по верхней границе */
-}
-
-/* Привязываем области */
-.product-info {
-  grid-area: info;
-}
-
-.product-gallery {
-  grid-area: gallery;
-  display: flex;
-  justify-content: center;  /* по центру вправо/влево */
-  align-items: center;      /* по центру сверху/снизу */
-}
-
-/* Фиксированный размер главного изображения */
-.gallery-main {
-  max-width: 100%;
-  max-height: 500px;        /* одинаковая высота */
-  object-fit: contain;      /* вписать без обрезки */
-}
-
-/* Миниатюры чуть меньше и тоже по центру */
-.gallery-thumbs {
-  display: flex;
-  gap: 0.5rem;
-  justify-content: center;
-  margin-top: 1rem;
-}
-.gallery-thumbs img {
-  width: 60px;
-  height: 60px;
-  object-fit: cover;
-  cursor: pointer;
-}
-
 
 .specs {
   list-style: none;
@@ -376,33 +244,161 @@ body {
   background: #005bb5;
 }
 
-/* Адаптив для мобильных */
-@media (max-width: 600px) {
-  .product-detail {
-    grid-template-columns: 1fr;
-  }
+
+
+/* Блок с названием и кнопкой */
+
+.card-content button {
+  width: 100%;
+  padding: 0.5rem 0;
+  border: none;
+  background: #0073e6;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
 }
------------------------------------
-/* === Сетка для статической и динамической галереи === */
-.product-grid,
+
+
+/* == Чистая реализация сетки и карточек == Homepage */
+
+/* Сетка карточек: 6/4/2 */
 .gallery__grid {
   display: grid;
   gap: 1rem;
   padding: 2rem;
   grid-template-columns: repeat(6, 1fr);
 }
-@media (max-width: 1024px) {
-  .product-grid,
-  .gallery__grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
+@media (max-width:1024px) {
+  .gallery__grid { grid-template-columns: repeat(4,1fr); }
 }
+@media (max-width:600px) {
+  .gallery__grid { grid-template-columns: repeat(2,1fr); }
+}
+
+/* Карточка товара: картинка + контент Homepage */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #fff;
+}
+.card-image {
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card-content {
+  padding: 0.5rem;
+  text-align: center;
+}
+.card-content h2 {
+  font-size: 1rem;
+  margin: 0.1rem 0;
+}
+.card-content p {
+  font-size: 0.9rem;
+  margin:0.4rem 0;
+
+}
+.card-content button {
+  width: 100%;
+  padding: 0.5rem 0;
+  border: none;
+  background: #0073e6;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.card-content button:hover {
+  background: #005bb5;
+}
+
+/* === Детальная страница товара === */
+.product-detail {
+  display: flex;
+  align-items: flex-start;   /* выравниваем оба блока по верху */
+  gap: 2rem;                 /* промежуток между колонками */
+  margin-top: 20px;          /* отступ от шапки */
+  padding: 0 1rem;           /* горизонтальные поля */
+}
+
+/* Галерея слева */
+.product-gallery {
+  flex: 0 0 500px;           /* фиксируем ширину */
+  margin-left: 40px;         /* ваш левый отступ */
+}
+
+/* Квадратный контейнер под главное изображение */
+.gallery-main-container {
+  width: 100%;
+  aspect-ratio: 1 / 1;       /* идеально квадрат */
+  overflow: hidden;          /* обрезаем избыток */
+  border-radius: 8px;
+}
+
+/* Главное изображение вписывается в контейнер без прыжков */
+.gallery-main-container img.gallery-main {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  
+}
+
+/* Миниатюры под основным изображением */
+.gallery-thumbs {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 20px;
+}
+.gallery-thumbs img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.gallery-thumbs img:hover,
+.gallery-thumbs img.active {
+  transform: scale(1.1);   /* эффект наведения/активной */
+  border-color: #0073e6;
+}
+
+/* Информационный блок справа */
+.product-info {
+  flex: 1;                   /* занимает оставшееся пространство */
+}
+
+/* === Мобильная адаптация === */
 @media (max-width: 600px) {
-  .product-grid,
-  .gallery__grid {
-    grid-template-columns: repeat(2, 1fr);
+  .product-detail {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .product-gallery {
+    flex: 0 0 auto;
+    margin: 0 auto 1rem;
+    width: 100%;
+  }
+  .gallery-main-container {
+    aspect-ratio: auto;
+    width: 100%;
+  }
+  .gallery-main-container img.gallery-main {
+    max-height: 300px;
+  }
+  .product-info {
+    width: 100%;
+    margin-top: 1rem;
   }
 }
-
-
-

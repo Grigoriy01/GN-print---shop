@@ -20,27 +20,30 @@ document.addEventListener("DOMContentLoaded", () => {
                       : [prod.image];
 
       document.querySelector(".product-detail-container").innerHTML = `
-        <section class="product-detail">
-          <div class="product-gallery">
-            <img src="${mainImg}" alt="${prod.name}" class="gallery-main">
-            <div class="gallery-thumbs">
-              ${thumbs.map(src =>
-                `<img src="${src}" alt="${prod.name}">`
-              ).join("")}
+          <section class="product-detail">
+            <div class="product-gallery">
+              <!-- ОБЁРТКА для фиксированного контейнера -->
+              <div class="gallery-main-container">
+                <img src="${mainImg}" alt="${prod.name}" class="gallery-main">
+              </div>
+              <div class="gallery-thumbs">
+                ${thumbs.map(src =>
+                  `<img src="${src}" alt="${prod.name}">`
+                ).join("")}
+              </div>
             </div>
-          </div>
-          <div class="product-info">
-            <h1>${prod.name}</h1>
-            <p>${prod.description}</p>
-            <ul class="specs">
-              ${prod.specs.map(s =>
-                `<li><strong>${s.label}:</strong> ${s.value}</li>`
-              ).join("")}
-            </ul>
-            <a href="#bestellen" class="btn-order">Jetzt bestellen</a>
-          </div>
-        </section>
-      `;
+            <div class="product-info">
+              <h1>${prod.name}</h1>
+              <p>${prod.description}</p>
+              <ul class="specs">
+                ${prod.specs.map(s =>
+                  `<li><strong>${s.label}:</strong> ${s.value}</li>`
+                ).join("")}
+              </ul>
+              <a href="#bestellen" class="btn-order">Jetzt bestellen</a>
+            </div>
+          </section>
+          `;
 
       // переключение миниатюр
       const mainEl = document.querySelector(".gallery-main");
