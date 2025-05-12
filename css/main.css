@@ -211,7 +211,16 @@ body {
 .product-card button:hover {
   background: #005bb5;
 }
-
+/* === Квадратные карточки === */
+.product-card {
+  aspect-ratio: 1/1;        /* соотношение ширины и высоты 1:1 */
+}
+.product-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        /* обрезает лишнее, заполняя блок */
+}
+--------------------------------
 /* Блок заказа */
 .order-section {
   padding: 2rem;
@@ -298,9 +307,51 @@ body {
 }
 
 .product-info h1 {
-  font-size: 2rem;
+  font-size: 1rem;
   margin-bottom: 1rem;
 }
+/* === Страница товара: текст слева, изображение справа === */
+.product-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "info gallery";
+  gap: 2rem;
+  align-items: start;       /* выравнивание по верхней границе */
+}
+
+/* Привязываем области */
+.product-info {
+  grid-area: info;
+}
+
+.product-gallery {
+  grid-area: gallery;
+  display: flex;
+  justify-content: center;  /* по центру вправо/влево */
+  align-items: center;      /* по центру сверху/снизу */
+}
+
+/* Фиксированный размер главного изображения */
+.gallery-main {
+  max-width: 100%;
+  max-height: 500px;        /* одинаковая высота */
+  object-fit: contain;      /* вписать без обрезки */
+}
+
+/* Миниатюры чуть меньше и тоже по центру */
+.gallery-thumbs {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.gallery-thumbs img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
 
 .specs {
   list-style: none;
@@ -331,3 +382,27 @@ body {
     grid-template-columns: 1fr;
   }
 }
+-----------------------------------
+/* === Сетка для статической и динамической галереи === */
+.product-grid,
+.gallery__grid {
+  display: grid;
+  gap: 1rem;
+  padding: 2rem;
+  grid-template-columns: repeat(6, 1fr);
+}
+@media (max-width: 1024px) {
+  .product-grid,
+  .gallery__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .product-grid,
+  .gallery__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+

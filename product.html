@@ -32,36 +32,9 @@
     </button>  
   </header>
 
-  <main>
-  <!-- Детали товара -->
-    <section class="product-detail">
-     <!-- Галерея -->
-     <div class="product-gallery">
-       <!-- Основное изображение -->
-       <img 
-         src="assets/images/Cap/Cap.png" 
-         alt="Produktname 1" 
-         class="gallery-main">
-       <!-- Миниатюры -->
-       <div class="gallery-thumbs">
-         <img src="assets/images/Cap/Cap-2.png" alt="Thumb 1">
-         <img src="assets/images/Cap/Cap-3.png" alt="Thumb 2">
-         <img src="assets/images/76542c3bee25fa37e6e6ace022ebc7ac.png" alt="Thumb 3">
-         <!-- …добавьте столько миниатюр, сколько нужно -->
-       </div>
-     </div>
- 
-     <!-- Информация -->
-     <div class="product-info">
-       <h1>Produktname 1</h1>
-       <ul class="specs">
-         <li><strong>Material:</strong> Baumwolle 100 %</li>
-         <li><strong>Schnitt:</strong> Regular Fit</li>
-         <li><strong>Verfügbarkeit:</strong> S, M, L, XL</li>
-       </ul>
-       <a href="index.html#bestellen" class="btn-order">Jetzt bestellen</a>
-     </div>
-    </section>
+  <!-- Контейнер для динамического рендера -->
+  <main class="product-detail-container">
+    <!-- JS заполнит этот блок -->
   </main>
 
 
@@ -74,6 +47,9 @@
 
   <!-- Кнопка «Наверх» -->
   <button class="back-to-top" aria-label="Nach oben">↑</button>
+  
   <script src="js/app.js"></script>
+  <script src="js/product.js"></script>
 
 </body>
+</html>

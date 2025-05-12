@@ -1,0 +1,55 @@
+[
+  {
+    "slug": "herren-T-Shirt-Black-Cap-01",
+    "name": "Observer/Cap",
+    "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
+    "image": "assets/images/Cap/Cap.png",
+    "imageLarge": "assets/images/Cap/Cap.png",
+    "thumbs": [
+      "assets/images/Cap/Cap-3.png",
+      "assets/images/Cap/Cap-2.png",
+      "assets/images/124.png"
+    ],
+    "specs": [
+      { "label": "Material", "value": "Baumwolle 100%" },
+      { "label": "Schnitt", "value": "Regular Fit" },
+      { "label": "Verfügbarkeit", "value": "S, M, L, XL" }
+    ],
+    "category": "herren"
+  },
+  {
+    "slug": "herren-T-Shirt-Black-Oculus-01",
+    "name": "Observer/Oculus",
+    "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
+    "image": "assets/images/Oculus/Ocu_1.png",
+    "imageLarge": "assets/images/Oculus/Ocu_1.png",
+    "thumbs": [
+      "assets/images/Oculus/Ocu_1-2.png",
+      "assets/images/Oculus/Ocu_1-3.png"
+    ],
+    "specs": [
+      { "label": "Material", "value": "Baumwolle 100%" },
+      { "label": "Schnitt", "value": "Regular Fit" },
+      { "label": "Verfügbarkeit", "value": "S, M, L, XL" }
+    ],
+    "category": "herren"
+  },
+  {
+    "slug": "herren-T-Shirt-Black-Strag-01",
+    "name": "Observer/Strag-#01",
+    "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
+    "image": "assets/images/Strag/Strag-1.png",
+    "imageLarge": "assets/images/Strag/Strag-2.png",
+    "thumbs": [
+      "assets/images/Strag/Strag-3.png",
+      "assets/images/124.png"
+    ],
+    "specs": [
+      { "label": "Material", "value": "Baumwolle 100%" },
+      { "label": "Schnitt", "value": "Regular Fit" },
+      { "label": "Verfügbarkeit", "value": "S, M, L, XL" }
+    ],
+    "category": "herren"
+  }
+]
+
