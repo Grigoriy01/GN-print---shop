@@ -24,7 +24,9 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="card-content">
             <h2>${prod.name}</h2>
             <p class="card-subtitle">${prod.subtitle || ""}</p>
-            <button type="button" class="btn-order">Jetzt bestellen</button>
+            <a href="product.html?slug=${prod.slug}">
+              <button>Details</button>
+            </a>
           </div>
         `;
 
