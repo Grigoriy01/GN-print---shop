@@ -409,12 +409,7 @@ body {
 }
 
 /* === Секция заказа === */
-.order-section {
-  padding: 2rem;
-  background: #f9f9f9;
-  margin-top: 2rem;        /* отступ от деталей товара */
-  border-radius: 8px;
-}
+
 
 /* Заголовок */
 .order-section h2 {
@@ -478,4 +473,33 @@ body {
   .order-image {
     margin: 0 auto 1rem;
   }
+}
+/* Ограничение ширины и центровка */
+.order-section {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+/* Звёздочки и валидация */
+.order-form label.required::after {
+  content: " *";
+  color: red;
+}
+.validation-message {
+  color: red;
+  font-size: 0.85rem;
+  display: none;
+  margin-top: 0.25rem;
+}
+
+/* Скрытые блоки */
+.order-form-container,
+.order-summary {
+  width: 100%;
+}
+.order-summary {
+  display: none;
 }
