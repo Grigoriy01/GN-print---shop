@@ -72,15 +72,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 <input type="hidden" name="orderID" value="${orderID}">
                 <input type="hidden" name="createdAt" value="${createdAt}">
                 <input type="hidden" name="productSlug" value="${slug}">
-                <label class="required">Ihr Name<br><input type="text" name="customerName" required></label>
-                <label class="required">E-Mail<br><input type="email" name="customerEmail" required></label>
-                <label class="required">Telefon<br><input type="tel" name="customerPhone" required></label>
+                <label class="required">Ihr Name<br><input type="text" name="customerName" required><br></label>
+                <label class="required">E-Mail<br><input type="email" name="customerEmail" required><br></label>
+                <label class="required">Telefon<br><input type="tel" name="customerPhone" required><br></label>
                 <label class="required">Größe<br>
                   <select name="size" id="sizeSelect" required>
-                    <option>…lädt Größen…</option>
-                  </select>
+                    <option value="" disabled selected>Größe wählen</option>
+                  </select>  <br>
                 </label>
-                <label>Kommentar<br><textarea name="comments" rows="3"></textarea></label>
+                <label>Kommentar<br><textarea name="comments" rows="3"></textarea><br></label>
                 <button type="button" id="nextBtn">Weiter</button>
               </form>
             </div>
@@ -92,18 +92,25 @@ document.addEventListener("DOMContentLoaded", () => {
         orderSec.scrollIntoView({ behavior: "smooth" });
 
         // Загрузка размеров
-        fetch(`https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec?slug=${slug}`)
-          .then(r => r.json())
-          .then(data => {
-            const sel = document.getElementById("sizeSelect");
-            sel.innerHTML = data.sizes.map(s =>
-              `<option value="${s.name}" ${s.available ? "" : "disabled"}>${s.name}</option>`
-            ).join("");
+        fetch(`https://script.google.com/macros/s/AKfycbzXCPYfYM6ElYClBLPov7avnncE4DVYDj1hQPFenXCkpGQlLOndyjG9aSolqoeQXRkq/exec?slug=${slug}`)
+          .then(r => {
+            console.log("Sizes-fetch status:", r.status);
+            return r.json();
           })
-          .catch(() => {
+          .then(data => {
+            console.log("Sizes data:", data);
+            const sel = document.getElementById("sizeSelect");
+            sel.innerHTML = `<option value="" disabled selected>Größe wählen</option>`
+              + data.sizes.map(s =>
+                  `<option value="${s.name}" ${s.available ? "" : "disabled"}>${s.name}</option>`
+                ).join("");
+          })
+          .catch(err => {
+            console.error("Ошибка загрузки размеров:", err);
             document.getElementById("sizeSelect")
-                    .innerHTML = `<option>Fehler beim Laden</option>`;
-          });
+                    .innerHTML = `<option value="" disabled>Fehler beim Laden</option>`;
+        });
+
 
         // Шаг “Weiter” → показать summary
         const orderForm = document.getElementById("orderForm");
@@ -111,30 +118,48 @@ document.addEventListener("DOMContentLoaded", () => {
         const orderSummary = document.getElementById("orderSummary");
 
         nextBtn.addEventListener("click", () => {
-          let valid = true;
-          orderForm.querySelectorAll("[required]").forEach(inp => {
-            const lbl = inp.closest("label");
-            let msg = lbl.querySelector(".validation-message");
-            if (!inp.value.trim()) {
-              if (!msg) {
-                msg = document.createElement("div");
+            let valid = true;
+            // Сброс старых ошибок
+            orderForm.querySelectorAll(".invalid, .validation-message").forEach(el => {
+              el.classList.remove("invalid");
+              if (el.classList.contains("validation-message")) el.remove();
+            });
+          
+            orderForm.querySelectorAll("[required]").forEach(inp => {
+              const val = inp.value.trim();
+              let msgText = "";
+            
+              // Сперва проверяем select
+              if (inp.tagName.toLowerCase() === "select" && val === "") {
+                msgText = "Bitte wählen Sie eine Größe.";
+              }
+              // Затем остальные поля
+              else if (!val) {
+                msgText = "Dieses Feld ist erforderlich.";
+              } else if (inp.type === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) {
+                msgText = "Bitte geben Sie eine gültige E-Mail-Adresse ein.";
+              } else if (inp.name === "customerPhone" && !/^\d+$/.test(val)) {
+                msgText = "Bitte geben Sie nur Ziffern ein.";
+              }
+            
+              if (msgText) {
+                valid = false;
+                inp.classList.add("invalid");
+                const lbl = inp.closest("label");
+                const msg = document.createElement("div");
                 msg.className = "validation-message";
-                msg.textContent = "Dieses Feld ist erforderlich.";
+                msg.textContent = msgText;
                 lbl.appendChild(msg);
               }
-              msg.style.display = "block";
-              valid = false;
-            } else if (msg) {
-              msg.style.display = "none";
-            }
-          });
-          if (!valid) return;
+            });
+          
+            if (!valid) return;
 
           // Сбор данных
           const formData = new FormData(orderForm);
           let summaryHtml = `<h3>Bitte überprüfen Sie Ihre Angaben</h3><ul>`;
           formData.forEach((val, key) => {
-            if (key === 'bot-field' || key === 'form-name') return;
+            if (["bot-field","form-name","createdAt"].includes(key)) return;
             summaryHtml += `<li><strong>${key}:</strong> ${val}</li>`;
           });
           summaryHtml += `</ul>

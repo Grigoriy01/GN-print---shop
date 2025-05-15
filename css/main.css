@@ -503,3 +503,56 @@ body {
 .order-summary {
   display: none;
 }
+ /* === Стили ошибок === */
+input.invalid,
+select.invalid,
+textarea.invalid {
+  border: 1px solid red;
+}
+
+/* Сообщения об ошибке */
+.validation-message {
+  color: red;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+/* Кнопки */
+#nextBtn,
+#backBtn,
+#buyBtn,
+.btn-order {
+  background: #0073e6;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  display: inline-block;
+  margin-top: 1rem;
+}
+#nextBtn:hover,
+#backBtn:hover,
+#buyBtn:hover,
+.btn-order:hover {
+  background: #005bb5;
+}
+/* Фиксированная ширина и базовый стиль для select */
+#sizeSelect {
+  width: 130px;       /* или любой другой подходящий размер */
+  max-width: 100%;    /* не выходит за границы контейнера */
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Ошибка валидации */
+select.invalid {
+  border-color: red;
+}
+/* Подсветка невыбранного select */
+select.invalid {
+  border: 1px solid red;
+  background-color: #fee;
+}
