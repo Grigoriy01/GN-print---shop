@@ -1,84 +1,98 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>GN Print Shop – Startseite</title>
-  <link rel="stylesheet" href="css/main.css">
-</head>
-<body>
-  <!-- Шапка сайта -->
-  <header class="site-header">
-    <div class="logo">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GN Print Shop – Startseite</title>
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <!-- Шапка сайта -->
+    <header class="site-header">
+      <div class="logo">
       <!-- Вставьте сюда свой логотип блога -->
       <a href="index.html">
         <img src="assets/images/INFO LABEL_S_logo 1.png" alt="Логотип блога" class="logo-img">
       </a>
-    </div>
-    <!-- Слоган в шапке -->
-    <div class="header-tagline">Individuelle Drucke &amp; Gravuren nach Wunsch</div>
-
-    <nav class="site-nav">
+      </div>
+      <!-- Слоган в шапке -->
+      <div class="header-tagline">Individuelle Drucke &amp; Gravuren nach Wunsch</div>
+      
+      <!--Werbkorb-->
+      <div class="cart-icon" id="cartToggle" title="Warenkorb öffnen">🛒</div>
+  
+      <nav class="site-nav">
       <ul>
         <li><a href="index.html">Startseite</a></li>
         <li><a href="catalog.html">Katalog</a></li>
         <li><a href="#kontakt">Kontakt</a></li>
       </ul>
-    </nav>
-    <!-- Кнопка-гамбургер для мобильного -->
-    <button class="nav-toggle" aria-label="Menü öffnen">
-      <span class="hamburger"></span>
-    </button>  
-  </header>
-
-<!-- Интро-блок после шапки -->
-  <section class="intro">
-    <h1>Willkommen bei GN Print Shop</h1>
-    <p>Hier kommt ein kurzer Einführungstext über unseren Shop…</p>
-  </section>
-
-  <!-- Навигация по категориям -->
-<nav class="category-nav">
-  <ul>
-    <li><a href="#herren">Herren</a></li>
-    <li><a href="#damen">Damen</a></li>
-    <li><a href="#tassen">Tassen</a></li> <!-- кружки -->
-  </ul>
-</nav>
-
-
-
-  <!-- Основной контент -->
-  <main>
-    <!-- Сетка товаров -->
-    <!-- Herren -->
-    <section id="herren" class="gallery__grid" data-category="herren"></section>
-      <!-- Карточка товара -->
-      <!-- JS подставит сюда карточки с category="herren" -->
-    <!-- Damen -->
-    <section id="damen"  class="gallery__grid" data-category="damen"></section>
-  <!-- JS подставит сюда карточки с category="damen" -->    
-    <!-- Tassen -->
-    <section id="tassen" class="gallery__grid" data-category="tassen"></section>
-  <!-- JS подставит сюда карточки с category="tassen" -->
-  </main>
-
-
-  <!-- Подвал с контактами -->
-  <footer id="kontakt" class="site-footer">
-    <p>&copy; 2025 GN Print Shop</p>
-    <p>E-Mail: <a href="mailto:info@gn-printshop.de">info@gn-printshop.de</a></p>
-    <p>WhatsApp: <a href="https://wa.me/491234567890">+49 123 4567890</a></p>
-  </footer>
-
-  <!-- Кнопка «Наверх» -->
-  <button class="back-to-top" aria-label="Nach oben">↑</button>
-
-  <script src="js/app.js"></script>
-  <script src="js/products.js"></script>
-
-
+      </nav>
+      
+      <!-- Кнопка-гамбургер для мобильного -->
+      <button class="nav-toggle" aria-label="Menü öffnen">
+        <span class="hamburger"></span>
+      </button>  
+    </header>
   
+  <!-- Интро-блок после шапки -->
+    <section class="intro">
+      <h1>Willkommen bei GN Print Shop</h1>
+      <p>Hier kommt ein kurzer Einführungstext über unseren Shop…</p>
+    </section>
+  
+    <!-- Навигация по категориям -->
+  <nav class="category-nav">
+    <ul>
+      <li><a href="#herren">Herren</a></li>
+      <li><a href="#damen">Damen</a></li>
+      <li><a href="#tassen">Tassen</a></li> <!-- кружки -->
+    </ul>
+  </nav>
+  
+  
+  
+    <!-- Основной контент -->
+    <main>
+      <!-- Сетка товаров -->
+      <!-- Herren -->
+      <section id="herren" class="gallery__grid" data-category="herren"></section>
+        <!-- Карточка товара -->
+        <!-- JS подставит сюда карточки с category="herren" -->
+      <!-- Damen -->
+      <section id="damen"  class="gallery__grid" data-category="damen"></section>
+    <!-- JS подставит сюда карточки с category="damen" -->    
+      <!-- Tassen -->
+      <section id="tassen" class="gallery__grid" data-category="tassen"></section>
+    <!-- JS подставит сюда карточки с category="tassen" -->
+    </main>
+  
+        <!-- Панель корзины -->
+    <div id="cartPanel" class="cart-panel hidden">
+      <div class="cart-header">
+        <button id="cartClose">×</button>
+        <h2>Ihre Bestellung</h2>
+      </div>
+      <div id="cartContent">
+        <p>Ihr Warenkorb ist leer.</p>
+      </div>
+    </div>
 
-</body>
+    
+    
+    <!-- Подвал с контактами -->
+    <footer id="kontakt" class="site-footer">
+      <p>&copy; 2025 GN Print Shop</p>
+      <p>E-Mail: <a href="mailto:info@gn-printshop.de">info@gn-printshop.de</a></p>
+      <p>WhatsApp: <a href="https://wa.me/491234567890">+49 123 4567890</a></p>
+    </footer>
+    
+    <!-- Кнопка «Наверх» -->
+    <button class="back-to-top" aria-label="Nach oben">↑</button>
+    
+    
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+  
+  </body>
 </html>

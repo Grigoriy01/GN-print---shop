@@ -18,7 +18,10 @@
     </div>
     <!-- Слоган в шапке -->
     <div class="header-tagline">Individuelle Drucke &amp; Gravuren nach Wunsch</div>
-
+    
+    <!--Werbkorb-->
+    <div class="cart-icon" id="cartToggle" title="Warenkorb öffnen">🛒</div>
+    
     <nav class="site-nav">
       <ul>
         <li><a href="index.html">Startseite</a></li>
@@ -26,6 +29,7 @@
         <li><a href="#kontakt">Kontakt</a></li>
       </ul>
     </nav>
+    
     <!-- Кнопка-гамбургер для мобильного -->
     <button class="nav-toggle" aria-label="Menü öffnen">
       <span class="hamburger"></span>
@@ -41,6 +45,16 @@
   <!-- сюда мы динамически вставим форму при клике -->
   </section>
 
+    <!-- Панель корзины -->
+  <div id="cartPanel" class="cart-panel hidden">
+    <div class="cart-header">
+      <button id="cartClose">×</button>
+      <h2>Ihre Bestellung</h2>
+    </div>
+    <div id="cartContent">
+      <p>Ihr Warenkorb ist leer.</p>
+    </div>
+  </div>
 
 
    <!-- Подвал с контактами -->
