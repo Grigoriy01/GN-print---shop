@@ -4,6 +4,7 @@
     "name": "Observer/Cap",
     "subtitle": "Autorenmotive",
     "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
+    "price":19.99,
     "image": "assets/images/Cap/Cap.png",
     "imageLarge": "assets/images/Cap/Cap.png",
     "thumbs": [
@@ -22,6 +23,7 @@
     "slug": "herren-T-Shirt-Black-Oculus-01",
     "name": "Observer/Oculus",
     "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
+    "price":19.99,
     "image": "assets/images/Oculus/Ocu_1.png",
     "imageLarge": "assets/images/Oculus/Ocu_1.png",
     "thumbs": [
@@ -39,6 +41,7 @@
     "slug": "herren-T-Shirt-Black-Strag-01",
     "name": "Observer/Strag-#01",
     "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
+    "price":19.99,
     "image": "assets/images/Strag/Strag-1.png",
     "imageLarge": "assets/images/Strag/Strag-2.png",
     "thumbs": [

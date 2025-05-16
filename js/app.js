@@ -1,4 +1,5 @@
 // js/app.js
+
 document.addEventListener("DOMContentLoaded", () => {
   // 1) Навигация (гамбургер)
   const navToggle = document.querySelector(".nav-toggle");
@@ -47,4 +48,9 @@ document.addEventListener("DOMContentLoaded", () => {
       cartPanel.classList.remove("visible");
     });
   }
+    cartToggle.addEventListener("click", () => {
+    renderCart();
+    cartPanel.classList.add("visible");
+    });
+    
 });

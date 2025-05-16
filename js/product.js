@@ -1,23 +1,122 @@
 // js/product.js
+
+// — Тост для уведомлений
+function showToast(message) {
+  const t = document.createElement("div");
+  t.className = "toast";
+  t.textContent = message;
+  document.body.appendChild(t);
+  t.addEventListener("animationend", () => t.remove());
+}
+
+// — Добавление товара в корзину
+function addToCartItem(prod, mainImgSrc) {
+  const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+  const size = prod.selectedSize || "";
+  const qty  = Number(prod.selectedQty) || 1;
+  const price = Number(prod.price) || 0;
+
+  const exists = cart.find(item => item.slug === prod.slug && item.size === size);
+  if (exists) {
+    exists.qty = Number(exists.qty) + qty;
+  } else {
+    cart.push({
+      slug: prod.slug,
+      name: prod.name,
+      price: price,
+      qty: qty,
+      image: mainImgSrc,
+      size: size
+    });
+  }
+  localStorage.setItem("cart", JSON.stringify(cart));
+  console.log("Cart now:", cart);
+  showToast("✅ Artikel zum Warenkorb hinzugefügt");
+}
+
+// — Отрисовка панели корзины
+function renderCart() {
+  const content = document.getElementById("cartContent");
+  const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+  console.log("Rendering cart:", cart);
+
+  if (!cart.length) {
+    content.innerHTML = `<p>Ihr Warenkorb ist leer.</p>`;
+    return;
+  }
+
+  let subTotal = 0;
+  const itemsHtml = cart.map(item => {
+    const price = Number(item.price) || 0;
+    const qty   = Number(item.qty)   || 1;
+    const line  = price * qty;
+    subTotal   += line;
+    return `
+      <li class="cart-item">
+        <img src="${item.image}" alt="${item.name}" class="cart-item-img">
+        <div class="cart-item-info">
+          <strong>${item.name}</strong><br>
+          Größe: ${item.size}<br>
+          Anzahl: ${qty}<br>
+          Preis: €${price.toFixed(2)}<br>
+          Gesamt: €${line.toFixed(2)}
+        </div>
+        <button class="cart-item-remove" data-slug="${item.slug}" data-size="${item.size}">×</button>
+      </li>`;
+  }).join("");
+
+  const versand = 4.90;
+  const total = subTotal + versand;
+
+  content.innerHTML = `
+    <ul class="cart-list">${itemsHtml}</ul>
+    <div class="cart-totals">
+      <p>Zwischensumme: €${subTotal.toFixed(2)}</p>
+      <p>Versandkosten: €${versand.toFixed(2)}</p>
+      <p><strong>Gesamt: €${total.toFixed(2)}</strong></p>
+      <button id="cartCheckout" class="btn-order">Kaufen</button>
+    </div>
+  `;
+
+  // Удаление товара
+  content.querySelectorAll(".cart-item-remove").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const slug = btn.dataset.slug;
+      const size = btn.dataset.size;
+      const updated = cart.filter(i => !(i.slug === slug && i.size === size));
+      localStorage.setItem("cart", JSON.stringify(updated));
+      renderCart();
+    });
+  });
+
+  // Checkout (пока только скролл к форме)
+  document.getElementById("cartCheckout").addEventListener("click", () => {
+    document.getElementById("cartPanel").scrollIntoView({ behavior: "smooth" });
+  });
+}
+
+// Делаем renderCart глобально доступным
+window.renderCart = renderCart;
+
 document.addEventListener("DOMContentLoaded", () => {
-  const params = new URLSearchParams(window.location.search);
-  const slug = params.get("slug");
-  console.log("Slug:", slug);
+  console.log("🛠 product.js запущен");
+  const slug = new URLSearchParams(window.location.search).get("slug");
 
   fetch("products.json")
-    .then(res => res.json())
+    .then(r => r.json())
     .then(products => {
       const prod = products.find(p => p.slug === slug);
       if (!prod) {
         document.querySelector(".product-detail-container")
-                .innerHTML = "<p>Produkt nicht gefunden</p>";
+          .innerHTML = "<p>Produkt nicht gefunden</p>";
         return;
       }
 
       const mainImgSrc = prod.imageLarge || prod.image;
-      const thumbs = (prod.thumbs && prod.thumbs.length) ? prod.thumbs : [prod.image];
+      const thumbs     = prod.thumbs?.length ? prod.thumbs : [prod.image];
+      const container  = document.querySelector(".product-detail-container");
 
-      const container = document.querySelector(".product-detail-container");
+      // 1) Рендер товара
       container.innerHTML = `
         <section class="product-detail">
           <div class="product-gallery">
@@ -34,160 +133,85 @@ document.addEventListener("DOMContentLoaded", () => {
             <ul class="specs">
               ${prod.specs.map(s => `<li><strong>${s.label}:</strong> ${s.value}</li>`).join("")}
             </ul>
+            <label class="required">Größe wählen<br>
+              <select id="sizeSelect" name="size">
+                <option value="" disabled selected>Größe wählen</option>
+              </select>
+            </label>
+            <label class="required">Anzahl<br>
+              <input type="number" id="qtyInput" name="quantity" min="1" value="1" required>
+            </label>
             <button type="button" class="btn-order">Jetzt bestellen</button>
+            <button type="button" class="add-cart-btn" title="In den Warenkorb">➕🛒</button>
           </div>
         </section>
-        <section id="orderSection" class="order-section hidden"></section>
       `;
 
-      // Переключение миниатюр
+      // 2) Галерея миниатюр
       const mainEl = document.querySelector(".gallery-main");
-      document.querySelectorAll(".gallery-thumbs img").forEach(img => {
-        img.style.cursor = "pointer";
-        img.addEventListener("click", () => {
-          mainEl.src = img.src;
+      document.querySelectorAll(".gallery-thumbs img").forEach(thumb => {
+        thumb.style.cursor = "pointer";
+        thumb.addEventListener("click", () => {
+          mainEl.src = thumb.src;
+          mainEl.alt = thumb.alt;
         });
       });
 
-      // Логика клика по кнопке «Jetzt bestellen»
-      const orderBtn = container.querySelector(".btn-order");
-      const orderSec = document.getElementById("orderSection");
-
-      orderBtn.addEventListener("click", e => {
-        e.preventDefault();
-
-        const orderID = 'ORD' + Date.now();
-        const createdAt = Date.now();
-
-        orderSec.innerHTML = `
-          <h2>Bestellung für ${prod.name}</h2>
-          <p>Ihre Bestellnummer: ${orderID}</p>
-          <div class="order-content">
-            <div class="order-image">
-              <img src="${mainEl.src}" alt="${mainEl.alt}">
-            </div>
-            <div class="order-form-container">
-              <form id="orderForm" name="order" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-                <input type="hidden" name="form-name" value="order">
-                <input type="hidden" name="orderID" value="${orderID}">
-                <input type="hidden" name="createdAt" value="${createdAt}">
-                <input type="hidden" name="productSlug" value="${slug}">
-                <label class="required">Ihr Name<br><input type="text" name="customerName" required><br></label>
-                <label class="required">E-Mail<br><input type="email" name="customerEmail" required><br></label>
-                <label class="required">Telefon<br><input type="tel" name="customerPhone" required><br></label>
-                <label class="required">Größe<br>
-                  <select name="size" id="sizeSelect" required>
-                    <option value="" disabled selected>Größe wählen</option>
-                  </select>  <br>
-                </label>
-                <label>Kommentar<br><textarea name="comments" rows="3"></textarea><br></label>
-                <button type="button" id="nextBtn">Weiter</button>
-              </form>
-            </div>
-            <div class="order-summary" id="orderSummary" style="display: none;"></div>
-          </div>
-        `;
-
-        orderSec.classList.remove("hidden");
-        orderSec.scrollIntoView({ behavior: "smooth" });
-
-        // Загрузка размеров
+      // 3) Загрузка размеров
+      const selectEl = document.getElementById("sizeSelect");
+      if (selectEl) {
         fetch(`https://script.google.com/macros/s/AKfycbzXCPYfYM6ElYClBLPov7avnncE4DVYDj1hQPFenXCkpGQlLOndyjG9aSolqoeQXRkq/exec?slug=${slug}`)
-          .then(r => {
-            console.log("Sizes-fetch status:", r.status);
-            return r.json();
-          })
+          .then(r => r.json())
           .then(data => {
-            console.log("Sizes data:", data);
-            const sel = document.getElementById("sizeSelect");
-            sel.innerHTML = `<option value="" disabled selected>Größe wählen</option>`
-              + data.sizes.map(s =>
-                  `<option value="${s.name}" ${s.available ? "" : "disabled"}>${s.name}</option>`
-                ).join("");
+            selectEl.innerHTML =
+              `<option value="" disabled selected>Größe wählen</option>` +
+              data.sizes.map(s =>
+                `<option value="${s.name}" ${s.available ? "" : "disabled"}>${s.name}</option>`
+              ).join("");
           })
-          .catch(err => {
-            console.error("Ошибка загрузки размеров:", err);
-            document.getElementById("sizeSelect")
-                    .innerHTML = `<option value="" disabled>Fehler beim Laden</option>`;
-        });
-
-
-        // Шаг “Weiter” → показать summary
-        const orderForm = document.getElementById("orderForm");
-        const nextBtn = document.getElementById("nextBtn");
-        const orderSummary = document.getElementById("orderSummary");
-
-        nextBtn.addEventListener("click", () => {
-            let valid = true;
-            // Сброс старых ошибок
-            orderForm.querySelectorAll(".invalid, .validation-message").forEach(el => {
-              el.classList.remove("invalid");
-              if (el.classList.contains("validation-message")) el.remove();
-            });
-          
-            orderForm.querySelectorAll("[required]").forEach(inp => {
-              const val = inp.value.trim();
-              let msgText = "";
-            
-              // Сперва проверяем select
-              if (inp.tagName.toLowerCase() === "select" && val === "") {
-                msgText = "Bitte wählen Sie eine Größe.";
-              }
-              // Затем остальные поля
-              else if (!val) {
-                msgText = "Dieses Feld ist erforderlich.";
-              } else if (inp.type === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) {
-                msgText = "Bitte geben Sie eine gültige E-Mail-Adresse ein.";
-              } else if (inp.name === "customerPhone" && !/^\d+$/.test(val)) {
-                msgText = "Bitte geben Sie nur Ziffern ein.";
-              }
-            
-              if (msgText) {
-                valid = false;
-                inp.classList.add("invalid");
-                const lbl = inp.closest("label");
-                const msg = document.createElement("div");
-                msg.className = "validation-message";
-                msg.textContent = msgText;
-                lbl.appendChild(msg);
-              }
-            });
-          
-            if (!valid) return;
-
-          // Сбор данных
-          const formData = new FormData(orderForm);
-          let summaryHtml = `<h3>Bitte überprüfen Sie Ihre Angaben</h3><ul>`;
-          formData.forEach((val, key) => {
-            if (["bot-field","form-name","createdAt"].includes(key)) return;
-            summaryHtml += `<li><strong>${key}:</strong> ${val}</li>`;
+          .catch(() => {
+            selectEl.innerHTML = `<option value="" disabled>Fehler beim Laden</option>`;
           });
-          summaryHtml += `</ul>
-            <button id="backBtn">Zurück</button>
-            <button id="buyBtn">Kaufen</button>`;
+      }
 
-          orderSummary.innerHTML = summaryHtml;
-          orderForm.style.display = "none";
-          orderSummary.style.display = "block";
+      // 4) Обработчики кнопок
+      const orderBtn   = container.querySelector(".btn-order");
+      const addCartBtn = container.querySelector(".add-cart-btn");
 
-          // “Zurück”
-          document.getElementById("backBtn").addEventListener("click", () => {
-            orderSummary.style.display = "none";
-            orderForm.style.display = "block";
-          });
+      addCartBtn.addEventListener("click", () => {
+        const size = selectEl.value;
+        const qty  = Number(document.getElementById("qtyInput").value);
+        if (!size) {
+          showToast("Bitte wählen Sie eine Größe.");
+          return;
+        }
+        if (!qty || qty < 1) {
+          showToast("Bitte geben Sie eine gültige Anzahl ein.");
+          document.getElementById("qtyInput").classList.add("invalid");
+          return;
+        }
+        prod.selectedSize = size;
+        prod.selectedQty  = qty;
+        addToCartItem(prod, mainImgSrc);
+      });
 
-          // “Kaufen” → PayPal.me
-          document.getElementById("buyBtn").addEventListener("click", () => {
-            const age = Date.now() - createdAt;
-            if (age > 24 * 60 * 60 * 1000) {
-              alert("Die Zahlungsfrist ist abgelaufen. Bitte erstellen Sie eine neue Bestellung.");
-            } else {
-              const price = prod.price || prod.defaultPrice || 0;
-              const payLink = `https://paypal.me/ВашПрофиль/${price}?note=${orderID}`;
-              window.open(payLink, "_blank");
-            }
-          });
-        });
+      orderBtn.addEventListener("click", () => {
+        const size = selectEl.value;
+        const qty  = Number(document.getElementById("qtyInput").value);
+        if (!size) {
+          showToast("Bitte wählen Sie eine Größe.");
+          return;
+        }
+        if (!qty || qty < 1) {
+          showToast("Bitte geben Sie eine gültige Anzahl ein.");
+          document.getElementById("qtyInput").classList.add("invalid");
+          return;
+        }
+        prod.selectedSize = size;
+        prod.selectedQty  = qty;
+        addToCartItem(prod, mainImgSrc);
+        renderCart();
+        document.getElementById("cartPanel").classList.add("visible");
       });
     })
     .catch(err => console.error("Ошибка в product.js:", err));
