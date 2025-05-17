@@ -120,9 +120,18 @@ function renderCart() {
       </form>
     `;
 
-    wrapper.classList.add("visible");
-    wrapper.querySelector(".form-back").addEventListener("click", () => {
-      wrapper.classList.remove("visible");
+    // Показ формы
+  wrapper.classList.remove("hidden");
+  void wrapper.offsetWidth; // фикс для повторного применения transition
+  wrapper.classList.add("visible");
+
+  // Обработчик кнопки ←
+  wrapper.querySelector(".form-back").addEventListener("click", () => {
+    wrapper.classList.remove("visible");
+    setTimeout(() => {
+      wrapper.classList.add("hidden");
+      wrapper.innerHTML = ""; // очистка для повторного использования
+    }, 400); // совпадает с CSS transition
     });
   });
 }
@@ -220,7 +229,7 @@ document.addEventListener("submit", (e) => {
     const data = Object.fromEntries(new FormData(e.target).entries());
     const cart = JSON.parse(localStorage.getItem("cart") || "[]");
     const panel = document.getElementById("confirmPanel");
-    if (!panel) return;
+    if (!panel || !cart.length) return;
 
     const itemsHtml = cart.map(item =>
       `${item.name} – Größe: ${item.size}, Anzahl: ${item.qty}`
@@ -251,17 +260,54 @@ document.addEventListener("submit", (e) => {
       </div>
     `;
 
+    panel.classList.remove("hidden");
     panel.classList.add("visible");
     panel.scrollTo({ top: 0, behavior: "instant" });
 
-
-    panel.querySelector(".back-btn").addEventListener("click", () => {
-      panel.classList.remove("visible");
+    // Обе кнопки "←" (сверху и снизу)
+    panel.querySelectorAll(".back-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        panel.classList.remove("visible");
+        setTimeout(() => panel.classList.add("hidden"), 400);
+      });
     });
 
+    // Кнопка "Bezahlen"
     panel.querySelector(".pay-btn").addEventListener("click", () => {
-      const paypalURL = `https://paypal.me/deinname/${total.toFixed(2)}`;
-      window.location.href = paypalURL;
+      const payload = {
+        orderId: orderId,
+        products: itemsHtml.replace(/<br>/g, "; "),
+        total: total.toFixed(2),
+        fullname: data.fullname,
+        email: data.email,
+        phone: data.phone,
+        address: data.address,
+        zip: data.zip,
+        city: data.city,
+        notes: data.notes
+      };
+
+      fetch("https://script.google.com/macros/s/AKfycbwrfZwUaH9pORSdUVd1Q9_40iz8HpM_XwWahxT3Nm4XezjvP4xx26IWbE_BqD3qapeR/exec", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+      })
+      .then(res => res.json())
+      .then(res => {
+        if (res.success) {
+          const paypalURL = `https://paypal.me/deinname/${total.toFixed(2)}`;
+          window.location.href = paypalURL;
+        } else {
+          showToast("❌ Fehler beim Speichern. Bitte später versuchen.");
+        }
+      })
+      .catch(err => {
+        showToast("❌ Verbindung fehlgeschlagen.");
+        console.error("Fehler beim Senden:", err);
+      });
     });
   }
 });
+
