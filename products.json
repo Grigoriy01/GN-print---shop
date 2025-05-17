@@ -54,6 +54,158 @@
       { "label": "Verfügbarkeit", "value": "S, M, L, XL" }
     ],
     "category": "herren"
+  },
+
+  {
+    "slug": "herren-T-Shirt-Black-Strag-01",
+    "name": "Observer/Strag-#01",
+    "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
+    "price":19.99,
+    "image": "assets/images/Strag/Strag-1.png",
+    "imageLarge": "assets/images/Strag/Strag-2.png",
+    "thumbs": [
+      "assets/images/Strag/Strag-3.png",
+      "assets/images/124.png"
+    ],
+    "specs": [
+      { "label": "Material", "value": "Baumwolle 100%" },
+      { "label": "Schnitt", "value": "Regular Fit" },
+      { "label": "Verfügbarkeit", "value": "S, M, L, XL" }
+    ],
+    "category": "herren"
+  },
+
+  {
+    "slug": "herren-T-Shirt-Black-Strag-01",
+    "name": "Observer/Strag-#01",
+    "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
+    "price":19.99,
+    "image": "assets/images/Strag/Strag-1.png",
+    "imageLarge": "assets/images/Strag/Strag-2.png",
+    "thumbs": [
+      "assets/images/Strag/Strag-3.png",
+      "assets/images/124.png"
+    ],
+    "specs": [
+      { "label": "Material", "value": "Baumwolle 100%" },
+      { "label": "Schnitt", "value": "Regular Fit" },
+      { "label": "Verfügbarkeit", "value": "S, M, L, XL" }
+    ],
+    "category": "herren"
+  },
+
+  {
+    "slug": "herren-T-Shirt-Black-Strag-01",
+    "name": "Observer/Strag-#01",
+    "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
+    "price":19.99,
+    "image": "assets/images/Strag/Strag-1.png",
+    "imageLarge": "assets/images/Strag/Strag-2.png",
+    "thumbs": [
+      "assets/images/Strag/Strag-3.png",
+      "assets/images/124.png"
+    ],
+    "specs": [
+      { "label": "Material", "value": "Baumwolle 100%" },
+      { "label": "Schnitt", "value": "Regular Fit" },
+      { "label": "Verfügbarkeit", "value": "S, M, L, XL" }
+    ],
+    "category": "herren"
+  },
+
+  {
+    "slug": "damen-T-Shirt-Black-Strag-01",
+    "name": "Observer/Strag-#01",
+    "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
+    "price":19.99,
+    "image": "assets/images/Strag/Strag-1.png",
+    "imageLarge": "assets/images/Strag/Strag-2.png",
+    "thumbs": [
+      "assets/images/Strag/Strag-3.png",
+      "assets/images/124.png"
+    ],
+    "specs": [
+      { "label": "Material", "value": "Baumwolle 100%" },
+      { "label": "Schnitt", "value": "Regular Fit" },
+      { "label": "Verfügbarkeit", "value": "S, M, L, XL" }
+    ],
+    "category": "damen"
+  },
+
+   {
+    "slug": "damen-T-Shirt-Black-Strag-01",
+    "name": "Observer/Strag-#01",
+    "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
+    "price":19.99,
+    "image": "assets/images/Strag/Strag-1.png",
+    "imageLarge": "assets/images/Strag/Strag-2.png",
+    "thumbs": [
+      "assets/images/Strag/Strag-3.png",
+      "assets/images/124.png"
+    ],
+    "specs": [
+      { "label": "Material", "value": "Baumwolle 100%" },
+      { "label": "Schnitt", "value": "Regular Fit" },
+      { "label": "Verfügbarkeit", "value": "S, M, L, XL" }
+    ],
+    "category": "damen"
+  },
+
+   {
+    "slug": "damen-T-Shirt-Black-Strag-01",
+    "name": "Observer/Strag-#01",
+    "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
+    "price":19.99,
+    "image": "assets/images/Strag/Strag-1.png",
+    "imageLarge": "assets/images/Strag/Strag-2.png",
+    "thumbs": [
+      "assets/images/Strag/Strag-3.png",
+      "assets/images/124.png"
+    ],
+    "specs": [
+      { "label": "Material", "value": "Baumwolle 100%" },
+      { "label": "Schnitt", "value": "Regular Fit" },
+      { "label": "Verfügbarkeit", "value": "S, M, L, XL" }
+    ],
+    "category": "damen"
+  },
+
+   {
+    "slug": "tassen-T-Shirt-Black-Strag-01",
+    "name": "Observer/Strag-#01",
+    "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
+    "price":19.99,
+    "image": "assets/images/Strag/Strag-1.png",
+    "imageLarge": "assets/images/Strag/Strag-2.png",
+    "thumbs": [
+      "assets/images/Strag/Strag-3.png",
+      "assets/images/124.png"
+    ],
+    "specs": [
+      { "label": "Material", "value": "Baumwolle 100%" },
+      { "label": "Schnitt", "value": "Regular Fit" },
+      { "label": "Verfügbarkeit", "value": "S, M, L, XL" }
+    ],
+    "category": "tassen"
+  },
+
+  {
+    "slug": "tassen-T-Shirt-Black-Strag-01",
+    "name": "Observer/Strag-#01",
+    "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
+    "price":19.99,
+    "image": "assets/images/Strag/Strag-1.png",
+    "imageLarge": "assets/images/Strag/Strag-2.png",
+    "thumbs": [
+      "assets/images/Strag/Strag-3.png",
+      "assets/images/124.png"
+    ],
+    "specs": [
+      { "label": "Material", "value": "Baumwolle 100%" },
+      { "label": "Schnitt", "value": "Regular Fit" },
+      { "label": "Verfügbarkeit", "value": "S, M, L, XL" }
+    ],
+    "category": "tassen"
   }
 ]
 

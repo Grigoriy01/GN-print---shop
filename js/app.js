@@ -32,25 +32,32 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 4) Корзина: открыть/закрыть
+  // 4) Корзина: открыть/закрыть + отрисовать
+
   const cartToggle = document.getElementById("cartToggle");
   const cartPanel  = document.getElementById("cartPanel");
   const cartClose  = document.getElementById("cartClose");
   console.log("app.js loaded:", { cartToggle, cartPanel, cartClose });
 
   if (cartToggle && cartPanel && cartClose) {
+    // Открытие: сначала рендерим содержимое, затем показываем панель
     cartToggle.addEventListener("click", () => {
       console.log("🛒 Открываем корзину");
+      renderCart();               // убедиться, что эта функция глобально доступна
       cartPanel.classList.add("visible");
     });
+    const toggle = document.getElementById("cartToggle");
+    if (toggle) {
+      toggle.addEventListener("click", () => {
+        document.getElementById("cartPanel").classList.add("visible");
+        renderCart(); // отрисовка корзины
+      });
+    }
+
+    // Закрытие
     cartClose.addEventListener("click", () => {
       console.log("✖ Закрываем корзину");
       cartPanel.classList.remove("visible");
     });
   }
-    cartToggle.addEventListener("click", () => {
-    renderCart();
-    cartPanel.classList.add("visible");
-    });
-    
 });

@@ -1,6 +1,4 @@
-// js/product.js
-
-// — Тост для уведомлений
+// === Тост для уведомлений
 function showToast(message) {
   const t = document.createElement("div");
   t.className = "toast";
@@ -9,7 +7,7 @@ function showToast(message) {
   t.addEventListener("animationend", () => t.remove());
 }
 
-// — Добавление товара в корзину
+// === Добавление товара в корзину
 function addToCartItem(prod, mainImgSrc) {
   const cart = JSON.parse(localStorage.getItem("cart") || "[]");
   const size = prod.selectedSize || "";
@@ -30,15 +28,13 @@ function addToCartItem(prod, mainImgSrc) {
     });
   }
   localStorage.setItem("cart", JSON.stringify(cart));
-  console.log("Cart now:", cart);
   showToast("✅ Artikel zum Warenkorb hinzugefügt");
 }
 
-// — Отрисовка панели корзины
+// === Отрисовка корзины и формы
 function renderCart() {
   const content = document.getElementById("cartContent");
   const cart = JSON.parse(localStorage.getItem("cart") || "[]");
-  console.log("Rendering cart:", cart);
 
   if (!cart.length) {
     content.innerHTML = `<p>Ihr Warenkorb ist leer.</p>`;
@@ -47,18 +43,16 @@ function renderCart() {
 
   let subTotal = 0;
   const itemsHtml = cart.map(item => {
-    const price = Number(item.price) || 0;
-    const qty   = Number(item.qty)   || 1;
-    const line  = price * qty;
-    subTotal   += line;
+    const line = item.price * item.qty;
+    subTotal += line;
     return `
       <li class="cart-item">
         <img src="${item.image}" alt="${item.name}" class="cart-item-img">
         <div class="cart-item-info">
           <strong>${item.name}</strong><br>
           Größe: ${item.size}<br>
-          Anzahl: ${qty}<br>
-          Preis: €${price.toFixed(2)}<br>
+          Anzahl: ${item.qty}<br>
+          Preis: €${item.price.toFixed(2)}<br>
           Gesamt: €${line.toFixed(2)}
         </div>
         <button class="cart-item-remove" data-slug="${item.slug}" data-size="${item.size}">×</button>
@@ -78,28 +72,65 @@ function renderCart() {
     </div>
   `;
 
-  // Удаление товара
+  // Кнопка удалить
   content.querySelectorAll(".cart-item-remove").forEach(btn => {
     btn.addEventListener("click", () => {
-      const slug = btn.dataset.slug;
-      const size = btn.dataset.size;
-      const updated = cart.filter(i => !(i.slug === slug && i.size === size));
+      const updated = cart.filter(i => !(i.slug === btn.dataset.slug && i.size === btn.dataset.size));
       localStorage.setItem("cart", JSON.stringify(updated));
       renderCart();
     });
   });
 
-  // Checkout (пока только скролл к форме)
+  // Кнопка "Kaufen" — показать форму
   document.getElementById("cartCheckout").addEventListener("click", () => {
-    document.getElementById("cartPanel").scrollIntoView({ behavior: "smooth" });
+    const lastItem = cart[cart.length - 1];
+    const wrapper = document.querySelector(".order-form-wrapper");
+    if (!wrapper) return;
+
+    wrapper.innerHTML = `
+      <button class="form-back" title="Zurück zur Übersicht">←</button>
+      <h2>Bestellformular</h2>
+      <form id="checkoutForm">
+        <input type="hidden" name="model" value="${lastItem.name}">
+        <input type="hidden" name="size" value="${lastItem.size}">
+        <input type="hidden" name="qty" value="${lastItem.qty}">
+
+        <label>Ihr Name:</label>
+        <input type="text" name="fullname" required>
+
+        <label>E-Mail:</label>
+        <input type="email" name="email" required>
+
+        <label>Telefon (optional):</label>
+        <input type="tel" name="phone" placeholder="+49 …">
+
+        <label>Adresse:</label>
+        <input type="text" name="address" required>
+
+        <label>PLZ:</label>
+        <input type="text" name="zip" pattern="\\d{5}" required>
+
+        <label>Ort:</label>
+        <input type="text" name="city" required>
+
+        <label>Bemerkung (optional):</label>
+        <textarea name="notes" rows="3"></textarea>
+
+        <button type="submit" class="submit-btn">Absenden</button>
+      </form>
+    `;
+
+    wrapper.classList.add("visible");
+    wrapper.querySelector(".form-back").addEventListener("click", () => {
+      wrapper.classList.remove("visible");
+    });
   });
 }
 
-// Делаем renderCart глобально доступным
 window.renderCart = renderCart;
 
+// === Отрисовка карточки товара
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("🛠 product.js запущен");
   const slug = new URLSearchParams(window.location.search).get("slug");
 
   fetch("products.json")
@@ -113,10 +144,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       const mainImgSrc = prod.imageLarge || prod.image;
-      const thumbs     = prod.thumbs?.length ? prod.thumbs : [prod.image];
-      const container  = document.querySelector(".product-detail-container");
+      const thumbs = prod.thumbs?.length ? prod.thumbs : [prod.image];
 
-      // 1) Рендер товара
+      const container = document.querySelector(".product-detail-container");
       container.innerHTML = `
         <section class="product-detail">
           <div class="product-gallery">
@@ -133,12 +163,12 @@ document.addEventListener("DOMContentLoaded", () => {
             <ul class="specs">
               ${prod.specs.map(s => `<li><strong>${s.label}:</strong> ${s.value}</li>`).join("")}
             </ul>
-            <label class="required">Größe wählen<br>
-              <select id="sizeSelect" name="size">
+            <label>Größe wählen<br>
+              <select id="sizeSelect" name="size" required>
                 <option value="" disabled selected>Größe wählen</option>
               </select>
             </label>
-            <label class="required">Anzahl<br>
+            <label>Anzahl<br>
               <input type="number" id="qtyInput" name="quantity" min="1" value="1" required>
             </label>
             <button type="button" class="btn-order">Jetzt bestellen</button>
@@ -147,72 +177,91 @@ document.addEventListener("DOMContentLoaded", () => {
         </section>
       `;
 
-      // 2) Галерея миниатюр
-      const mainEl = document.querySelector(".gallery-main");
       document.querySelectorAll(".gallery-thumbs img").forEach(thumb => {
-        thumb.style.cursor = "pointer";
         thumb.addEventListener("click", () => {
-          mainEl.src = thumb.src;
-          mainEl.alt = thumb.alt;
+          document.querySelector(".gallery-main").src = thumb.src;
         });
       });
 
-      // 3) Загрузка размеров
       const selectEl = document.getElementById("sizeSelect");
-      if (selectEl) {
-        fetch(`https://script.google.com/macros/s/AKfycbzXCPYfYM6ElYClBLPov7avnncE4DVYDj1hQPFenXCkpGQlLOndyjG9aSolqoeQXRkq/exec?slug=${slug}`)
-          .then(r => r.json())
-          .then(data => {
-            selectEl.innerHTML =
-              `<option value="" disabled selected>Größe wählen</option>` +
-              data.sizes.map(s =>
-                `<option value="${s.name}" ${s.available ? "" : "disabled"}>${s.name}</option>`
-              ).join("");
-          })
-          .catch(() => {
-            selectEl.innerHTML = `<option value="" disabled>Fehler beim Laden</option>`;
-          });
-      }
+      fetch(`https://script.google.com/macros/s/AKfycbzXCPYfYM6ElYClBLPov7avnncE4DVYDj1hQPFenXCkpGQlLOndyjG9aSolqoeQXRkq/exec?slug=${slug}`)
+        .then(r => r.json())
+        .then(data => {
+          selectEl.innerHTML = `<option value="" disabled selected>Größe wählen</option>` +
+            data.sizes.map(s => `<option value="${s.name}" ${s.available ? "" : "disabled"}>${s.name}</option>`).join("");
+        });
 
-      // 4) Обработчики кнопок
-      const orderBtn   = container.querySelector(".btn-order");
-      const addCartBtn = container.querySelector(".add-cart-btn");
-
-      addCartBtn.addEventListener("click", () => {
+      container.querySelector(".add-cart-btn").addEventListener("click", () => {
         const size = selectEl.value;
-        const qty  = Number(document.getElementById("qtyInput").value);
-        if (!size) {
-          showToast("Bitte wählen Sie eine Größe.");
-          return;
-        }
-        if (!qty || qty < 1) {
-          showToast("Bitte geben Sie eine gültige Anzahl ein.");
-          document.getElementById("qtyInput").classList.add("invalid");
-          return;
-        }
+        const qty = Number(document.getElementById("qtyInput").value);
+        if (!size || qty < 1) return showToast("Größe & Menge wählen");
         prod.selectedSize = size;
-        prod.selectedQty  = qty;
+        prod.selectedQty = qty;
         addToCartItem(prod, mainImgSrc);
       });
 
-      orderBtn.addEventListener("click", () => {
+      container.querySelector(".btn-order").addEventListener("click", () => {
         const size = selectEl.value;
-        const qty  = Number(document.getElementById("qtyInput").value);
-        if (!size) {
-          showToast("Bitte wählen Sie eine Größe.");
-          return;
-        }
-        if (!qty || qty < 1) {
-          showToast("Bitte geben Sie eine gültige Anzahl ein.");
-          document.getElementById("qtyInput").classList.add("invalid");
-          return;
-        }
+        const qty = Number(document.getElementById("qtyInput").value);
+        if (!size || qty < 1) return showToast("Größe & Menge wählen");
         prod.selectedSize = size;
-        prod.selectedQty  = qty;
+        prod.selectedQty = qty;
         addToCartItem(prod, mainImgSrc);
         renderCart();
         document.getElementById("cartPanel").classList.add("visible");
       });
-    })
-    .catch(err => console.error("Ошибка в product.js:", err));
+    });
+});
+
+// === Подтверждение и оплата
+document.addEventListener("submit", (e) => {
+  if (e.target.id === "checkoutForm") {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(e.target).entries());
+    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+    const panel = document.getElementById("confirmPanel");
+    if (!panel) return;
+
+    const itemsHtml = cart.map(item =>
+      `${item.name} – Größe: ${item.size}, Anzahl: ${item.qty}`
+    ).join("<br>");
+
+    const orderId = "GN-" + Date.now();
+    const versand = 4.90;
+    const total = cart.reduce((sum, i) => sum + i.price * i.qty, 0) + versand;
+
+    panel.innerHTML = `
+      <div class="confirm-header">
+        <button class="back-btn" title="Zurück zur Bestellung">←</button>
+        <h2>Bestellübersicht</h2>
+      </div>
+      <div class="confirm-inner">
+        <div class="field-group"><label>Bestellnummer:</label><div class="value">${orderId}</div></div>
+        <div class="field-group"><label>Produkte:</label><div class="value">${itemsHtml}</div></div>
+        <div class="field-group"><label>Gesamtbetrag:</label><div class="value">€${total.toFixed(2)}</div></div>
+        <div class="field-group"><label>Name:</label><div class="value">${data.fullname}</div></div>
+        <div class="field-group"><label>E-Mail:</label><div class="value">${data.email}</div></div>
+        <div class="field-group"><label>Telefon:</label><div class="value">${data.phone || "-"}</div></div>
+        <div class="field-group"><label>Adresse:</label><div class="value">${data.address}, ${data.zip} ${data.city}</div></div>
+        <div class="field-group"><label>Bemerkung:</label><div class="value">${data.notes || "-"}</div></div>
+        <div class="button-row">
+          <button class="back-btn">Zurück</button>
+          <button class="pay-btn">Bezahlen</button>
+        </div>
+      </div>
+    `;
+
+    panel.classList.add("visible");
+    panel.scrollTo({ top: 0, behavior: "instant" });
+
+
+    panel.querySelector(".back-btn").addEventListener("click", () => {
+      panel.classList.remove("visible");
+    });
+
+    panel.querySelector(".pay-btn").addEventListener("click", () => {
+      const paypalURL = `https://paypal.me/deinname/${total.toFixed(2)}`;
+      window.location.href = paypalURL;
+    });
+  }
 });
