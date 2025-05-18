@@ -287,26 +287,38 @@ document.addEventListener("submit", (e) => {
         notes: data.notes
       };
 
-      fetch("https://script.google.com/macros/s/AKfycbxNaqKU6nsHGJBip3l8fp04r1HmApitabOu40KgybJz2ETQqmdsNGuduQZd6MSjnC_bhg/exec", {
+      fetch("https://corsproxy.io/?https://script.google.com/macros/s/AKfycbxNaqKU6nsHGJBip3l8fp04r1HmApitabOu40KgybJz2ETQqmdsNGuduQZd6MSjnC_bhg/exec", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify(payload)
+        body: JSON.stringify({
+          orderId: orderId,
+          products: itemsHtml.replace(/<br>/g, "; "),
+          total: total.toFixed(2),
+          fullname: data.fullname,
+          email: data.email,
+          phone: data.phone,
+          address: data.address,
+          zip: data.zip,
+          city: data.city,
+          notes: data.notes
+        })
       })
       .then(res => res.json())
       .then(res => {
         if (res.success) {
-          const paypalURL = `https://paypal.me/deinname/${total.toFixed(2)}`;
+          const paypalURL = `https://paypal.me/gnprintshop/${total.toFixed(2)}`;
           window.location.href = paypalURL;
         } else {
           showToast("❌ Fehler beim Speichern. Bitte später versuchen.");
         }
       })
       .catch(err => {
-        showToast("❌ Verbindung fehlgeschlagen.");
-        console.error("Fehler beim Senden:", err);
+        showToast("❌ Verbindung fehlgeschlagen (Proxy).");
+        console.error("Proxy-Fehler:", err);
       });
+
     });
   }
 });
