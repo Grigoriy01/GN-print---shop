@@ -276,18 +276,19 @@ document.addEventListener("submit", (e) => {
     panel.querySelector(".pay-btn").addEventListener("click", () => {
       const payload = {
         orderId: orderId,
-        products: itemsHtml.replace(/<br>/g, "; "),
-        total: total.toFixed(2),
+        products: itemsHtml.replace(/<br>/g, "; "), // список товаров
+        unitPrice: unitPrice.toFixed(2),            // цена за штуку
+        total: total.toFixed(2),                    // общая сумма
         fullname: data.fullname,
         email: data.email,
         phone: data.phone,
-        address: data.addressFull,
-        //zip: data.zip,
-        //city: data.city,
+        address: data.address,
+        zip: data.zip,
+        city: data.city,
         notes: data.notes
       };
 
-      fetch("https://proxy-printshop.m9258923028.workers.dev/?url=https://script.google.com/macros/s/AKfycbwT61Q0L1y7Pg1PBZEobkMypAdqIY5xELV1MD0rYy2syrutUMZHQSdBWGw0DUCNcT8ymQ/exec", {
+      fetch("https://proxy-printshop.m9258923028.workers.dev/?url=https://script.google.com/macros/s/AKfycbzp_C_fr_Y913iCBmOfw04g7Ffv2Es_bZdGJ-RtTSORcAR2kDDcQHuJLLCUVVikd3NqzA/exec", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
