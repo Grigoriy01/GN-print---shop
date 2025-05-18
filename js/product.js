@@ -287,7 +287,7 @@ document.addEventListener("submit", (e) => {
         notes: data.notes
       };
 
-      fetch("https://script.google.com/macros/s/AKfycbwrfZwUaH9pORSdUVd1Q9_40iz8HpM_XwWahxT3Nm4XezjvP4xx26IWbE_BqD3qapeR/exec", {
+      fetch("https://script.google.com/macros/s/AKfycbxNaqKU6nsHGJBip3l8fp04r1HmApitabOu40KgybJz2ETQqmdsNGuduQZd6MSjnC_bhg/exec", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
