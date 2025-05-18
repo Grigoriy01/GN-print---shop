@@ -281,13 +281,13 @@ document.addEventListener("submit", (e) => {
         fullname: data.fullname,
         email: data.email,
         phone: data.phone,
-        address: data.address,
-        zip: data.zip,
-        city: data.city,
+        address: data.addressFull,
+        //zip: data.zip,
+        //city: data.city,
         notes: data.notes
       };
 
-      fetch("https://proxy-printshop.m9258923028.workers.dev/?url=https://script.google.com/macros/s/AKfycbzBPuvIv6LNr-jjFsFeZCy4GC9q3k7r18Y-cq2YpLcM2nC3M3a1vWhCbcBRGnmQdyH8mg/exec", {
+      fetch("https://proxy-printshop.m9258923028.workers.dev/?url=https://script.google.com/macros/s/AKfycbwT61Q0L1y7Pg1PBZEobkMypAdqIY5xELV1MD0rYy2syrutUMZHQSdBWGw0DUCNcT8ymQ/exec", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
