@@ -222,7 +222,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// === Подтверждение и оплата
 document.addEventListener("submit", (e) => {
   if (e.target.id === "checkoutForm") {
     e.preventDefault();
@@ -231,13 +230,16 @@ document.addEventListener("submit", (e) => {
     const panel = document.getElementById("confirmPanel");
     if (!panel || !cart.length) return;
 
+    const lastItem = cart[cart.length - 1];
+    const qty = Number(lastItem.qty) || 1;
+    const unitPrice = qty ? Number(lastItem.price) : 0;
+    const total = unitPrice * qty + 4.90; // + Versand
+
     const itemsHtml = cart.map(item =>
       `${item.name} – Größe: ${item.size}, Anzahl: ${item.qty}`
     ).join("<br>");
 
     const orderId = "GN-" + Date.now();
-    const versand = 4.90;
-    const total = cart.reduce((sum, i) => sum + i.price * i.qty, 0) + versand;
 
     panel.innerHTML = `
       <div class="confirm-header">
@@ -264,7 +266,7 @@ document.addEventListener("submit", (e) => {
     panel.classList.add("visible");
     panel.scrollTo({ top: 0, behavior: "instant" });
 
-    // Обе кнопки "←" (сверху и снизу)
+    // Обе кнопки "←"
     panel.querySelectorAll(".back-btn").forEach(btn => {
       btn.addEventListener("click", () => {
         panel.classList.remove("visible");
@@ -276,9 +278,9 @@ document.addEventListener("submit", (e) => {
     panel.querySelector(".pay-btn").addEventListener("click", () => {
       const payload = {
         orderId: orderId,
-        products: itemsHtml.replace(/<br>/g, "; "), // список товаров
-        //unitPrice: unitPrice.toFixed(2),            // цена за штуку
-        total: total.toFixed(2),                    // общая сумма
+        products: itemsHtml.replace(/<br>/g, "; "),
+        unitPrice: unitPrice.toFixed(2),
+        total: total.toFixed(2),
         fullname: data.fullname,
         email: data.email,
         phone: data.phone,
@@ -294,7 +296,6 @@ document.addEventListener("submit", (e) => {
           "Content-Type": "application/json"
         },
         body: JSON.stringify(payload)
-
       })
       .then(res => res.json())
       .then(res => {
@@ -309,8 +310,8 @@ document.addEventListener("submit", (e) => {
         showToast("❌ Verbindung fehlgeschlagen (Proxy).");
         console.error("Proxy-Fehler:", err);
       });
-
     });
   }
 });
+
 
