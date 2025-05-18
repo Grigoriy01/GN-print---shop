@@ -277,7 +277,7 @@ document.addEventListener("submit", (e) => {
       const payload = {
         orderId: orderId,
         products: itemsHtml.replace(/<br>/g, "; "), // список товаров
-        unitPrice: unitPrice.toFixed(2),            // цена за штуку
+        //unitPrice: unitPrice.toFixed(2),            // цена за штуку
         total: total.toFixed(2),                    // общая сумма
         fullname: data.fullname,
         email: data.email,
