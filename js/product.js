@@ -29,9 +29,11 @@ function addToCartItem(prod, mainImgSrc) {
   }
   localStorage.setItem("cart", JSON.stringify(cart));
   showToast("✅ Artikel zum Warenkorb hinzugefügt");
+   
+   // Сохраняем срок действия — *** минут (wenn 1 min. -- 1*60*1000; 30sek. -- + 10*1000)
+  localStorage.setItem("cartExpireAt", Date.now() + 30 * 60 * 1000); 
 }
   
-localStorage.setItem("cartExpireAt", Date.now() + 1 * 60 * 1000); // например, 30 секунд
 
 
 // === Отрисовка корзины и формы
