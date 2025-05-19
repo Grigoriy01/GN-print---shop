@@ -505,6 +505,23 @@ body {
   flex-direction: column;
 }
 
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+  line-height: 1;
+  font-weight: bold;
+}
+
+.cart-count.hidden {
+  display: none;
+}
+
 
 /* === Секция заказа === */
 
@@ -688,7 +705,7 @@ header.site-header .site-nav {
 }
 
 /* Корзина прилеплена сразу после навигации */
-header.site-header .cart-icon {
+header.site-header {
   margin-left: 0.5rem;
   font-size: 1.5rem;
   cursor: pointer;
@@ -735,9 +752,18 @@ header.site-header .site-nav {
   display: flex;
   gap: 1.5rem;
 }
+.cart-icon {
+  position: relative;
+  order: 3;
+  margin-left: 0.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  
+}
 
 /* Корзина — третья, сразу после меню */
-header.site-header .cart-icon {
+header.site-header  {
   order: 3;
   margin-left: 0.5rem;
   font-size: 1.5rem;
