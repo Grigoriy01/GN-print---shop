@@ -31,7 +31,7 @@ function addToCartItem(prod, mainImgSrc) {
   showToast("✅ Artikel zum Warenkorb hinzugefügt");
 }
   
-localStorage.setItem("cartExpireAt", Date.now() + 30 * 1000); // например, 30 секунд
+localStorage.setItem("cartExpireAt", Date.now() + 1 * 60 * 1000); // например, 30 секунд
 
 
 // === Отрисовка корзины и формы
