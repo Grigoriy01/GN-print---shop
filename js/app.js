@@ -1,14 +1,5 @@
 // js/app.js
 
-// Автоочистка корзины по таймеру
-const expireKey = "cartExpireAt";
-const now = Date.now();
-const expire = Number(localStorage.getItem(expireKey));
-
-if (expire && now > expire) {
-  localStorage.removeItem("cart");
-  localStorage.removeItem(expireKey);
-}
 
 
 // === Защита от возврата назад с PayPal на стартовой странице
@@ -21,6 +12,16 @@ if (expire && now > expire) {
 
 
 document.addEventListener("DOMContentLoaded", () => {
+  
+// Автоочистка корзины по таймеру
+  const expireKey = "cartExpireAt";
+  const now = Date.now();
+  const expire = Number(localStorage.getItem(expireKey)); 
+
+  if (expire && now > expire) {
+    localStorage.removeItem("cart");
+    localStorage.removeItem(expireKey);
+  }
   // 1) Навигация (гамбургер)
   const navToggle = document.querySelector(".nav-toggle");
   const siteNav   = document.querySelector(".site-nav");
