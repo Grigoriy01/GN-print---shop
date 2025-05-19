@@ -141,12 +141,12 @@ window.renderCart = renderCart;
 // === Отрисовка карточки товара
 document.addEventListener("DOMContentLoaded", () => {
   // Если пользователь вернулся назад из PayPal, перенаправляем на главную
-    if (document.referrer.includes("paypal.") || sessionStorage.getItem("orderSubmitted") === "1") {
-      localStorage.removeItem("cart");                  // очищаем корзину
-      sessionStorage.removeItem("orderSubmitted");      // удаляем флаг
-      window.location.href = "index.html";              // отправляем на стартовую страницу
-    }
-    
+  if (document.referrer.includes("paypal.") || sessionStorage.getItem("orderSubmitted") === "1") {
+    localStorage.removeItem("cart");                  // очищаем корзину
+    sessionStorage.removeItem("orderSubmitted");      // удаляем флаг
+    window.location.href = "index.html";              // отправляем на стартовую страницу
+  }
+  
 
 
 
