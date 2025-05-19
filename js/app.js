@@ -1,5 +1,12 @@
 // js/app.js
 
+// === Защита от возврата назад с PayPal на стартовой странице
+if (performance && performance.navigation.type === 2) {
+  localStorage.removeItem("cart");
+  sessionStorage.removeItem("orderSubmitted");
+  window.location.href = "index.html";
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   // 1) Навигация (гамбургер)
   const navToggle = document.querySelector(".nav-toggle");
