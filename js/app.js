@@ -1,5 +1,16 @@
 // js/app.js
 
+// Автоочистка корзины по таймеру
+const expireKey = "cartExpireAt";
+const now = Date.now();
+const expire = Number(localStorage.getItem(expireKey));
+
+if (expire && now > expire) {
+  localStorage.removeItem("cart");
+  localStorage.removeItem(expireKey);
+}
+
+
 // === Защита от возврата назад с PayPal на стартовой странице
   if (window.name === "ORDER_SENT") {
   window.name = "";

@@ -1,3 +1,13 @@
+// Автоочистка корзины по таймеру
+const expireKey = "cartExpireAt";
+const now = Date.now();
+const expire = Number(localStorage.getItem(expireKey));
+
+if (expire && now > expire) {
+  localStorage.removeItem("cart");
+  localStorage.removeItem(expireKey);
+}
+
 // === Тост для уведомлений
 function showToast(message) {
   const t = document.createElement("div");
@@ -29,6 +39,10 @@ function addToCartItem(prod, mainImgSrc) {
   }
   localStorage.setItem("cart", JSON.stringify(cart));
   showToast("✅ Artikel zum Warenkorb hinzugefügt");
+
+  // Сохраняем срок действия — *** минут
+  localStorage.setItem("cartExpireAt", Date.now() + 30 * 60 * 1000);
+
 }
 
 // === Отрисовка корзины и формы
