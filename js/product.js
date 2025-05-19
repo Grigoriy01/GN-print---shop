@@ -139,11 +139,14 @@ function renderCart() {
 window.renderCart = renderCart;
 
 // === Защита от возврата назад с PayPal
-if (performance && performance.navigation.type === 2) {
+  if (window.name === "ORDER_SENT") {
+  // Очистка и защита при возврате из PayPal
+  window.name = ""; // сбрасываем
   localStorage.removeItem("cart");
   sessionStorage.removeItem("orderSubmitted");
-  window.location.href = "index.html";
-}
+  window.location.href = "index.html"; // на главную
+  }
+
 
 // === Отрисовка карточки товара
 document.addEventListener("DOMContentLoaded", () => {
@@ -307,23 +310,17 @@ document.addEventListener("submit", (e) => {
       .then(res => res.json())
       .then(res => {
         if (res.success) {
+          // Устанавливаем защитные флаги
+          localStorage.removeItem("cart");
+          sessionStorage.setItem("orderSubmitted", "1");
+          window.name = "ORDER_SENT";
+        
+          // Перенаправляем без возможности возврата назад
           const paypalURL = `https://paypal.me/gnprintshop/${total.toFixed(2)}`;
-          localStorage.removeItem("cart"); // очищаем корзину
-            setTimeout(() => {
-              window.location.href = paypalURL;
-            }, 
-            500); // даём немного времени перед редиректом
-
+          window.location.replace(paypalURL);
         } else {
           showToast("❌ Fehler beim Speichern. Bitte später versuchen.");
         }
-        if (res.success) {
-          localStorage.removeItem("cart");              // очищаем корзину
-          sessionStorage.setItem("orderSubmitted", "1"); // флаг: заказ отправлен
-          const paypalURL = `https://paypal.me/gnprintshop/${total.toFixed(2)}`;
-          window.location.href = paypalURL;
-        }
-
       })
       .catch(err => {
         showToast("❌ Verbindung fehlgeschlagen (Proxy).");
