@@ -30,6 +30,9 @@ function addToCartItem(prod, mainImgSrc) {
   localStorage.setItem("cart", JSON.stringify(cart));
   showToast("✅ Artikel zum Warenkorb hinzugefügt");
 }
+  
+localStorage.setItem("cartExpireAt", Date.now() + 30 * 1000); // например, 30 секунд
+
 
 // === Отрисовка корзины и формы
 function renderCart() {
@@ -155,7 +158,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const expireKey = "cartExpireAt";
   const now = Date.now();
   const expire = Number(localStorage.getItem(expireKey));
-  
+
   if (expire && now > expire) {
     localStorage.removeItem("cart");
     localStorage.removeItem(expireKey);
