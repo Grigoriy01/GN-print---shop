@@ -141,6 +141,12 @@ window.renderCart = renderCart;
 // === Отрисовка карточки товара
 document.addEventListener("DOMContentLoaded", () => {
   const slug = new URLSearchParams(window.location.search).get("slug");
+  if (window.performance && performance.navigation.type === 2) {
+  // пользователь нажал кнопку "назад"
+  localStorage.removeItem("cart"); // удаляем корзину
+  window.location.href = "index.html"; // возвращаем на главную
+  }
+
 
   fetch("products.json")
     .then(r => r.json())
@@ -301,7 +307,12 @@ document.addEventListener("submit", (e) => {
       .then(res => {
         if (res.success) {
           const paypalURL = `https://paypal.me/gnprintshop/${total.toFixed(2)}`;
-          window.location.href = paypalURL;
+          localStorage.removeItem("cart"); // очищаем корзину
+            setTimeout(() => {
+              window.location.href = paypalURL;
+            }, 
+            500); // даём немного времени перед редиректом
+
         } else {
           showToast("❌ Fehler beim Speichern. Bitte später versuchen.");
         }
