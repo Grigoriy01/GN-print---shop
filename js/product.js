@@ -104,22 +104,22 @@ function renderCart() {
         <input type="hidden" name="qty" value="${lastItem.qty}">
 
         <label>Ihr Name:</label>
-        <input type="text" name="fullname" required>
+        <input type="text" placeholder="Name / Vorname" name="fullname" required>
 
         <label>E-Mail:</label>
-        <input type="email" name="email" required>
+        <input type="email" placeholder="name@mess.com" name="email" required>
 
         <label>Telefon (optional):</label>
         <input type="tel" name="phone" placeholder="+49 …">
 
-        <label>Adresse:</label>
-        <input type="text" name="address" required>
+        <label>Lieferadresse:</label>
+        <input type="text" placeholder="Straße 87" name="address" required>
 
         <label>PLZ:</label>
-        <input type="text" name="zip" pattern="\\d{5}" required>
+        <input type="text" placeholder="12345" name="zip" pattern="\\d{5}" required>
 
         <label>Ort:</label>
-        <input type="text" name="city" required>
+        <input type="text" placeholder="Stadt" name="city" required>
 
         <label>Bemerkung (optional):</label>
         <textarea name="notes" rows="3"></textarea>
@@ -199,11 +199,16 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
           <div class="product-info">
             <h1>${prod.name}</h1>
+            <div class="product-price mobile-only">€${Number(prod.price).toFixed(2)}</div>
+
             <p>${prod.description}</p>
+          
             <ul class="specs">
               ${prod.specs.map(s => `<li><strong>${s.label}:</strong> ${s.value}</li>`).join("")}
             </ul>
-            
+            <div class="product-price desktop-only">
+              €${Number(prod.price).toFixed(2)}
+            </div>
               <label>Verfügbarkeit Größe:<br>
                 <select id="sizeSelect" name="size" required>
                   <option value="" disabled selected>Größe wählen</option>
@@ -285,11 +290,11 @@ document.addEventListener("submit", (e) => {
       <div class="confirm-inner">
         <div class="field-group"><label>Bestellnummer:</label><div class="value">${orderId}</div></div>
         <div class="field-group"><label>Produkte:</label><div class="value">${itemsHtml}</div></div>
-        <div class="field-group"><label>Gesamtbetrag:</label><div class="value">€${total.toFixed(2)}</div></div>
+        <div class="field-group"><label>Gesamtbetrag:<p style="font-size:0.6rem;" >inkl.Versandkosten</p></label><div class="value">€${total.toFixed(2)}</div></div>
         <div class="field-group"><label>Name:</label><div class="value">${data.fullname}</div></div>
         <div class="field-group"><label>E-Mail:</label><div class="value">${data.email}</div></div>
         <div class="field-group"><label>Telefon:</label><div class="value">${data.phone || "-"}</div></div>
-        <div class="field-group"><label>Adresse:</label><div class="value">${data.address}, ${data.zip} ${data.city}</div></div>
+        <div class="field-group"><label>Lieferadresse:</label><div class="value">${data.address}, ${data.zip} ${data.city}</div></div>
         <div class="field-group"><label>Bemerkung:</label><div class="value">${data.notes || "-"}</div></div>
         <div class="button-row">
           <button class="back-btn">Zurück</button>

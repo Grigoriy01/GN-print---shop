@@ -4,7 +4,7 @@
     "name": "Observer/Cap",
     "subtitle": "Autorenmotive",
     "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
-    "price":19.99,
+    "price":17.99,
     "image": "assets/images/Cap/Cap.png",
     "imageLarge": "assets/images/Cap/Cap.png",
     "thumbs": [
@@ -15,7 +15,7 @@
     "specs": [
       { "label": "Material", "value": "Baumwolle 100%" },
       { "label": "Schnitt", "value": "Regular Fit" },
-      { "label": "preis", "value": "17<sup>99</99>" }
+      { "label": "weite info", "value": "rwersdfssfsdfwsfwerwertwgf wfesfsdfsdfsdfwerwrwe" }
     ],
     "category": "herren"
   },
