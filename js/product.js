@@ -174,9 +174,13 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(products => {
       const prod = products.find(p => p.slug === slug);
       if (!prod) {
-        document.querySelector(".product-detail-container")
-          .innerHTML = "<p>Produkt nicht gefunden</p>";
-        return;
+        const container = document.querySelector(".product-detail-container");
+          if (container) {
+            container.innerHTML = "<p>Produkt nicht gefunden</p>";
+          } else {
+            console.warn("Контейнер .product-detail-container не найден в DOM");
+          }
+          return;
       }
 
       const mainImgSrc = prod.imageLarge || prod.image;
@@ -199,16 +203,21 @@ document.addEventListener("DOMContentLoaded", () => {
             <ul class="specs">
               ${prod.specs.map(s => `<li><strong>${s.label}:</strong> ${s.value}</li>`).join("")}
             </ul>
-            <label>Größe wählen<br>
-              <select id="sizeSelect" name="size" required>
-                <option value="" disabled selected>Größe wählen</option>
-              </select>
-            </label>
-            <label>Anzahl<br>
+            
+              <label>Verfügbarkeit Größe:<br>
+                <select id="sizeSelect" name="size" required>
+                  <option value="" disabled selected>Größe wählen</option>
+                </select>
+              </label>
+            <div class="product-info_anzahl-label">
+              <label>Anzahl<br>
               <input type="number" id="qtyInput" name="quantity" min="1" value="1" required>
-            </label>
-            <button type="button" class="btn-order">Jetzt bestellen</button>
-            <button type="button" class="add-cart-btn" title="In den Warenkorb">➕🛒</button>
+              </label>
+            </div>
+            <div class="product-info_btn-row">
+              <button type="button" class="btn-order">Jetzt bestellen</button>
+              <button type="button" class="add-cart-btn" title="In den Warenkorb">+🛒</button>
+            </div>
           </div>
         </section>
       `;

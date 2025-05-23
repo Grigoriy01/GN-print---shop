@@ -22,14 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.removeItem("cart");
     localStorage.removeItem(expireKey);
   }
-  // 1) Навигация (гамбургер)
-  const navToggle = document.querySelector(".nav-toggle");
-  const siteNav   = document.querySelector(".site-nav");
-  if (navToggle && siteNav) {
-    navToggle.addEventListener("click", () => {
-      siteNav.classList.toggle("open");
-    });
-  }
+  
 
   // 2) Галерея на product.html
   const mainImg = document.querySelector(".gallery-main");
@@ -82,3 +75,27 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+// 1) Навигация (гамбургер)
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("DOM загружен");
+
+  const navToggle = document.querySelector('.nav-toggle');
+  const siteNav = document.querySelector('.site-nav');
+  const hamburger = document.querySelector('.hamburger');
+
+  console.log("Найден navToggle:", navToggle);
+  console.log("Найден siteNav:", siteNav);
+
+  if (navToggle && siteNav && hamburger) {
+    navToggle.addEventListener('click', () => {
+      siteNav.classList.toggle('open');
+      console.log("Клик по гамбургеру. Класс 'open' добавлен/удалён.");
+      hamburger.classList.toggle('active');
+    });
+  } else {
+    console.warn("navToggle или siteNav не найден.");
+  }
+});
+
+
