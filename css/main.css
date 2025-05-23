@@ -668,6 +668,7 @@ header.site-header .nav-toggle {
   cursor: pointer;
   padding: 0.5rem;
   margin-left: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 .cart-count {
