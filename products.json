@@ -15,7 +15,7 @@
     "specs": [
       { "label": "Material", "value": "Baumwolle 100%" },
       { "label": "Schnitt", "value": "Regular Fit" },
-      { "label": "Verfügbarkeit", "value": "S, M, L, XL" }
+      { "label": "preis", "value": "17<sup>99</99>" }
     ],
     "category": "herren"
   },
