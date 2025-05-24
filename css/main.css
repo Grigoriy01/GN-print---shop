@@ -253,6 +253,18 @@ body {
   background: var(--color-accent-hover);
 }
 
+.btn-disabled {
+  background: #ccc !important;
+  cursor: not-allowed;
+  color: #888;
+}
+.discount-info {
+  margin-left: 1rem;
+  font-weight: bold;
+  color: green;
+}
+
+
 
 /* === Секция "Оформление заказа" === */
 .order-section {

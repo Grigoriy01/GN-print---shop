@@ -1,3 +1,4 @@
+const versand = 4.90;
 // === Тост для уведомлений
 function showToast(message) {
   const t = document.createElement("div");
@@ -34,14 +35,25 @@ function addToCartItem(prod, mainImgSrc) {
    
    // Сохраняем срок действия — *** минут (wenn 1 min. -- 1*60*1000; 30sek. -- + 10*1000)
   localStorage.setItem("cartExpireAt", Date.now() + 30 * 60 * 1000); 
-}
   
+
+}
+
+function generateRandomDiscount(min = 0.11, max = 1.11) {
+    // Генерирует случайную скидку в нужном диапазоне
+    return +(Math.random() * (max - min) + min).toFixed(2);
+}
+
 
 
 // === Отрисовка корзины и формы
 function renderCart() {
   const content = document.getElementById("cartContent");
   const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+  let cartDiscount = localStorage.getItem('cartDiscount');
+
+  if (cartDiscount) cartDiscount = parseFloat(cartDiscount);
+
 
   if (!cart.length) {
     content.innerHTML = `<p>Ihr Warenkorb ist leer.</p>`;
@@ -66,15 +78,22 @@ function renderCart() {
       </li>`;
   }).join("");
 
-  const versand = 4.90;
-  const total = subTotal + versand;
+  
+  //const total = subTotal + versand;
+  let finalSum = subTotal + versand;
+    if (cartDiscount) finalSum -= cartDiscount;
+
 
   content.innerHTML = `
     <ul class="cart-list">${itemsHtml}</ul>
     <div class="cart-totals">
       <p>Zwischensumme: €${subTotal.toFixed(2)}</p>
       <p>Versandkosten: €${versand.toFixed(2)}</p>
-      <p><strong>Gesamt: €${total.toFixed(2)}</strong></p>
+      <div class="discount-row" style="margin: 12px 0;">
+        <span class="discount-info">${cartDiscount ? `Ваша скидка: ${cartDiscount.toFixed(2)} €` : ''}</span>
+      </div>
+      <p><strong>Gesamt: €${finalSum.toFixed(2)}</strong></p>
+      <button id="discountBtn" ${cartDiscount ? 'disabled class="btn-disabled"' : ''}>Получить скидку</button>
       <button id="cartCheckout" class="btn-order">Kaufen</button>
     </div>
   `;
@@ -84,6 +103,10 @@ function renderCart() {
     btn.addEventListener("click", () => {
       const updated = cart.filter(i => !(i.slug === btn.dataset.slug && i.size === btn.dataset.size));
       localStorage.setItem("cart", JSON.stringify(updated));
+      if (updated.length === 0) {
+        localStorage.removeItem('cartDiscount');
+      }
+
       renderCart();
       updateCartCounter(); // 👉 обновляем счётчик после удаления
     });
@@ -142,6 +165,18 @@ function renderCart() {
     }, 400); // совпадает с CSS transition
     });
   });
+
+  setTimeout(() => {
+  const discountBtn = document.getElementById('discountBtn');
+    if (discountBtn && !cartDiscount) {
+      discountBtn.addEventListener('click', () => {
+        const discount = generateRandomDiscount();
+        localStorage.setItem('cartDiscount', discount);
+        renderCart(); // перерисовать корзину, чтобы всё обновилось
+      });
+    }
+  }, 10);
+
 }
 
 window.renderCart = renderCart;
@@ -151,7 +186,10 @@ window.renderCart = renderCart;
   // Очистка и защита при возврате из PayPal
   window.name = ""; // сбрасываем
   localStorage.removeItem("cart");
+  localStorage.removeItem('cartDiscount');
   sessionStorage.removeItem("orderSubmitted");
+  
+
   window.location.href = "index.html"; // на главную
   }
 
@@ -166,6 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (expire && now > expire) {
     localStorage.removeItem("cart");
+    localStorage.removeItem('cartDiscount');
     localStorage.removeItem(expireKey);
   }
 
@@ -271,10 +310,11 @@ document.addEventListener("submit", (e) => {
     const panel = document.getElementById("confirmPanel");
     if (!panel || !cart.length) return;
 
+    let cartDiscount = parseFloat(localStorage.getItem('cartDiscount')) || 0;
     const lastItem = cart[cart.length - 1];
     const qty = Number(lastItem.qty) || 1;
     const unitPrice = qty ? Number(lastItem.price) : 0;
-    const total = unitPrice * qty + 4.90; // + Versand
+    const finalSum = unitPrice * qty + versand - cartDiscount; // + Versand
 
     const itemsHtml = cart.map(item =>
       `${item.name} – Größe: ${item.size}, Anzahl: ${item.qty}`
@@ -290,7 +330,7 @@ document.addEventListener("submit", (e) => {
       <div class="confirm-inner">
         <div class="field-group"><label>Bestellnummer:</label><div class="value">${orderId}</div></div>
         <div class="field-group"><label>Produkte:</label><div class="value">${itemsHtml}</div></div>
-        <div class="field-group"><label>Gesamtbetrag:<p style="font-size:0.6rem;" >inkl.Versandkosten</p></label><div class="value">€${total.toFixed(2)}</div></div>
+        <div class="field-group"><label>Gesamtbetrag:<p style="font-size:0.6rem;" >inkl.Versandkosten</p></label><div class="value">€${finalSum.toFixed(2)}</div></div>
         <div class="field-group"><label>Name:</label><div class="value">${data.fullname}</div></div>
         <div class="field-group"><label>E-Mail:</label><div class="value">${data.email}</div></div>
         <div class="field-group"><label>Telefon:</label><div class="value">${data.phone || "-"}</div></div>
@@ -321,7 +361,7 @@ document.addEventListener("submit", (e) => {
         orderId: orderId,
         products: itemsHtml.replace(/<br>/g, "; "),
         unitPrice: unitPrice.toFixed(2),
-        total: total.toFixed(2),
+        total: finalSum.toFixed(2),
         fullname: data.fullname,
         email: data.email,
         phone: data.phone,
@@ -343,11 +383,12 @@ document.addEventListener("submit", (e) => {
         if (res.success) {
           // Устанавливаем защитные флаги
           localStorage.removeItem("cart");
+          localStorage.removeItem('cartDiscount');
           sessionStorage.setItem("orderSubmitted", "1");
           window.name = "ORDER_SENT";
         
           // Перенаправляем без возможности возврата назад
-          const paypalURL = `https://paypal.me/GrigoriyNikitenko/${total.toFixed(2)}`;
+          const paypalURL = `https://paypal.me/GrigoriyNikitenko/${finalSum.toFixed(2)}`;
           window.location.replace(paypalURL);
         } else {
           showToast("❌ Fehler beim Speichern. Bitte später versuchen.");
