@@ -347,7 +347,7 @@ document.addEventListener("submit", (e) => {
           window.name = "ORDER_SENT";
         
           // Перенаправляем без возможности возврата назад
-          const paypalURL = `https://paypal.me/gnprintshop/${total.toFixed(2)}`;
+          const paypalURL = `https://paypal.me/GrigoriyNikitenko/${total.toFixed(2)}`;
           window.location.replace(paypalURL);
         } else {
           showToast("❌ Fehler beim Speichern. Bitte später versuchen.");
