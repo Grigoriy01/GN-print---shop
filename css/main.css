@@ -244,7 +244,7 @@ body {
   cursor: pointer;
   border: none;
   transition: background 0.2s ease;
-  margin-top: 1rem;
+
 }
 .btn:hover, .btn-order:hover, 
 #nextBtn:hover, 
@@ -253,23 +253,38 @@ body {
   background: var(--color-accent-hover);
 }
 
-#discountBtn {
-  width: 5rem;
-  
-  
-}
 
-.btn-disabled {
-  background: #ccc !important;
-  cursor: not-allowed;
-  color: #888;
-}
 .discount-info {
   font-style: italic;
   font-size: 0.7rem;
   color: rgb(131, 91, 12);
 }
 
+.cart-btn-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  align-items: center;
+}
+
+.btn-discount {
+  background: linear-gradient(90deg, #ffb700, #ffe47a);
+  color: #222;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  padding: 10px 24px;
+  box-shadow: 0 2px 6px rgba(255,183,0,0.15);
+  transition: opacity 0.2s;
+  cursor: pointer;
+  width: 7rem;
+}
+
+.btn-discount:disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+  color: #938181;
+}
 
 
 /* === Секция "Оформление заказа" === */
@@ -685,8 +700,7 @@ header.site-header .nav-toggle {
   border: none;
   cursor: pointer;
   padding: 0.5rem;
-  margin-left: 0.5rem;
-  margin-top: 0.5rem;
+  margin-top: 0.3rem;
 }
 
 .cart-count {
@@ -1087,15 +1101,15 @@ header.site-header .nav-toggle {
     display: none !important;
     margin-top: 0.5rem;
     position: absolute;
-    top: 50%;
+    top: 70%;
     left: 1rem;
-    background: rgba(39, 36, 36, 0.9);
+    background: rgba(30, 28, 28, 0.98);
     border-radius: 6px;
-    padding: 0.75rem 1.25rem;
+    /*padding: 0.75rem 1.25rem;*/
     z-index: 999;
     animation: slideFadeIn 0.8s ease forwards;
     width: max-content;
-    min-width: 140px; /* ограничение по минимальной ширине */ 
+    min-width: 100px; /* ограничение по минимальной ширине */ 
   }
 
   .site-nav.open {
@@ -1106,7 +1120,7 @@ header.site-header .nav-toggle {
 
   .site-nav ul {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
     padding: 0.5rem 1rem;
    
   }
@@ -1180,15 +1194,15 @@ header.site-header .nav-toggle {
     display: none !important;
     margin-top: 0.5rem;
     position: absolute;
-    top: 50%;
+    top: 70%;
     left: 1rem;
-    background: rgba(39, 36, 36, 0.9);
+    background: rgba(30, 28, 28, 0.98);
     border-radius: 6px;
-    padding: 0.75rem 1.25rem;
+    /*padding: 0.75rem 1.25rem;*/
     z-index: 999;
     animation: slideFadeIn 0.8s ease forwards;
     width: max-content;
-    min-width: 140px; /* ограничение по минимальной ширине */ 
+    min-width: 100px; /* ограничение по минимальной ширине */ 
   }
 
   .site-nav.open {
@@ -1197,7 +1211,7 @@ header.site-header .nav-toggle {
 
   .site-nav ul {
     flex-direction: column;
-    gap: 0.8rem;
+    gap: 1rem;
     padding: 0.5rem 1rem;
   }
 }

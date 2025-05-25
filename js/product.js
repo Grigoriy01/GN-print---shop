@@ -85,21 +85,51 @@ function renderCart() {
   let finalSum = subTotal + versand;
     if (cartDiscount) finalSum -= cartDiscount;
 
-
+  const discountBtnHtml = `
+  <button id="discountBtn" class="btn-discount"${cartDiscount ? ' disabled' : ''}>Rabatt sichern</button>
+  `;
+  const checkoutBtnHtml = `
+    <button id="cartCheckout" class="btn-order"${cartDiscount ? '' : ' style="display:none;"'}>Kaufen</button>
+  `;
   content.innerHTML = `
     <ul class="cart-list">${itemsHtml}</ul>
     <div class="cart-totals">
       <p>Zwischensumme: €${subTotal.toFixed(2)}</p>
       <p>Versandkosten: €${versand.toFixed(2)}</p>
       <div class="discount-row">
-        <span class="discount-info">${cartDiscount ? `Ваша скидка: ${cartDiscount.toFixed(2)} €` : ''}</span>
+        <span class="discount-info">${cartDiscount ? `Ihr Rabatt: ${cartDiscount.toFixed(2)} €` : ''}</span>
       </div>
       <p><strong>Gesamt: €${finalSum.toFixed(2)}</strong></p>
-      <button id="discountBtn" ${cartDiscount ? 'disabled class="btn-disabled"' : ''}>Получить скидку</button>
-      <button id="cartCheckout" class="btn-order">Kaufen</button>
+      <div class="cart-btn-row">
+        ${discountBtnHtml}
+        ${checkoutBtnHtml}
+      </div>
     </div>
   `;
+    // --- JS логика ---
+  setTimeout(() => {
+    const discountBtn = document.getElementById('discountBtn');
+    const checkoutBtn = document.getElementById('cartCheckout');
 
+    // До применения скидки видна только discountBtn, checkoutBtn скрыта
+    if (!cartDiscount) {
+      checkoutBtn.style.display = "none";
+      discountBtn.disabled = false; 
+      discountBtn.style.display = "";
+    } else {
+      discountBtn.disabled = true;
+      checkoutBtn.style.display = "";
+    }
+
+    // Обработчик на "Получить скидку"
+    if (discountBtn && !cartDiscount) {
+      discountBtn.addEventListener('click', () => {
+        const discount = generateRandomDiscount();
+        localStorage.setItem('cartDiscount', discount);
+        renderCart(); // всё обновится само
+      });
+    }
+  }, 10);
   // Кнопка удалить
   content.querySelectorAll(".cart-item-remove").forEach(btn => {
     btn.addEventListener("click", () => {
