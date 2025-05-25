@@ -1,4 +1,4 @@
-const versand = 4.90;
+const versand = 1;
 // === Тост для уведомлений
 function showToast(message) {
   const t = document.createElement("div");
@@ -70,7 +70,9 @@ function renderCart() {
         <div class="cart-item-info">
           <strong>${item.name}</strong><br>
           Größe: ${item.size}<br>
-          Anzahl: ${item.qty}<br>
+          Anzahl: <input type="number" class="cart-qty-input" 
+                      data-slug="${item.slug}" data-size="${item.size}" 
+                      min="1" value="${item.qty}" style="width:38px"><br>
           Preis: €${item.price.toFixed(2)}<br>
           Gesamt: €${line.toFixed(2)}
         </div>
@@ -111,6 +113,26 @@ function renderCart() {
       updateCartCounter(); // 👉 обновляем счётчик после удаления
     });
   });
+    // === Обработчик изменения количества прямо в корзине ===
+    content.querySelectorAll('.cart-qty-input').forEach(input => {
+    input.addEventListener('change', function () {
+      const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+      const slug = this.dataset.slug;
+      const size = this.dataset.size;
+      let qty = parseInt(this.value, 10);
+      if (!qty || qty < 1) qty = 1;
+      this.value = qty; // если ввели 0 или пусто — автофикс
+    
+      // Находим нужную позицию и меняем qty
+      const item = cart.find(i => i.slug === slug && i.size === size);
+      if (item) item.qty = qty;
+    
+      localStorage.setItem("cart", JSON.stringify(cart));
+      renderCart(); // перерисовать корзину (и обновить суммы)
+      updateCartCounter();
+    });
+  });
+
 
   // Кнопка "Kaufen" — показать форму
   document.getElementById("cartCheckout").addEventListener("click", () => {
@@ -310,11 +332,15 @@ document.addEventListener("submit", (e) => {
     const panel = document.getElementById("confirmPanel");
     if (!panel || !cart.length) return;
 
-    let cartDiscount = parseFloat(localStorage.getItem('cartDiscount')) || 0;
-    const lastItem = cart[cart.length - 1];
+    const cartItems = JSON.parse(localStorage.getItem("cart") || "[]");
+    const discount = parseFloat(localStorage.getItem('cartDiscount')) || 0;
+    const versand = 1;
+    let subTotal = cartItems.reduce((sum, item) => sum + item.price * item.qty, 0);
+    let finalSum = subTotal + versand - discount;
+
+    const lastItem = cartItems[cartItems.length - 1];
     const qty = Number(lastItem.qty) || 1;
     const unitPrice = qty ? Number(lastItem.price) : 0;
-    const finalSum = unitPrice * qty + versand - cartDiscount; // + Versand
 
     const itemsHtml = cart.map(item =>
       `${item.name} – Größe: ${item.size}, Anzahl: ${item.qty}`
