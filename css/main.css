@@ -253,15 +253,21 @@ body {
   background: var(--color-accent-hover);
 }
 
+#discountBtn {
+  width: 5rem;
+  
+  
+}
+
 .btn-disabled {
   background: #ccc !important;
   cursor: not-allowed;
   color: #888;
 }
 .discount-info {
-  margin-left: 1rem;
-  font-weight: bold;
-  color: green;
+  font-style: italic;
+  font-size: 0.7rem;
+  color: rgb(131, 91, 12);
 }
 
 

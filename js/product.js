@@ -89,7 +89,7 @@ function renderCart() {
     <div class="cart-totals">
       <p>Zwischensumme: €${subTotal.toFixed(2)}</p>
       <p>Versandkosten: €${versand.toFixed(2)}</p>
-      <div class="discount-row" style="margin: 12px 0;">
+      <div class="discount-row">
         <span class="discount-info">${cartDiscount ? `Ваша скидка: ${cartDiscount.toFixed(2)} €` : ''}</span>
       </div>
       <p><strong>Gesamt: €${finalSum.toFixed(2)}</strong></p>
