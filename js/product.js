@@ -371,7 +371,7 @@ document.addEventListener("submit", (e) => {
         notes: data.notes
       };
 
-      fetch("https://proxy-printshop.m9258923028.workers.dev/?url=https://script.google.com/macros/s/AKfycbzgBUM-WEdzdZoVidLVt-E0ad6ywLHOxRbbFQisnhrwY5E9tq1cTvZ35taNlG1Sxx0U/exec", {
+      fetch("https://proxy-printshop.m9258923028.workers.dev/?url=https://script.google.com/macros/s/AKfycby8avH7o6ahtOt0COF0jymg073YDtKmz3HgCrmjuu3og0_2ip3XIIInlODvrI9Jahg6CA/exec", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
