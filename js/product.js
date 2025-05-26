@@ -1,4 +1,4 @@
-const versand = 1;
+const versand = 4.90;
 // === Тост для уведомлений
 function showToast(message) {
   const t = document.createElement("div");
@@ -171,7 +171,7 @@ function renderCart() {
     if (!wrapper) return;
 
     wrapper.innerHTML = `
-      <button class="form-back" title="Zurück zur Übersicht">←</button>
+      <button class="form-back" title="Zurück zur Übersicht">↩</button>
       <h2>Bestellformular</h2>
       <form id="checkoutForm">
         <input type="hidden" name="model" value="${lastItem.name}">
@@ -295,14 +295,14 @@ document.addEventListener("DOMContentLoaded", () => {
             <p>${prod.description}</p>
           
             <ul class="specs">
-              ${prod.specs.map(s => `<li><strong>${s.label}:</strong> ${s.value}</li>`).join("")}
+              ${prod.specs.map(s => `<li><h4>${s.label}:</h4><p> ${s.value} </p></li>`).join("")}
             </ul>
             <div class="product-price desktop-only">
               €${Number(prod.price).toFixed(2)}
             </div>
               <label>Verfügbarkeit Größe:<br>
                 <select id="sizeSelect" name="size" required>
-                  <option value="" disabled selected>Größe wählen</option>
+                  <option value="" disabled selected > Größe wählen</option>
                 </select>
               </label>
             <div class="product-info_anzahl-label">
@@ -380,7 +380,7 @@ document.addEventListener("submit", (e) => {
 
     panel.innerHTML = `
       <div class="confirm-header">
-        <button class="back-btn" title="Zurück zur Bestellung">←</button>
+        <button class="back-btn" title="Zurück zur Bestellung">↩</button>
         <h2>Bestellübersicht</h2>
       </div>
       <div class="confirm-inner">

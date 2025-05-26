@@ -1,9 +1,9 @@
 [
   {
     "slug": "herren-T-Shirt-Black-Cap-01",
-    "name": "Observer/Cap",
-    "subtitle": "Autorenmotive",
-    "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
+    "name": "Observer/Unnamed",
+    "subtitle": "Du kennst ihn nicht. Aber er kennt dich schon",
+    "description": "Klassisches Herren-T-Shirt",
     "price":17.99,
     "image": "assets/images/Cap/Cap.png",
     "imageLarge": "assets/images/Cap/Cap.png",
@@ -15,13 +15,16 @@
     "specs": [
       { "label": "Material", "value": "Baumwolle 100%" },
       { "label": "Schnitt", "value": "Regular Fit" },
-      { "label": "weite info", "value": "rwersdfssfsdfwsfwerwertwgf wfesfsdfsdfsdfwerwrwe" }
+      { "label": "weite info", "value": "Klassisches Herren-T-Shirt \nAngenehm auf der Haut, atmungsaktiv \nund ideal für den Alltag. Die klassische, gerade Passform und die schwarze Farbe \nsorgen für Komfort und Bewegungsfreiheit.\nHergestellt aus reiner Baumwolle ohne synthetische Zusätze.\nDas T-Shirt behält seine Form und verliert auch nach dem Waschen nicht an Farbe.\nPflegeleicht und praktisch.Empfohlen wird \nMaschinenwäsche bei bis zu 40 °C. \nAuf links bügeln. Keine Bleichmittel verwenden. " }
+
+
     ],
     "category": "herren"
   },
   {
     "slug": "herren-T-Shirt-Black-Oculus-01",
     "name": "Observer/Oculus",
+    "subtitle": "Null Emotion. Maximale Beobachtung",
     "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
     "price":19.99,
     "image": "assets/images/Oculus/Ocu_1.png",
@@ -97,7 +100,7 @@
   {
     "slug": "herren-T-Shirt-Black-Strag-01",
     "name": "Observer/Strag-#01",
-    "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
+    "description": "Klassisches Herren-T-Shirt",
     "price":19.99,
     "image": "assets/images/Strag/Strag-1.png",
     "imageLarge": "assets/images/Strag/Strag-2.png",

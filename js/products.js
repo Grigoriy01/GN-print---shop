@@ -28,6 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
           <div class="card-content">
             <h2>${prod.name}</h2>
+            <p>${prod.subtitle}</p>
+            <p>€ ${prod.price}</p>
             <a href="product.html?slug=${prod.slug}">
               <button>Details</button>
             </a>
