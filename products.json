@@ -119,18 +119,18 @@
   },
 
   {
-    "slug": "herren-T-Shirt-Black-Der einsame Wächter-01",
-    "name": "Observer/Der einsame Wächter",
-    "subtitle": "Die Stille ist seine Waffe.",
+    "slug": "herren-T-Shirt-Jenseits des Blicks",
+    "name": "Observer/Jenseits des Blicks",
+    "subtitle": "Er sieht nicht nur. Er spürt.",
     "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
     "price":19.99,
-    "image": "assets/images/T-Shirt/Der einsame Wächter/Strag-1.webp",
-    "imageLarge": "assets/images/T-Shirt/Der einsame Wächter/Strag-1.webp",
+    "image": "assets/images/T-Shirt/Jenseits des Blicks/Wand2-1.webp",
+    "imageLarge": "assets/images/T-Shirt/Jenseits des Blicks/Wand2-1.webp",
     "thumbs": [
-      "assets/images/T-Shirt/Der einsame Wächter/Strag-7.webp",
-      "assets/images/T-Shirt/Der einsame Wächter/Strag-8.webp",
-      "assets/images/T-Shirt/Der einsame Wächter/Strag-3.webp",
-      "assets/images/T-Shirt/Der einsame Wächter/Strag-6.webp"
+      "assets/images/T-Shirt/Jenseits des Blicks/Wand2-3.webp",
+      "assets/images/T-Shirt/Jenseits des Blicks/Wand2-2.webp",
+      "assets/images/T-Shirt/Bemessung.png"
+    
       
     ],
     "specs": [
@@ -142,9 +142,9 @@
   },
 
   {
-    "slug": "herren-T-Shirt-Black-Der einsame Wächter-01",
-    "name": "Observer/Der einsame Wächter",
-    "subtitle": "Die Stille ist seine Waffe.",
+    "slug": "herren-T-Shirt-Black-",
+    "name": "Observer/",
+    "subtitle": "",
     "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
     "price":19.99,
     "image": "assets/images/T-Shirt/Der einsame Wächter/Strag-1.webp",
