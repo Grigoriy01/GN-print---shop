@@ -5,12 +5,13 @@
     "subtitle": "Du kennst ihn nicht. Aber er kennt dich schon",
     "description": "Klassisches Herren-T-Shirt",
     "price":17.99,
-    "image": "assets/images/Cap/Cap.png",
-    "imageLarge": "assets/images/Cap/Cap.png",
+    "image": "assets/images/T-Shirt/Cap/Cap-3.webp",
+    "imageLarge": "assets/images/T-Shirt/Cap/Cap-3.webp",
     "thumbs": [
-      "assets/images/Cap/Cap-3.png",
-      "assets/images/Cap/Cap-2.png",
-      "assets/images/124.png"
+      "assets/images/T-Shirt/Cap/Unnamed-2.webp",
+      "assets/images/T-Shirt/Cap/Cap-4.webp",
+      "assets/images/T-Shirt/Cap/Cap.webp",
+      "assets/images/T-Shirt/Bemessung.png"
     ],
     "specs": [
       { "label": "Material", "value": "Baumwolle 100%" },
@@ -27,91 +28,230 @@
     "subtitle": "Null Emotion. Maximale Beobachtung",
     "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
     "price":19.99,
-    "image": "assets/images/Oculus/Ocu_1.png",
-    "imageLarge": "assets/images/Oculus/Ocu_1.png",
+    "image": "assets/images/T-Shirt/Oculus/Ocu_1-3.webp",
+    "imageLarge": "assets/images/T-Shirt/Oculus/Ocu_1-3.webp",
     "thumbs": [
-      "assets/images/Oculus/Ocu_1-2.png",
-      "assets/images/Oculus/Ocu_1-3.png"
+      "assets/images/T-Shirt/Oculus/Ocu_1.webp",
+      "assets/images/T-Shirt/Oculus/Ocu_1-2.webp",
+      "assets/images/T-Shirt/Oculus/Oculus-3.webp",
+      "assets/images/T-Shirt/Oculus/Oculus-5.webp",
+      "assets/images/T-Shirt/Bemessung.png"
+      
     ],
     "specs": [
       { "label": "Material", "value": "Baumwolle 100%" },
       { "label": "Schnitt", "value": "Regular Fit" },
-      { "label": "Verfügbarkeit", "value": "S, M, L, XL" }
-    ],
-    "category": "herren"
-  },
-  {
-    "slug": "herren-T-Shirt-Black-Strag-01",
-    "name": "Observer/Strag-#01",
-    "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
-    "price":19.99,
-    "image": "assets/images/Strag/Strag-1.png",
-    "imageLarge": "assets/images/Strag/Strag-2.png",
-    "thumbs": [
-      "assets/images/Strag/Strag-3.png",
-      "assets/images/124.png"
-    ],
-    "specs": [
-      { "label": "Material", "value": "Baumwolle 100%" },
-      { "label": "Schnitt", "value": "Regular Fit" },
-      { "label": "Verfügbarkeit", "value": "S, M, L, XL" }
+      { "label": "Verfügbarkeit", "value": "Klassisches Herren-T-Shirt \nAngenehm auf der Haut, atmungsaktiv \nund ideal für den Alltag. Die klassische, gerade Passform und die schwarze Farbe \nsorgen für Komfort und Bewegungsfreiheit.\nHergestellt aus reiner Baumwolle ohne synthetische Zusätze.\nDas T-Shirt behält seine Form und verliert auch nach dem Waschen nicht an Farbe.\nPflegeleicht und praktisch.Empfohlen wird \nMaschinenwäsche bei bis zu 40 °C. \nAuf links bügeln. Keine Bleichmittel verwenden." }
     ],
     "category": "herren"
   },
 
   {
-    "slug": "herren-T-Shirt-Black-Strag-01",
-    "name": "Observer/Strag-#01",
+    "slug": "herren-T-Shirt-Black-Der einsame Wächter-01",
+    "name": "Observer/Der einsame Wächter",
+    "subtitle": "Die Stille ist seine Waffe.",
     "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
     "price":19.99,
-    "image": "assets/images/Strag/Strag-1.png",
-    "imageLarge": "assets/images/Strag/Strag-2.png",
+    "image": "assets/images/T-Shirt/Der einsame Wächter/Strag-1.webp",
+    "imageLarge": "assets/images/T-Shirt/Der einsame Wächter/Strag-1.webp",
     "thumbs": [
-      "assets/images/Strag/Strag-3.png",
-      "assets/images/124.png"
+      "assets/images/T-Shirt/Der einsame Wächter/Strag-7.webp",
+      "assets/images/T-Shirt/Der einsame Wächter/Strag-8.webp",
+      "assets/images/T-Shirt/Der einsame Wächter/Strag-3.webp",
+      "assets/images/T-Shirt/Der einsame Wächter/Strag-6.webp",
+      "assets/images/T-Shirt/Bemessung.png"
+      
     ],
     "specs": [
       { "label": "Material", "value": "Baumwolle 100%" },
       { "label": "Schnitt", "value": "Regular Fit" },
-      { "label": "Verfügbarkeit", "value": "S, M, L, XL" }
+      { "label": "Verfügbarkeit", "value": "Klassisches Herren-T-Shirt \nAngenehm auf der Haut, atmungsaktiv \nund ideal für den Alltag. Die klassische, gerade Passform und die schwarze Farbe \nsorgen für Komfort und Bewegungsfreiheit.\nHergestellt aus reiner Baumwolle ohne synthetische Zusätze.\nDas T-Shirt behält seine Form und verliert auch nach dem Waschen nicht an Farbe.\nPflegeleicht und praktisch.Empfohlen wird \nMaschinenwäsche bei bis zu 40 °C. \nAuf links bügeln. Keine Bleichmittel verwenden." }
     ],
     "category": "herren"
   },
 
   {
-    "slug": "herren-T-Shirt-Black-Strag-01",
-    "name": "Observer/Strag-#01",
+    "slug": "herren-T-Shirt-Black-Der kalte Blick",
+    "name": "Observer/Der kalte Blick",
+    "subtitle": "Ohne Worte. Ohne Emotion. Nur das Wesentliche",
     "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
     "price":19.99,
-    "image": "assets/images/Strag/Strag-1.png",
-    "imageLarge": "assets/images/Strag/Strag-2.png",
+    "image": "assets/images/T-Shirt/Der kalte Blick/Strag2-1.webp",
+    "imageLarge": "assets/images/T-Shirt/Der kalte Blick/Strag2-1.webp",
     "thumbs": [
-      "assets/images/Strag/Strag-3.png",
-      "assets/images/124.png"
+      "assets/images/T-Shirt/Der kalte Blick/st-2.1.webp",
+      "assets/images/T-Shirt/Der kalte Blick/st-2.webp",
+      "assets/images/T-Shirt/Der kalte Blick/st-2.2.webp",
+      "assets/images/T-Shirt/Der kalte Blick/Strag2-3.webp",
+      "assets/images/T-Shirt/Bemessung.png"
+      
     ],
     "specs": [
       { "label": "Material", "value": "Baumwolle 100%" },
       { "label": "Schnitt", "value": "Regular Fit" },
-      { "label": "Verfügbarkeit", "value": "S, M, L, XL" }
+      { "label": "Verfügbarkeit", "value": "Klassisches Herren-T-Shirt \nAngenehm auf der Haut, atmungsaktiv \nund ideal für den Alltag. Die klassische, gerade Passform und die schwarze Farbe \nsorgen für Komfort und Bewegungsfreiheit.\nHergestellt aus reiner Baumwolle ohne synthetische Zusätze.\nDas T-Shirt behält seine Form und verliert auch nach dem Waschen nicht an Farbe.\nPflegeleicht und praktisch.Empfohlen wird \nMaschinenwäsche bei bis zu 40 °C. \nAuf links bügeln. Keine Bleichmittel verwenden." }
     ],
     "category": "herren"
   },
 
   {
-    "slug": "herren-T-Shirt-Black-Strag-01",
-    "name": "Observer/Strag-#01",
-    "description": "Klassisches Herren-T-Shirt",
+    "slug": "herren-T-Shirt-Der Beobachtungsmönch",
+    "name": "Observer/Der Beobachtungsmönch",
+    "subtitle": "Die Stille ist sein Gelübde.",
+    "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
     "price":19.99,
-    "image": "assets/images/Strag/Strag-1.png",
-    "imageLarge": "assets/images/Strag/Strag-2.png",
+    "image": "assets/images/T-Shirt/Der Beobachtungsmönch/Wand-3.webp",
+    "imageLarge": "assets/images/T-Shirt/Der Beobachtungsmönch/Wand-3.webp",
     "thumbs": [
-      "assets/images/Strag/Strag-3.png",
-      "assets/images/124.png"
+      "assets/images/T-Shirt/Der Beobachtungsmönch/w1-1.webp",
+      "assets/images/T-Shirt/Der Beobachtungsmönch/w1-4.webp",
+      "assets/images/T-Shirt/Der Beobachtungsmönch/w1-3.webp",
+      "assets/images/T-Shirt/Der Beobachtungsmönch/Wand-1.webp",
+      "assets/images/T-Shirt/Bemessung.png"
+      
     ],
     "specs": [
       { "label": "Material", "value": "Baumwolle 100%" },
       { "label": "Schnitt", "value": "Regular Fit" },
-      { "label": "Verfügbarkeit", "value": "S, M, L, XL" }
+      { "label": "Verfügbarkeit", "value": "Klassisches Herren-T-Shirt \nAngenehm auf der Haut, atmungsaktiv \nund ideal für den Alltag. Die klassische, gerade Passform und die schwarze Farbe \nsorgen für Komfort und Bewegungsfreiheit.\nHergestellt aus reiner Baumwolle ohne synthetische Zusätze.\nDas T-Shirt behält seine Form und verliert auch nach dem Waschen nicht an Farbe.\nPflegeleicht und praktisch.Empfohlen wird \nMaschinenwäsche bei bis zu 40 °C. \nAuf links bügeln. Keine Bleichmittel verwenden." }
+    ],
+    "category": "herren"
+  },
+
+  {
+    "slug": "herren-T-Shirt-Black-Der einsame Wächter-01",
+    "name": "Observer/Der einsame Wächter",
+    "subtitle": "Die Stille ist seine Waffe.",
+    "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
+    "price":19.99,
+    "image": "assets/images/T-Shirt/Der einsame Wächter/Strag-1.webp",
+    "imageLarge": "assets/images/T-Shirt/Der einsame Wächter/Strag-1.webp",
+    "thumbs": [
+      "assets/images/T-Shirt/Der einsame Wächter/Strag-7.webp",
+      "assets/images/T-Shirt/Der einsame Wächter/Strag-8.webp",
+      "assets/images/T-Shirt/Der einsame Wächter/Strag-3.webp",
+      "assets/images/T-Shirt/Der einsame Wächter/Strag-6.webp"
+      
+    ],
+    "specs": [
+      { "label": "Material", "value": "Baumwolle 100%" },
+      { "label": "Schnitt", "value": "Regular Fit" },
+      { "label": "Verfügbarkeit", "value": "Klassisches Herren-T-Shirt \nAngenehm auf der Haut, atmungsaktiv \nund ideal für den Alltag. Die klassische, gerade Passform und die schwarze Farbe \nsorgen für Komfort und Bewegungsfreiheit.\nHergestellt aus reiner Baumwolle ohne synthetische Zusätze.\nDas T-Shirt behält seine Form und verliert auch nach dem Waschen nicht an Farbe.\nPflegeleicht und praktisch.Empfohlen wird \nMaschinenwäsche bei bis zu 40 °C. \nAuf links bügeln. Keine Bleichmittel verwenden." }
+    ],
+    "category": "herren"
+  },
+
+  {
+    "slug": "herren-T-Shirt-Black-Der einsame Wächter-01",
+    "name": "Observer/Der einsame Wächter",
+    "subtitle": "Die Stille ist seine Waffe.",
+    "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
+    "price":19.99,
+    "image": "assets/images/T-Shirt/Der einsame Wächter/Strag-1.webp",
+    "imageLarge": "assets/images/T-Shirt/Der einsame Wächter/Strag-1.webp",
+    "thumbs": [
+      "assets/images/T-Shirt/Der einsame Wächter/Strag-7.webp",
+      "assets/images/T-Shirt/Der einsame Wächter/Strag-8.webp",
+      "assets/images/T-Shirt/Der einsame Wächter/Strag-3.webp",
+      "assets/images/T-Shirt/Der einsame Wächter/Strag-6.webp"
+      
+    ],
+    "specs": [
+      { "label": "Material", "value": "Baumwolle 100%" },
+      { "label": "Schnitt", "value": "Regular Fit" },
+      { "label": "Verfügbarkeit", "value": "Klassisches Herren-T-Shirt \nAngenehm auf der Haut, atmungsaktiv \nund ideal für den Alltag. Die klassische, gerade Passform und die schwarze Farbe \nsorgen für Komfort und Bewegungsfreiheit.\nHergestellt aus reiner Baumwolle ohne synthetische Zusätze.\nDas T-Shirt behält seine Form und verliert auch nach dem Waschen nicht an Farbe.\nPflegeleicht und praktisch.Empfohlen wird \nMaschinenwäsche bei bis zu 40 °C. \nAuf links bügeln. Keine Bleichmittel verwenden." }
+    ],
+    "category": "herren"
+  },
+
+  {
+    "slug": "herren-T-Shirt-Black-Der einsame Wächter-01",
+    "name": "Observer/Der einsame Wächter",
+    "subtitle": "Die Stille ist seine Waffe.",
+    "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
+    "price":19.99,
+    "image": "assets/images/T-Shirt/Der einsame Wächter/Strag-1.webp",
+    "imageLarge": "assets/images/T-Shirt/Der einsame Wächter/Strag-1.webp",
+    "thumbs": [
+      "assets/images/T-Shirt/Der einsame Wächter/Strag-7.webp",
+      "assets/images/T-Shirt/Der einsame Wächter/Strag-8.webp",
+      "assets/images/T-Shirt/Der einsame Wächter/Strag-3.webp",
+      "assets/images/T-Shirt/Der einsame Wächter/Strag-6.webp"
+      
+    ],
+    "specs": [
+      { "label": "Material", "value": "Baumwolle 100%" },
+      { "label": "Schnitt", "value": "Regular Fit" },
+      { "label": "Verfügbarkeit", "value": "Klassisches Herren-T-Shirt \nAngenehm auf der Haut, atmungsaktiv \nund ideal für den Alltag. Die klassische, gerade Passform und die schwarze Farbe \nsorgen für Komfort und Bewegungsfreiheit.\nHergestellt aus reiner Baumwolle ohne synthetische Zusätze.\nDas T-Shirt behält seine Form und verliert auch nach dem Waschen nicht an Farbe.\nPflegeleicht und praktisch.Empfohlen wird \nMaschinenwäsche bei bis zu 40 °C. \nAuf links bügeln. Keine Bleichmittel verwenden." }
+    ],
+    "category": "herren"
+  },
+
+  {
+    "slug": "herren-T-Shirt-Black-Der einsame Wächter-01",
+    "name": "Observer/Der einsame Wächter",
+    "subtitle": "Die Stille ist seine Waffe.",
+    "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
+    "price":19.99,
+    "image": "assets/images/T-Shirt/Der einsame Wächter/Strag-1.webp",
+    "imageLarge": "assets/images/T-Shirt/Der einsame Wächter/Strag-1.webp",
+    "thumbs": [
+      "assets/images/T-Shirt/Der einsame Wächter/Strag-7.webp",
+      "assets/images/T-Shirt/Der einsame Wächter/Strag-8.webp",
+      "assets/images/T-Shirt/Der einsame Wächter/Strag-3.webp",
+      "assets/images/T-Shirt/Der einsame Wächter/Strag-6.webp"
+      
+    ],
+    "specs": [
+      { "label": "Material", "value": "Baumwolle 100%" },
+      { "label": "Schnitt", "value": "Regular Fit" },
+      { "label": "Verfügbarkeit", "value": "Klassisches Herren-T-Shirt \nAngenehm auf der Haut, atmungsaktiv \nund ideal für den Alltag. Die klassische, gerade Passform und die schwarze Farbe \nsorgen für Komfort und Bewegungsfreiheit.\nHergestellt aus reiner Baumwolle ohne synthetische Zusätze.\nDas T-Shirt behält seine Form und verliert auch nach dem Waschen nicht an Farbe.\nPflegeleicht und praktisch.Empfohlen wird \nMaschinenwäsche bei bis zu 40 °C. \nAuf links bügeln. Keine Bleichmittel verwenden." }
+    ],
+    "category": "herren"
+  },
+
+  {
+    "slug": "herren-T-Shirt-Black-Der einsame Wächter-01",
+    "name": "Observer/Der einsame Wächter",
+    "subtitle": "Die Stille ist seine Waffe.",
+    "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
+    "price":19.99,
+    "image": "assets/images/T-Shirt/Der einsame Wächter/Strag-1.webp",
+    "imageLarge": "assets/images/T-Shirt/Der einsame Wächter/Strag-1.webp",
+    "thumbs": [
+      "assets/images/T-Shirt/Der einsame Wächter/Strag-7.webp",
+      "assets/images/T-Shirt/Der einsame Wächter/Strag-8.webp",
+      "assets/images/T-Shirt/Der einsame Wächter/Strag-3.webp",
+      "assets/images/T-Shirt/Der einsame Wächter/Strag-6.webp"
+      
+    ],
+    "specs": [
+      { "label": "Material", "value": "Baumwolle 100%" },
+      { "label": "Schnitt", "value": "Regular Fit" },
+      { "label": "Verfügbarkeit", "value": "Klassisches Herren-T-Shirt \nAngenehm auf der Haut, atmungsaktiv \nund ideal für den Alltag. Die klassische, gerade Passform und die schwarze Farbe \nsorgen für Komfort und Bewegungsfreiheit.\nHergestellt aus reiner Baumwolle ohne synthetische Zusätze.\nDas T-Shirt behält seine Form und verliert auch nach dem Waschen nicht an Farbe.\nPflegeleicht und praktisch.Empfohlen wird \nMaschinenwäsche bei bis zu 40 °C. \nAuf links bügeln. Keine Bleichmittel verwenden." }
+    ],
+    "category": "herren"
+  },
+
+  {
+    "slug": "herren-T-Shirt-Black-Der einsame Wächter-01",
+    "name": "Observer/Der einsame Wächter",
+    "subtitle": "Die Stille ist seine Waffe.",
+    "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
+    "price":19.99,
+    "image": "assets/images/T-Shirt/Der einsame Wächter/Strag-1.webp",
+    "imageLarge": "assets/images/T-Shirt/Der einsame Wächter/Strag-1.webp",
+    "thumbs": [
+      "assets/images/T-Shirt/Der einsame Wächter/Strag-7.webp",
+      "assets/images/T-Shirt/Der einsame Wächter/Strag-8.webp",
+      "assets/images/T-Shirt/Der einsame Wächter/Strag-3.webp",
+      "assets/images/T-Shirt/Der einsame Wächter/Strag-6.webp"
+      
+    ],
+    "specs": [
+      { "label": "Material", "value": "Baumwolle 100%" },
+      { "label": "Schnitt", "value": "Regular Fit" },
+      { "label": "Verfügbarkeit", "value": "Klassisches Herren-T-Shirt \nAngenehm auf der Haut, atmungsaktiv \nund ideal für den Alltag. Die klassische, gerade Passform und die schwarze Farbe \nsorgen für Komfort und Bewegungsfreiheit.\nHergestellt aus reiner Baumwolle ohne synthetische Zusätze.\nDas T-Shirt behält seine Form und verliert auch nach dem Waschen nicht an Farbe.\nPflegeleicht und praktisch.Empfohlen wird \nMaschinenwäsche bei bis zu 40 °C. \nAuf links bügeln. Keine Bleichmittel verwenden." }
     ],
     "category": "herren"
   },
