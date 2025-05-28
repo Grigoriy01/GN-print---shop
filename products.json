@@ -142,18 +142,21 @@
   },
 
   {
-    "slug": "herren-T-Shirt-Black-",
-    "name": "Observer/",
-    "subtitle": "",
+    "slug": "herren-T-Shirt-Black-Kalter Umriss",
+    "name": "Observer/Kalter Umriss",
+    "subtitle": "Keine Bewegung. Nur ein Blick",
     "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
     "price":19.99,
-    "image": "assets/images/T-Shirt/Der einsame Wächter/Strag-1.webp",
-    "imageLarge": "assets/images/T-Shirt/Der einsame Wächter/Strag-1.webp",
+    "image": "assets/images/T-Shirt/Kalter Umriss/Wand3-1.webp",
+    "imageLarge": "assets/images/T-Shirt/Kalter Umriss/Wand3-1.webp",
     "thumbs": [
-      "assets/images/T-Shirt/Der einsame Wächter/Strag-7.webp",
-      "assets/images/T-Shirt/Der einsame Wächter/Strag-8.webp",
-      "assets/images/T-Shirt/Der einsame Wächter/Strag-3.webp",
-      "assets/images/T-Shirt/Der einsame Wächter/Strag-6.webp"
+      "assets/images/T-Shirt/Kalter Umriss/Wand3-3.webp",
+      "assets/images/T-Shirt/Kalter Umriss/Wand3-2.webp",
+      "assets/images/T-Shirt/Kalter Umriss/Wand3-3.webp",
+      "assets/images/T-Shirt/Kalter Umriss/Wand3-4.webp",
+      "assets/images/T-Shirt/Kalter Umriss/Wand3-5.webp",
+      "assets/images/T-Shirt/Kalter Umriss/Wand3-6.webp",
+      "assets/images/T-Shirt/Bemessung.png"
       
     ],
     "specs": [
@@ -165,18 +168,20 @@
   },
 
   {
-    "slug": "herren-T-Shirt-Black-Der einsame Wächter-01",
-    "name": "Observer/Der einsame Wächter",
-    "subtitle": "Die Stille ist seine Waffe.",
+    "slug": "herren-T-Shirt-Black-Unsichtbarer Blick",
+    "name": "Observer/Unsichtbarer Blick",
+    "subtitle": "Du spürst ihn, doch siehst ihn nicht.",
     "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
     "price":19.99,
-    "image": "assets/images/T-Shirt/Der einsame Wächter/Strag-1.webp",
-    "imageLarge": "assets/images/T-Shirt/Der einsame Wächter/Strag-1.webp",
+    "image": "assets/images/T-Shirt/Unsichtbarer Blick/Wand-1.webp",
+    "imageLarge": "assets/images/T-Shirt/Unsichtbarer Blick/Wand-1.webp",
     "thumbs": [
-      "assets/images/T-Shirt/Der einsame Wächter/Strag-7.webp",
-      "assets/images/T-Shirt/Der einsame Wächter/Strag-8.webp",
-      "assets/images/T-Shirt/Der einsame Wächter/Strag-3.webp",
-      "assets/images/T-Shirt/Der einsame Wächter/Strag-6.webp"
+      "assets/images/T-Shirt/Unsichtbarer Blick/Wand-3.webp",
+      "assets/images/T-Shirt/Unsichtbarer Blick/Wand-2.webp",
+      "assets/images/T-Shirt/Unsichtbarer Blick/w-1.webp",
+      "assets/images/T-Shirt/Unsichtbarer Blick/w-4.webp",
+      "assets/images/T-Shirt/Unsichtbarer Blick/w-3.webp",
+      "assets/images/T-Shirt/Bemessung.png"
       
     ],
     "specs": [
@@ -188,19 +193,42 @@
   },
 
   {
-    "slug": "herren-T-Shirt-Black-Der einsame Wächter-01",
-    "name": "Observer/Der einsame Wächter",
-    "subtitle": "Die Stille ist seine Waffe.",
+    "slug": "herren-T-Shirt-White-Am Rand der Traktion",
+    "name": "Am Rand der Traktion",
+    "subtitle": "Wenn Kontrolle zur Kunst wird.",
     "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
     "price":19.99,
-    "image": "assets/images/T-Shirt/Der einsame Wächter/Strag-1.webp",
-    "imageLarge": "assets/images/T-Shirt/Der einsame Wächter/Strag-1.webp",
+    "image": "assets/images/T-Shirt/MotoCross-1/motocross-3.webp",
+    "imageLarge": "assets/images/T-Shirt/MotoCross-1/motocross-3.webp",
     "thumbs": [
-      "assets/images/T-Shirt/Der einsame Wächter/Strag-7.webp",
-      "assets/images/T-Shirt/Der einsame Wächter/Strag-8.webp",
-      "assets/images/T-Shirt/Der einsame Wächter/Strag-3.webp",
-      "assets/images/T-Shirt/Der einsame Wächter/Strag-6.webp"
+      "assets/images/T-Shirt/MotoCross-1/motocross.webp",
+      "assets/images/T-Shirt/MotoCross-1/motocross-2.webp",
+      "assets/images/T-Shirt/MotoCross-1/mc-2.webp",
+      "assets/images/T-Shirt/MotoCross-1/mc-1.webp",
+      "assets/images/T-Shirt/Bemessung.png"
       
+    ],
+    "specs": [
+      { "label": "Material", "value": "Baumwolle 100%" },
+      { "label": "Schnitt", "value": "Regular Fit" },
+      { "label": "Verfügbarkeit", "value": "Klassisches Herren-T-Shirt \nAngenehm auf der Haut, atmungsaktiv \nund ideal für den Alltag. Die klassische, gerade Passform und die weiße Farbe \nsorgen für Komfort und Bewegungsfreiheit.\nHergestellt aus reiner Baumwolle ohne synthetische Zusätze.\nDas T-Shirt behält seine Form und verliert auch nach dem Waschen nicht an Farbe.\nPflegeleicht und praktisch.Empfohlen wird \nMaschinenwäsche bei bis zu 40 °C. \nAuf links bügeln. Keine Bleichmittel verwenden." }
+    ],
+    "category": "herren"
+  },
+
+  {
+    "slug": "herren-T-Shirt-Black-Am Rand der Traktion",
+    "name": "Am Rand der Traktion",
+    "subtitle": "Wenn Kontrolle zur Kunst wird.",
+    "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
+    "price":19.99,
+    "image": "assets/images/T-Shirt/MotoCross-1/mc_black-1.webp",
+    "imageLarge": "assets/images/T-Shirt/MotoCross-1/mc_black-1.webp",
+    "thumbs": [
+      "assets/images/T-Shirt/MotoCross-1/mc_black-3.webp",
+      "assets/images/T-Shirt/MotoCross-1/mc_black-2.webp",
+      "assets/images/T-Shirt/MotoCross-1/mc_black-4.webp",
+      "assets/images/T-Shirt/Bemessung.png"
     ],
     "specs": [
       { "label": "Material", "value": "Baumwolle 100%" },
@@ -211,19 +239,18 @@
   },
 
   {
-    "slug": "herren-T-Shirt-Black-Der einsame Wächter-01",
-    "name": "Observer/Der einsame Wächter",
-    "subtitle": "Die Stille ist seine Waffe.",
+    "slug": "herren-T-Shirt-Black-Am Rand der Traktion-02",
+    "name": "Am Rand der Traktion-#2",
+    "subtitle": "Wenn Kontrolle zur Kunst wird.",
     "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
     "price":19.99,
-    "image": "assets/images/T-Shirt/Der einsame Wächter/Strag-1.webp",
-    "imageLarge": "assets/images/T-Shirt/Der einsame Wächter/Strag-1.webp",
+    "image": "assets/images/T-Shirt/MotoCross-2/mc_black-3.webp",
+    "imageLarge": "assets/images/T-Shirt/MotoCross-2/mc_black-3.webp",
     "thumbs": [
-      "assets/images/T-Shirt/Der einsame Wächter/Strag-7.webp",
-      "assets/images/T-Shirt/Der einsame Wächter/Strag-8.webp",
-      "assets/images/T-Shirt/Der einsame Wächter/Strag-3.webp",
-      "assets/images/T-Shirt/Der einsame Wächter/Strag-6.webp"
-      
+      "assets/images/T-Shirt/MotoCross-2/mc_black-1.webp",
+      "assets/images/T-Shirt/MotoCross-2/mc_black-2.webp",
+      "assets/images/T-Shirt/Bemessung.png"
+   
     ],
     "specs": [
       { "label": "Material", "value": "Baumwolle 100%" },
@@ -232,21 +259,66 @@
     ],
     "category": "herren"
   },
-
   {
-    "slug": "herren-T-Shirt-Black-Der einsame Wächter-01",
-    "name": "Observer/Der einsame Wächter",
-    "subtitle": "Die Stille ist seine Waffe.",
+    "slug": "herren-T-Shirt-White-Am Rand der Traktion-02",
+    "name": "Am Rand der Traktion-#2",
+    "subtitle": "Wenn Kontrolle zur Kunst wird.",
     "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
     "price":19.99,
-    "image": "assets/images/T-Shirt/Der einsame Wächter/Strag-1.webp",
-    "imageLarge": "assets/images/T-Shirt/Der einsame Wächter/Strag-1.webp",
+    "image": "assets/images/T-Shirt/MotoCross-2/M_C-3.webp",
+    "imageLarge": "assets/images/T-Shirt/MotoCross-2/M_C-3.webp",
     "thumbs": [
-      "assets/images/T-Shirt/Der einsame Wächter/Strag-7.webp",
-      "assets/images/T-Shirt/Der einsame Wächter/Strag-8.webp",
-      "assets/images/T-Shirt/Der einsame Wächter/Strag-3.webp",
-      "assets/images/T-Shirt/Der einsame Wächter/Strag-6.webp"
-      
+      "assets/images/T-Shirt/MotoCross-2/M_C-1.webp",
+      "assets/images/T-Shirt/MotoCross-2/M_C-2.webp",
+      "assets/images/T-Shirt/MotoCross-2/mc_white-1.webp",
+      "assets/images/T-Shirt/MotoCross-2/mc_white-2.webp",
+      "assets/images/T-Shirt/Bemessung.png"
+   
+    ],
+    "specs": [
+      { "label": "Material", "value": "Baumwolle 100%" },
+      { "label": "Schnitt", "value": "Regular Fit" },
+      { "label": "Verfügbarkeit", "value": "Klassisches Herren-T-Shirt \nAngenehm auf der Haut, atmungsaktiv \nund ideal für den Alltag. Die klassische, gerade Passform und die weiße Farbe \nsorgen für Komfort und Bewegungsfreiheit.\nHergestellt aus reiner Baumwolle ohne synthetische Zusätze.\nDas T-Shirt behält seine Form und verliert auch nach dem Waschen nicht an Farbe.\nPflegeleicht und praktisch.Empfohlen wird \nMaschinenwäsche bei bis zu 40 °C. \nAuf links bügeln. Keine Bleichmittel verwenden." }
+    ],
+    "category": "herren"
+  },
+  {
+    "slug": "herren-T-Shirt-White-Am Mustang ohne Regeln",
+    "name": "Mustang ohne Regeln",
+    "subtitle": "Jeder Start ist wie ein Schuss.",
+    "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
+    "price":19.99,
+    "image": "assets/images/T-Shirt/Mustang/mus_white-2.webp",
+    "imageLarge": "assets/images/T-Shirt/Mustang/mus_white-2.webp",
+    "thumbs": [
+      "assets/images/T-Shirt/Mustang/mus_white-3.webp",
+      "assets/images/T-Shirt/Mustang/mus_white-4.webp",
+      "assets/images/T-Shirt/Mustang/mus_white-1.webp",
+      "assets/images/T-Shirt/Bemessung.png"
+   
+    ],
+    "specs": [
+      { "label": "Material", "value": "Baumwolle 100%" },
+      { "label": "Schnitt", "value": "Regular Fit" },
+      { "label": "Verfügbarkeit", "value": "Klassisches Herren-T-Shirt \nAngenehm auf der Haut, atmungsaktiv \nund ideal für den Alltag. Die klassische, gerade Passform und die weiße Farbe \nsorgen für Komfort und Bewegungsfreiheit.\nHergestellt aus reiner Baumwolle ohne synthetische Zusätze.\nDas T-Shirt behält seine Form und verliert auch nach dem Waschen nicht an Farbe.\nPflegeleicht und praktisch.Empfohlen wird \nMaschinenwäsche bei bis zu 40 °C. \nAuf links bügeln. Keine Bleichmittel verwenden." }
+    ],
+    "category": "herren"
+  },
+  {
+    "slug": "herren-T-Shirt-Black-Am Mustang ohne Regeln",
+    "name": "Mustang ohne Regeln",
+    "subtitle": "Jeder Start ist wie ein Schuss.",
+    "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
+    "price":19.99,
+    "image": "assets/images/T-Shirt/Mustang/mus_black-1.webp",
+    "imageLarge": "assets/images/T-Shirt/Mustang/mus_black-1.webp",
+    "thumbs": [
+      "assets/images/T-Shirt/Mustang/mus_black-2.webp",
+      "assets/images/T-Shirt/Mustang/mus_black-3.webp",
+      "assets/images/T-Shirt/Mustang/mus_black-4.webp",
+      "assets/images/T-Shirt/Mustang/mus_black-5.webp",     
+      "assets/images/T-Shirt/Bemessung.png"
+   
     ],
     "specs": [
       { "label": "Material", "value": "Baumwolle 100%" },
@@ -255,17 +327,62 @@
     ],
     "category": "herren"
   },
-
   {
-    "slug": "damen-T-Shirt-Black-Strag-01",
-    "name": "Observer/Strag-#01",
+    "slug": "herren-T-Shirt-Black-Die DNA der Geschwindigkeit",
+    "name": "Die DNA der Geschwindigkeit",
+    "subtitle": "Genetik aus Aggression und Antrieb.",
     "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
     "price":19.99,
-    "image": "assets/images/Strag/Strag-1.png",
-    "imageLarge": "assets/images/Strag/Strag-2.png",
+    "image": "assets/images/T-Shirt/Dodge/Car_Dodge-4.webp",
+    "imageLarge": "assets/images/T-Shirt/Dodge/Car_Dodge-4.webp",
     "thumbs": [
-      "assets/images/Strag/Strag-3.png",
-      "assets/images/124.png"
+      "assets/images/T-Shirt/Dodge/Car_Dodge.webp",
+      "assets/images/T-Shirt/Dodge/Car_Dodge-3.webp",
+      "assets/images/T-Shirt/Dodge/dodge-3.webp",
+      "assets/images/T-Shirt/Bemessung.png"
+   
+    ],
+    "specs": [
+      { "label": "Material", "value": "Baumwolle 100%" },
+      { "label": "Schnitt", "value": "Regular Fit" },
+      { "label": "Verfügbarkeit", "value": "Klassisches Herren-T-Shirt \nAngenehm auf der Haut, atmungsaktiv \nund ideal für den Alltag. Die klassische, gerade Passform und die schwarze Farbe \nsorgen für Komfort und Bewegungsfreiheit.\nHergestellt aus reiner Baumwolle ohne synthetische Zusätze.\nDas T-Shirt behält seine Form und verliert auch nach dem Waschen nicht an Farbe.\nPflegeleicht und praktisch.Empfohlen wird \nMaschinenwäsche bei bis zu 40 °C. \nAuf links bügeln. Keine Bleichmittel verwenden." }
+    ],
+    "category": "herren"
+  },
+  {
+    "slug": "herren-T-Shirt-White-Die DNA der Geschwindigkeit",
+    "name": "Die DNA der Geschwindigkeit",
+    "subtitle": "Genetik aus Aggression und Antrieb.",
+    "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
+    "price":19.99,
+    "image": "assets/images/T-Shirt/Dodge/dodge_white-1.webp",
+    "imageLarge": "assets/images/T-Shirt/Dodge/dodge_white-1.webp",
+    "thumbs": [
+      "assets/images/T-Shirt/Dodge/dodge_white-2.webp",
+      "assets/images/T-Shirt/Dodge/dodge_white-3.webp",
+      "assets/images/T-Shirt/Dodge/dodge_white-4.webp",
+      "assets/images/T-Shirt/Bemessung.png"
+   
+    ],
+    "specs": [
+      { "label": "Material", "value": "Baumwolle 100%" },
+      { "label": "Schnitt", "value": "Regular Fit" },
+      { "label": "Verfügbarkeit", "value": "Klassisches Herren-T-Shirt \nAngenehm auf der Haut, atmungsaktiv \nund ideal für den Alltag. Die klassische, gerade Passform und die weiße Farbe \nsorgen für Komfort und Bewegungsfreiheit.\nHergestellt aus reiner Baumwolle ohne synthetische Zusätze.\nDas T-Shirt behält seine Form und verliert auch nach dem Waschen nicht an Farbe.\nPflegeleicht und praktisch.Empfohlen wird \nMaschinenwäsche bei bis zu 40 °C. \nAuf links bügeln. Keine Bleichmittel verwenden." }
+    ],
+    "category": "herren"
+  },
+
+  {
+    "slug": "damen-T-Shirt-Black",
+    "name": "damen-T-Shirt-Black",
+    "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
+    "price":19.99,
+    "image": "assets/images/T-Shirt/Damen/1.webp",
+    "imageLarge": "assets/images/T-Shirt/Damen/1.webp",
+    "thumbs": [
+      "assets/images/T-Shirt/Damen/2.webp",
+      "assets/images/T-Shirt/Damen/2.webp"
+      
     ],
     "specs": [
       { "label": "Material", "value": "Baumwolle 100%" },
@@ -275,16 +392,17 @@
     "category": "damen"
   },
 
-   {
-    "slug": "damen-T-Shirt-Black-Strag-01",
-    "name": "Observer/Strag-#01",
+  {
+    "slug": "damen-T-Shirt-Black",
+    "name": "damen-T-Shirt-Black",
     "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
     "price":19.99,
-    "image": "assets/images/Strag/Strag-1.png",
-    "imageLarge": "assets/images/Strag/Strag-2.png",
+    "image": "assets/images/T-Shirt/Damen/2.webp",
+    "imageLarge": "assets/images/T-Shirt/Damen/2.webp",
     "thumbs": [
-      "assets/images/Strag/Strag-3.png",
-      "assets/images/124.png"
+      "assets/images/T-Shirt/Damen/2.webp",
+      "assets/images/T-Shirt/Damen/3.webp"
+      
     ],
     "specs": [
       { "label": "Material", "value": "Baumwolle 100%" },
@@ -294,16 +412,17 @@
     "category": "damen"
   },
 
-   {
-    "slug": "damen-T-Shirt-Black-Strag-01",
-    "name": "Observer/Strag-#01",
+  {
+    "slug": "damen-T-Shirt-Black",
+    "name": "damen-T-Shirt-Black",
     "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
     "price":19.99,
-    "image": "assets/images/Strag/Strag-1.png",
-    "imageLarge": "assets/images/Strag/Strag-2.png",
+    "image": "assets/images/T-Shirt/Damen/3.webp",
+    "imageLarge": "assets/images/T-Shirt/Damen/3.webp",
     "thumbs": [
-      "assets/images/Strag/Strag-3.png",
-      "assets/images/124.png"
+      "assets/images/T-Shirt/Damen/2.webp",
+      "assets/images/T-Shirt/Damen/3.webp"
+      
     ],
     "specs": [
       { "label": "Material", "value": "Baumwolle 100%" },
@@ -313,42 +432,172 @@
     "category": "damen"
   },
 
-   {
-    "slug": "tassen-T-Shirt-Black-Strag-01",
-    "name": "Observer/Strag-#01",
+  {
+    "slug": "damen-T-Shirt-Black",
+    "name": "damen-T-Shirt-Black",
     "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
     "price":19.99,
-    "image": "assets/images/Strag/Strag-1.png",
-    "imageLarge": "assets/images/Strag/Strag-2.png",
+    "image": "assets/images/T-Shirt/Damen/4.webp",
+    "imageLarge": "assets/images/T-Shirt/Damen/4.webp",
     "thumbs": [
-      "assets/images/Strag/Strag-3.png",
-      "assets/images/124.png"
+      "assets/images/T-Shirt/Damen/2.webp",
+      "assets/images/T-Shirt/Damen/3.webp"
+      
     ],
     "specs": [
       { "label": "Material", "value": "Baumwolle 100%" },
       { "label": "Schnitt", "value": "Regular Fit" },
       { "label": "Verfügbarkeit", "value": "S, M, L, XL" }
+    ],
+    "category": "damen"
+  },
+
+  {
+    "slug": "damen-T-Shirt-Black",
+    "name": "damen-T-Shirt-Black",
+    "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
+    "price":19.99,
+    "image": "assets/images/T-Shirt/Damen/5.webp",
+    "imageLarge": "assets/images/T-Shirt/Damen/5.webp",
+    "thumbs": [
+      "assets/images/T-Shirt/Damen/2.webp",
+      "assets/images/T-Shirt/Damen/3.webp"
+      
+    ],
+    "specs": [
+      { "label": "Material", "value": "Baumwolle 100%" },
+      { "label": "Schnitt", "value": "Regular Fit" },
+      { "label": "Verfügbarkeit", "value": "S, M, L, XL" }
+    ],
+    "category": "damen"
+  },
+
+
+   {
+    "slug": "tassen-White",
+    "name": "tassen-White",
+    "description": "tassen-White",
+    "price":11.99,
+    "image": "assets/images/Tasse/bild-1.webp",
+    "imageLarge": "assets/images/Tasse/bild-1.webp",
+      "thumbs": [
+      "assets/images/Tasse/bild-2.webp",
+      "assets/images/Tasse/bild-2.webp"
+      
+    ],
+    "specs": [
+      { "label": "Material", "value": "tassen-White" },
+      { "label": "Schnitt", "value": "" },
+      { "label": "Verfügbarkeit", "value": "" }
+    ],
+    "category": "tassen"
+  },
+   {
+    "slug": "tassen-White",
+    "name": "tassen-White",
+    "description": "tassen-White",
+    "price":11.99,
+    "image": "assets/images/Tasse/bild-3.webp",
+    "imageLarge": "assets/images/Tasse/bild-3.webp",
+    "thumbs": [
+      "assets/images/Tasse/bild-3-1.webp",
+      "assets/images/Tasse/bild-3-2.webp"
+      
+    ],
+    "specs": [
+      { "label": "Material", "value": "tassen-White" },
+      { "label": "Schnitt", "value": "" },
+      { "label": "Verfügbarkeit", "value": "" }
+    ],
+    "category": "tassen"
+  },
+   {
+    "slug": "tassen-White",
+    "name": "tassen-White",
+    "description": "tassen-White",
+    "price":11.99,
+    "image": "assets/images/Tasse/bodybilder-1.webp",
+    "imageLarge": "assets/images/Tasse/bodybilder-1.webp",
+    "thumbs": [
+      "assets/images/Tasse/bodybilder-2.webp",
+      "assets/images/Tasse/bodybilder-2.webp",
+      "assets/images/Tasse/bodybilder-2.webp"
+      
+      
+    ],
+    "specs": [
+      { "label": "Material", "value": "tassen-White" },
+      { "label": "Schnitt", "value": "" },
+      { "label": "Verfügbarkeit", "value": "" }
+    ],
+    "category": "tassen"
+  },
+   {
+    "slug": "tassen-White",
+    "name": "tassen-White",
+    "description": "tassen-White",
+    "price":11.99,
+    "image": "assets/images/Tasse/Frau freundin.webp",
+    "imageLarge": "assets/images/Tasse/Frau freundin.webp",
+    "thumbs": [
+      "assets/images/Tasse/Frau freundin.webp",
+      "assets/images/Tasse/Frau freundin.webp",
+      "assets/images/Tasse/Frau freundin.webp"
+      
+    ],
+    "specs": [
+      { "label": "Material", "value": "tassen-White" },
+      { "label": "Schnitt", "value": "" },
+      { "label": "Verfügbarkeit", "value": "" }
     ],
     "category": "tassen"
   },
 
-  {
-    "slug": "tassen-T-Shirt-Black-Strag-01",
-    "name": "Observer/Strag-#01",
-    "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
-    "price":19.99,
-    "image": "assets/images/Strag/Strag-1.png",
-    "imageLarge": "assets/images/Strag/Strag-2.png",
+   {
+    "slug": "tassen-White",
+    "name": "tassen-White",
+    "description": "tassen-White",
+    "price":11.99,
+    "image": "assets/images/Tasse/moto-1.webp",
+    "imageLarge": "assets/images/Tasse/moto-1.webp",
     "thumbs": [
-      "assets/images/Strag/Strag-3.png",
-      "assets/images/124.png"
+      "assets/images/Tasse/moto-1.webp",
+      "assets/images/Tasse/moto-2.webp",
+      "assets/images/Tasse/moto-1.webp"
+      
+      
     ],
     "specs": [
-      { "label": "Material", "value": "Baumwolle 100%" },
-      { "label": "Schnitt", "value": "Regular Fit" },
-      { "label": "Verfügbarkeit", "value": "S, M, L, XL" }
+      { "label": "Material", "value": "tassen-White" },
+      { "label": "Schnitt", "value": "" },
+      { "label": "Verfügbarkeit", "value": "" }
+    ],
+    "category": "tassen"
+  },
+   
+  {
+    "slug": "tassen-White",
+    "name": "tassen-White",
+    "description": "tassen-White",
+    "price":11.99,
+    "image": "assets/images/Tasse/paar-1.webp",
+    "imageLarge": "assets/images/Tasse/paar-1.webp",
+    "thumbs": [
+      "assets/images/Tasse/paar-1.webp",
+      "assets/images/Tasse/paar-1.webp",
+      "assets/images/Tasse/paar-1.webp"
+      
+      
+      
+    ],
+    "specs": [
+      { "label": "Material", "value": "tassen-White" },
+      { "label": "Schnitt", "value": "" },
+      { "label": "Verfügbarkeit", "value": "" }
     ],
     "category": "tassen"
   }
+
+  
 ]
 
