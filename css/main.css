@@ -608,7 +608,9 @@ textarea.invalid {
 
 /* === Выезжающая форма заказа в корзине === */
 .order-form-wrapper {
-  position: absolute;
+  position: fixed;
+  top: 0;
+  overscroll-behavior: contain;
   bottom: 0;
   left: 0;
   right: 0;
