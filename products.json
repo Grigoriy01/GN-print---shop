@@ -1,6 +1,6 @@
 [
   {
-    "slug": "herren-T-Shirt-Black-Cap-01",
+    "slug": "herren-T-Shirt-Black-Unnamed",
     "name": "Observer/Unnamed",
     "subtitle": "Du kennst ihn nicht. Aber er kennt dich schon",
     "description": "Klassisches Herren-T-Shirt",
@@ -22,8 +22,9 @@
     ],
     "category": "herren"
   },
+  
   {
-    "slug": "herren-T-Shirt-Black-Oculus-01",
+    "slug": "herren-T-Shirt-Black-Oculus",
     "name": "Observer/Oculus",
     "subtitle": "Null Emotion. Maximale Beobachtung",
     "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
@@ -47,7 +48,7 @@
   },
 
   {
-    "slug": "herren-T-Shirt-Black-Der einsame Wächter-01",
+    "slug": "herren-T-Shirt-Black-Der einsame Wächter",
     "name": "Observer/Der einsame Wächter",
     "subtitle": "Die Stille ist seine Waffe.",
     "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
