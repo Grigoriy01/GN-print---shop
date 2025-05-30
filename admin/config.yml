@@ -12,10 +12,10 @@ collections:
     description: "Управление карточками товаров"
     files:
       - file: "products.json"
-        label: "Каталог товаров"
+        label: ""
         name: "products"
         fields:
-          - label: "Товары"
+          - label: ""
             name: ""
             widget: "list"
              allow_add: true
