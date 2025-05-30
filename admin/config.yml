@@ -10,7 +10,7 @@ collections:
         format: "json"
         fields:
           - label: "Товары"
-            name: ""
+            name: "items"
             widget: "list"
             allow_add: true
             fields:
