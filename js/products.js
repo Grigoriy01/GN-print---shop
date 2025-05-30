@@ -4,7 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   fetch("products.json")
     .then(res => res.json())
-    .then(products => {
+    .then(data => {
+      const products = data.items; // 🔧 ВАЖНО: теперь берём data.items
+      
       // Лог всех контейнеров
       const allContainers = document.querySelectorAll(".gallery__grid");
       console.log("Найдено секций .gallery__grid:", allContainers.length);
