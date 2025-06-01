@@ -262,8 +262,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   fetch("products.json")
     .then(r => r.json())
-    .then(data => {
-      const products = data.items; // <--- 🔧 Изменено
+    .then(products => {
       const prod = products.find(p => p.slug === slug);
       if (!prod) {
         const container = document.querySelector(".product-detail-container");
