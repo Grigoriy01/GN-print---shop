@@ -1,0 +1,39 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+media_library:
+  name: uploadcare
+
+collections:
+  - name: "products"
+    label: "Товары"
+    label_singular: "Товар"
+    description: "Управление карточками товаров"
+    files:
+      - file: "products.json"
+        label: "Каталог товаров"
+        name: "products"
+        fields:
+          - label: "Товары"
+            name: "items"
+            widget: "list"
+            allow_add: true
+            fields:
+              - { label: "Slug", name: "slug", widget: "string" }
+              - { label: "Название", name: "name", widget: "string" }
+              - { label: "Подзаголовок", name: "subtitle", widget: "string", required: false }
+              - { label: "Описание", name: "description", widget: "text" }
+              - { label: "Цена", name: "preis", widget: "number" }
+              - { label: "Главное изображение", name: "image", widget: "image" }
+              - { label: "Изображение (детально)", name: "imageLarge", widget: "image" }
+              - label: "Миниатюры"
+                name: "thumbs"
+                widget: "list"
+                field: { label: "Миниатюра", name: "thumb", widget: "image" }
+              - { label: "Лейбл 1", name: "label1", widget: "string", required: false }
+              - { label: "Лейбл 2", name: "label2", widget: "string", required: false }
+              - { label: "Лейбл 3", name: "label3", widget: "string", required: false }
