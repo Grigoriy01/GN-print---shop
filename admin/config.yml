@@ -1,1 +1,28 @@
+backend:
+  name: github
+  repo: Grigoriy01/GN-print---shop
+  branch: main # Или master, если у тебя ветка так называется
+  client_id: Ov23li9f4BcaOelPZ2X2
+  base_url: https://api.netlify.com
+  auth_endpoint: auth # это значение не меняй
+
+media_folder: "images" # Куда будут складываться загруженные картинки
+public_folder: "/images"
+
+collections:
+  - name: "products"
+    label: "Карточки товаров"
+    label_singular: "Карточка"
+    description: "Управление товарами магазина"
+    folder: ""
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    fields:
+      - { label: "Название", name: "name", widget: "string" }
+      - { label: "Описание", name: "description", widget: "text" }
+      - { label: "Цена", name: "price", widget: "number" }
+      - { label: "Изображение", name: "image", widget: "image" }
+      # Добавь другие поля, если нужны (например, id, категория и т.д.)
 
