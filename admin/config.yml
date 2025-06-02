@@ -1,28 +1,38 @@
-backend:
+sbackend:
   name: github
   repo: Grigoriy01/GN-print---shop
   branch: main # Или master, если у тебя ветка так называется
   client_id: Ov23li9f4BcaOelPZ2X2
   base_url: https://api.netlify.com
   auth_endpoint: auth # это значение не меняй
-
-media_folder: "images" # Куда будут складываться загруженные картинки
-public_folder: "/images"
+media_folder: "assets/images" # Куда будут складываться загруженные картинки
+public_folder: "/assets/images"
 
 collections:
   - name: "products"
-    label: "Карточки товаров"
-    label_singular: "Карточка"
-    description: "Управление товарами магазина"
-    folder: ""
-    create: true
-    slug: "{{slug}}"
-    extension: "json"
-    format: "json"
-    fields:
-      - { label: "Название", name: "name", widget: "string" }
-      - { label: "Описание", name: "description", widget: "text" }
-      - { label: "Цена", name: "price", widget: "number" }
-      - { label: "Изображение", name: "image", widget: "image" }
-      # Добавь другие поля, если нужны (например, id, категория и т.д.)
-
+    label: "Товары"
+    label_singular: "Товар"
+    description: "Список товаров интернет-магазина"
+    files:
+      - file: "products.json"
+        label: "Список товаров"
+        name: "productslist"
+        fields:
+          - { label: "Товары", name: "products", widget: "list", allow_add: true, fields: 
+              [
+                { label: "Slug", name: "slug", widget: "string" },
+                { label: "Название", name: "name", widget: "string" },
+                { label: "Подзаголовок", name: "subtitle", widget: "string", required: false },
+                { label: "Описание", name: "description", widget: "text" },
+                { label: "Цена", name: "price", widget: "number", value_type: "float", min: 0 },
+                { label: "Главное изображение", name: "image", widget: "image" },
+                { label: "Большое изображение", name: "imageLarge", widget: "image", required: false },
+                { label: "Галерея", name: "thumbs", widget: "list", field: { label: "Изображение", name: "thumb", widget: "image" }, required: false },
+                { label: "Характеристики", name: "specs", widget: "list", fields: [
+                    { label: "Название параметра", name: "label", widget: "string" },
+                    { label: "Значение", name: "value", widget: "string" }
+                  ]
+                },
+                { label: "Категория", name: "category", widget: "string" }
+              ]
+            }
