@@ -1,4 +1,4 @@
-sbackend:
+backend:
   name: github
   repo: Grigoriy01/GN-print---shop
   branch: main # Или master, если у тебя ветка так называется
