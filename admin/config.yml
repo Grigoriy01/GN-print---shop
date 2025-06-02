@@ -1,38 +1,13 @@
 backend:
-  name: github
-  repo: Grigoriy01/GN-print---shop
-  branch: main # Или master, если у тебя ветка так называется
-  client_id: Ov23li9f4BcaOelPZ2X2
-  base_url: https://api.netlify.com
-  auth_endpoint: auth # это значение не меняй
-media_folder: "assets/images" 
-public_folder: "/assets/images"
+  name: test-repo
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
 
 collections:
-  - name: "products"
-    label: "Товары"
-    label_singular: "Товар"
-    description: "Список товаров интернет-магазина"
-    files:
-      - file: "products.json"
-        label: "Список товаров"
-        name: "productslist"
-        fields:
-          - { label: "Товары", name: "products", widget: "list", allow_add: true, fields: 
-              [
-                { label: "Slug", name: "slug", widget: "string" },
-                { label: "Название", name: "name", widget: "string" },
-                { label: "Подзаголовок", name: "subtitle", widget: "string", required: false },
-                { label: "Описание", name: "description", widget: "text" },
-                { label: "Цена", name: "price", widget: "number", value_type: "float", min: 0 },
-                { label: "Главное изображение", name: "image", widget: "image" },
-                { label: "Большое изображение", name: "imageLarge", widget: "image", required: false },
-                { label: "Галерея", name: "thumbs", widget: "list", field: { label: "Изображение", name: "thumb", widget: "image" }, required: false },
-                { label: "Характеристики", name: "specs", widget: "list", fields: [
-                    { label: "Название параметра", name: "label", widget: "string" },
-                    { label: "Значение", name: "value", widget: "string" }
-                  ]
-                },
-                { label: "Категория", name: "category", widget: "string" }
-              ]
-            }
+  - name: "test"
+    label: "Test Collection"
+    folder: "content/test"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
