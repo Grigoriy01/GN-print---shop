@@ -5,7 +5,7 @@ sbackend:
   client_id: Ov23li9f4BcaOelPZ2X2
   base_url: https://api.netlify.com
   auth_endpoint: auth # это значение не меняй
-media_folder: "assets/images" # Куда будут складываться загруженные картинки
+media_folder: "assets/images" 
 public_folder: "/assets/images"
 
 collections:
