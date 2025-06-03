@@ -364,7 +364,6 @@ document.addEventListener("submit", (e) => {
 
     const cartItems = JSON.parse(localStorage.getItem("cart") || "[]");
     const discount = parseFloat(localStorage.getItem('cartDiscount')) || 0;
-    const versand = 1;
     let subTotal = cartItems.reduce((sum, item) => sum + item.price * item.qty, 0);
     let finalSum = subTotal + versand - discount;
 
