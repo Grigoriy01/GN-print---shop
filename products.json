@@ -2,46 +2,7 @@
   "lastEdit": "2025-06-07T02:46:32.882Z",
   "comment": "v1 test",
   "products": [
-    {
-      "slug": "damen T-Shirt",
-      "name": "Blumen #6",
-      "subtitle": "",
-      "description": "",
-      "price": "19,99",
-      "image": "assets/images/T-Shirt\\Damen\\T-W-Blume-1/Blume-1-color.webp",
-      "imageLarge": "assets/images/T-Shirt\\Damen\\T-W-Blume-1/Blume-1-color.webp",
-      "thumbs": [
-        "assets/images/T-Shirt\\Damen\\T-W-Blume-1/Blume-2-color.webp",
-        "assets/images/T-Shirt\\Damen\\T-W-Blume-1/Blume-3-color.webp"
-      ],
-      "specs": [
-        {
-          "label": "",
-          "value": ""
-        }
-      ],
-      "category": "damen"
-    },
-    {
-      "slug": "damen T-Shirt",
-      "name": "Blumen #5",
-      "subtitle": "",
-      "description": "",
-      "price": "19,99",
-      "image": "assets/images/T-Shirt\\Damen\\T-W-Blume-1/Blume-1.webp",
-      "imageLarge": "assets/images/T-Shirt\\Damen\\T-W-Blume-1/Blume-1.webp",
-      "thumbs": [
-        "assets/images/T-Shirt\\Damen\\T-W-Blume-1/Blume-1-1.webp",
-        "assets/images/T-Shirt\\Damen\\T-W-Blume-1/Blume-1-2.webp"
-      ],
-      "specs": [
-        {
-          "label": "",
-          "value": ""
-        }
-      ],
-      "category": "damen"
-    },
+    
     {
       "slug": "herren-T-Shirt-Black-Unnamed",
       "name": "Observer/Unnamed",
