@@ -262,7 +262,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   fetch("products.json")
     .then(r => r.json())
-    .then(products => {
+    .then(data => {
+      // 1) определяем, что пришло: чистый массив или объект с { products, lastEdit, comment }
+      const products = Array.isArray(data)
+        ? data
+        : (data.products || []);
+      const { lastEdit, comment } = (!Array.isArray(data) ? data : {});
+
+      // (опционально) вывести метаданные куда-нибудь в шапку/футер
+      if (lastEdit || comment) {
+        const info = document.getElementById("versionInfo");
+        if (info) info.textContent = `${comment || ""} (${new Date(lastEdit).toLocaleString()})`;
+      }
       const prod = products.find(p => p.slug === slug);
       if (!prod) {
         const container = document.querySelector(".product-detail-container");
@@ -322,6 +333,7 @@ document.addEventListener("DOMContentLoaded", () => {
         thumb.addEventListener("click", () => {
           document.querySelector(".gallery-main").src = thumb.src;
         });
+        
       });
 
       const selectEl = document.getElementById("sizeSelect");
@@ -352,6 +364,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("cartPanel").classList.add("visible");
       });
     });
+    
 });
 
 document.addEventListener("submit", (e) => {

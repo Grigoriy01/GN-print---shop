@@ -2,9 +2,12 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("🛠 products.js запущен");
 
-  fetch("products.json")
+   fetch("products.json")
     .then(res => res.json())
-    .then(products => {
+    .then(data => {
+      const products = Array.isArray(data)
+         ? data
+         : (data.products || []);
       // Лог всех контейнеров
       const allContainers = document.querySelectorAll(".gallery__grid");
       console.log("Найдено секций .gallery__grid:", allContainers.length);

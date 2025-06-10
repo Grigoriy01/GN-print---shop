@@ -1,6 +1,47 @@
-
- [
-    
+{
+  "lastEdit": "2025-06-10T16:28:47.058Z",
+  "comment": "+damen_schmett. color",
+  "products": [
+    {
+      "slug": "damen T-Shirt",
+      "name": "Blumen #6",
+      "subtitle": "",
+      "description": "",
+      "price": "19,99",
+      "image": "assets/images/T-Shirt\\Damen\\T-W-Blume-1/Blume-1-color.webp",
+      "imageLarge": "assets/images/T-Shirt\\Damen\\T-W-Blume-1/Blume-1-color.webp",
+      "thumbs": [
+        "assets/images/T-Shirt\\Damen\\T-W-Blume-1/Blume-2-color.webp",
+        "assets/images/T-Shirt\\Damen\\T-W-Blume-1/Blume-3-color.webp"
+      ],
+      "specs": [
+        {
+          "label": "",
+          "value": ""
+        }
+      ],
+      "category": "damen"
+    },
+    {
+      "slug": "damen T-Shirt",
+      "name": "Blumen #5",
+      "subtitle": "",
+      "description": "",
+      "price": "19,99",
+      "image": "assets/images/T-Shirt\\Damen\\T-W-Blume-1/Blume-1.webp",
+      "imageLarge": "assets/images/T-Shirt\\Damen\\T-W-Blume-1/Blume-1.webp",
+      "thumbs": [
+        "assets/images/T-Shirt\\Damen\\T-W-Blume-1/Blume-1-1.webp",
+        "assets/images/T-Shirt\\Damen\\T-W-Blume-1/Blume-1-2.webp"
+      ],
+      "specs": [
+        {
+          "label": "",
+          "value": ""
+        }
+      ],
+      "category": "damen"
+    },
     {
       "slug": "herren-T-Shirt-Black-Unnamed",
       "name": "Observer/Unnamed",
@@ -493,7 +534,7 @@
     },
     {
       "slug": "damen-T-Shirt-Black",
-      "name": "damen-T-Shirt-Black",
+      "name": "Blume und ",
       "description": "Klassisches Damen-T-Shirt aus 100% Baumwolle",
       "price": 19.99,
       "image": "assets\\images\\T-Shirt\\Damen\\T-B-Blum mit schmet/bild-1.webp",
@@ -800,5 +841,63 @@
         }
       ],
       "category": "tassen"
+    },
+    {
+      "slug": "damen-T-Shirt-White",
+      "name": "Blumen und Schmetterling_color",
+      "description": "Klassisches Damen-T-Shirt aus 100% Baumwolle",
+      "price": 21.99,
+      "image": "assets\\images\\T-Shirt\\Damen\\T-W-Blum mit schmet\\Color/1.webp",
+      "imageLarge": "assets\\images\\T-Shirt\\Damen\\T-W-Blum mit schmet\\Color/1.webp",
+      "thumbs": [
+        "assets\\images\\T-Shirt\\Damen\\T-W-Blum mit schmet\\Color/2.webp",
+        "assets\\images\\T-Shirt\\Damen\\T-W-Blum mit schmet\\Color/3.webp",
+        "assets\\images\\T-Shirt\\Damen\\T-W-Blum mit schmet\\Color/4.webp",
+        "assets\\images\\T-Shirt\\Damen\\T-W-Blum mit schmet\\Color/5.webp"
+      ],
+      "specs": [
+        {
+          "label": "Material",
+          "value": "Baumwolle 100%"
+        },
+        {
+          "label": "Schnitt",
+          "value": "Regular Fit"
+        },
+        {
+          "label": "Verfügbarkeit",
+          "value": "S, M, L, XL"
+        }
+      ],
+      "category": "damen"
+    },
+    {
+      "slug": "damen-T-Shirt-Black",
+      "name": "Blumen und Schmetterling_color",
+      "description": "Klassisches Damen-T-Shirt aus 100% Baumwolle",
+      "price": 19.99,
+      "image": "assets\\images\\T-Shirt\\Damen\\T-B-Blum mit schmet\\Color/1.webp",
+      "imageLarge": "assets\\images\\T-Shirt\\Daassets\\images\\T-Shirt\\Damen\\T-B-Blum mit schmet\\Color/1.webpmen\\T-B-Blum mit schmet/bild-1.webp",
+      "thumbs": [
+        "assets\\images\\T-Shirt\\Damen\\T-B-Blum mit schmet\\Color/2.webp",
+        "assets\\images\\T-Shirt\\Damen\\T-B-Blum mit schmet\\Color/3.webp",
+        "assets\\images\\T-Shirt\\Damen\\T-B-Blum mit schmet\\Color/4.webp"
+      ],
+      "specs": [
+        {
+          "label": "Material",
+          "value": "Baumwolle 100%"
+        },
+        {
+          "label": "Schnitt",
+          "value": "Regular Fit"
+        },
+        {
+          "label": "Verfügbarkeit",
+          "value": "S, M, L, XL"
+        }
+      ],
+      "category": "damen"
     }
   ]
+}
