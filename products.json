@@ -1,13 +1,13 @@
 {
-  "lastEdit": "2025-06-10T16:28:47.058Z",
-  "comment": "+damen_schmett. color",
+  "lastEdit": "2025-06-10T16:42:06.164Z",
+  "comment": "+damen_price redaktieren",
   "products": [
     {
       "slug": "damen T-Shirt",
       "name": "Blumen #6",
       "subtitle": "",
       "description": "",
-      "price": "19,99",
+      "price": "20.99",
       "image": "assets/images/T-Shirt\\Damen\\T-W-Blume-1/Blume-1-color.webp",
       "imageLarge": "assets/images/T-Shirt\\Damen\\T-W-Blume-1/Blume-1-color.webp",
       "thumbs": [
@@ -565,7 +565,7 @@
       "slug": "damen-T-Shirt-Black",
       "name": "damen-T-Shirt-Black_color",
       "description": "Klassisches Damen-T-Shirt aus 100% Baumwolle",
-      "price": 19.99,
+      "price": "20.99",
       "image": "assets\\images\\T-Shirt\\Damen\\T-B-Blume-1/Blumen-1-color.webp",
       "imageLarge": "assets\\images\\T-Shirt\\Damen\\T-B-Blume-1/Blumen-1-color.webp",
       "thumbs": [
@@ -846,7 +846,7 @@
       "slug": "damen-T-Shirt-White",
       "name": "Blumen und Schmetterling_color",
       "description": "Klassisches Damen-T-Shirt aus 100% Baumwolle",
-      "price": 21.99,
+      "price": "20.99",
       "image": "assets\\images\\T-Shirt\\Damen\\T-W-Blum mit schmet\\Color/1.webp",
       "imageLarge": "assets\\images\\T-Shirt\\Damen\\T-W-Blum mit schmet\\Color/1.webp",
       "thumbs": [
@@ -875,7 +875,7 @@
       "slug": "damen-T-Shirt-Black",
       "name": "Blumen und Schmetterling_color",
       "description": "Klassisches Damen-T-Shirt aus 100% Baumwolle",
-      "price": 19.99,
+      "price": "20.99",
       "image": "assets\\images\\T-Shirt\\Damen\\T-B-Blum mit schmet\\Color/1.webp",
       "imageLarge": "assets\\images\\T-Shirt\\Daassets\\images\\T-Shirt\\Damen\\T-B-Blum mit schmet\\Color/1.webpmen\\T-B-Blum mit schmet/bild-1.webp",
       "thumbs": [
