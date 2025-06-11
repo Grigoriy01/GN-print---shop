@@ -1,4 +1,32 @@
 const versand = 4.90;
+function showOverlaySpinner(text = "") {
+  if (document.getElementById('overlay-loading')) return;
+  const overlay = document.createElement("div");
+  overlay.className = "overlay-loading";
+  overlay.id = "overlay-loading";
+  overlay.innerHTML = `<div>
+    <div class="spinner"></div>
+    <div style="text-align:center;color:#23272f;font-size:1.11rem;margin-top:13px;">${text}</div>
+  </div>`;
+  document.body.appendChild(overlay);
+}
+function hideOverlaySpinner() {
+  const overlay = document.getElementById('overlay-loading');
+  if (overlay) overlay.remove();
+}
+
+function showInlineSpinner(el) {
+  if (el.nextSibling && el.nextSibling.classList && el.nextSibling.classList.contains('spinner-inline')) return;
+  const spin = document.createElement('span');
+  spin.className = "spinner spinner-inline";
+  el.parentNode.insertBefore(spin, el.nextSibling);
+}
+function hideInlineSpinner(el) {
+  if (el.nextSibling && el.nextSibling.classList && el.nextSibling.classList.contains('spinner-inline')) {
+    el.nextSibling.remove();
+  }
+}
+
 // === Тост для уведомлений
 function showToast(message) {
   const t = document.createElement("div");
@@ -337,9 +365,17 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       const selectEl = document.getElementById("sizeSelect");
+      selectEl.disabled = true;
+      let sizeSpinnerTimeout = setTimeout(() => showInlineSpinner(selectEl), 400); // если дольше 0.4 сек, только тогда покажет спиннер
       fetch(`https://script.google.com/macros/s/AKfycbzXCPYfYM6ElYClBLPov7avnncE4DVYDj1hQPFenXCkpGQlLOndyjG9aSolqoeQXRkq/exec?slug=${slug}`)
         .then(r => r.json())
         .then(data => {
+            clearTimeout(sizeSpinnerTimeout);
+            hideInlineSpinner(selectEl);
+            selectEl.disabled = false;
+            selectEl.innerHTML = `<option value="" disabled selected>Größe wählen</option>` +
+              data.sizes.map(s => `<option value="${s.name}" ${s.available ? "" : "disabled"}>${s.name}</option>`).join("");
+
           selectEl.innerHTML = `<option value="" disabled selected>Größe wählen</option>` +
             data.sizes.map(s => `<option value="${s.name}" ${s.available ? "" : "disabled"}>${s.name}</option>`).join("");
         });
@@ -425,6 +461,9 @@ document.addEventListener("submit", (e) => {
 
     // Кнопка "Bezahlen"
     panel.querySelector(".pay-btn").addEventListener("click", () => {
+        const payBtn = panel.querySelector(".pay-btn");
+        payBtn.disabled = true;
+        showOverlaySpinner("Bitte warten Sie, Ihre Bestellung wird verarbeitet...");
       const payload = {
         orderId: orderId,
         products: itemsHtml.replace(/<br>/g, "; "),
@@ -459,12 +498,19 @@ document.addEventListener("submit", (e) => {
           const paypalURL = `https://paypal.me/GrigoriyNikitenko/${finalSum.toFixed(2)}`;
           window.location.replace(paypalURL);
         } else {
-          showToast("❌ Fehler beim Speichern. Bitte später versuchen.");
+            hideOverlaySpinner();
+            payBtn.disabled = false;
+            showToast("❌ Fehler beim Speichern. Bitte später versuchen.");
         }
       })
       .catch(err => {
+        hideOverlaySpinner();
+        payBtn.disabled = false;
         showToast("❌ Verbindung fehlgeschlagen (Proxy).");
         console.error("Proxy-Fehler:", err);
+        clearTimeout(sizeSpinnerTimeout);
+        hideInlineSpinner(selectEl);
+        selectEl.disabled = false;
       });
     });
   }
