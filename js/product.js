@@ -27,6 +27,40 @@ function hideInlineSpinner(el) {
   }
 }
 
+function showOrderInfoOverlay(callback) {
+  if (document.getElementById('overlay-info-block')) return;
+  // Блюрим только правую панель, если хочешь — можешь заменить 'body'
+  const mainContainer = document.getElementById('confirmPanel');
+  if (mainContainer) mainContainer.classList.add('info-blur-bg');
+  const infoHTML = `
+    <div class="info-title">Hinweis</div>
+    <div class="info-text">
+      Falls beim Wechsel zu PayPal der Betrag nicht automatisch erscheint,<br>
+      geben Sie diesen bitte manuell ein.<br>
+      <span style="opacity:.7;">Dies kann bei der Zahlung über die PayPal-App auf Mobilgeräten vorkommen.</span>
+    </div>
+    <button class="info-ok-btn">OK</button>
+  `;
+  const overlay = document.createElement('div');
+  overlay.id = 'overlay-info-block';
+  overlay.className = 'overlay-info-block';
+  overlay.innerHTML = infoHTML;
+  document.body.appendChild(overlay);
+  document.body.style.overflow = 'hidden';
+  overlay.querySelector('.info-ok-btn').onclick = function() {
+    overlay.classList.add('info-hide');
+    overlay.style.transition = 'opacity .22s';
+    overlay.style.opacity = '0';
+    setTimeout(() => {
+      overlay.remove();
+      if (mainContainer) mainContainer.classList.remove('info-blur-bg');
+      document.body.style.overflow = '';
+      if (typeof callback === 'function') callback();
+    }, 190);
+  };
+}
+
+
 // === Тост для уведомлений
 function showToast(message) {
   const t = document.createElement("div");
@@ -450,6 +484,8 @@ document.addEventListener("submit", (e) => {
     panel.classList.remove("hidden");
     panel.classList.add("visible");
     panel.scrollTo({ top: 0, behavior: "instant" });
+
+    showOrderInfoOverlay();
 
     // Обе кнопки "←"
     panel.querySelectorAll(".back-btn").forEach(btn => {
