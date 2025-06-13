@@ -1,17 +1,16 @@
 {
-  "lastEdit": "2025-06-12T12:26:31.527Z",
-  "comment": "t-herr-redakt",
+  "lastEdit": "2025-06-13T03:00:30.167Z",
+  "comment": "++damen foto v.1",
   "products": [
     {
-      "slug": "damen T-Shirt",
-      "name": "Blumen #6",
-      "subtitle": "",
-      "description": "",
+      "slug": "damen T-Shirt_Blumen #1_color",
+      "name": "Blumen #1_color",
+      "subtitle": "Damen Weiß T-Shirt",
+      "description": "Tailliertes Damen T-Shirt aus 100% Baumvolle",
       "price": "20.99",
-      "image": "assets/images/T-Shirt\\Damen\\T-W-Blume-1/Blume-1-color.webp",
-      "imageLarge": "assets/images/T-Shirt\\Damen\\T-W-Blume-1/Blume-1-color.webp",
+      "image": "assets\\images\\T-Shirt\\Damen\\T-W-Blume-1/Blume-1-color.webp",
+      "imageLarge": "assets\\images\\T-Shirt\\Damen\\T-W-Blume-1/Blume-2-color.webp",
       "thumbs": [
-        "assets/images/T-Shirt\\Damen\\T-W-Blume-1/Blume-2-color.webp",
         "assets/images/T-Shirt\\Damen\\T-W-Blume-1/Blume-3-color.webp"
       ],
       "specs": [
@@ -25,8 +24,8 @@
     {
       "slug": "damen T-Shirt",
       "name": "Blumen #5",
-      "subtitle": "",
-      "description": "",
+      "subtitle": "Damen Weiß T-Shirt",
+      "description": "Tailliertes Damen T-Shirt aus 100% Baumvolle",
       "price": "19,99",
       "image": "assets/images/T-Shirt\\Damen\\T-W-Blume-1/Blume-1.webp",
       "imageLarge": "assets/images/T-Shirt\\Damen\\T-W-Blume-1/Blume-1.webp",
@@ -46,7 +45,7 @@
       "slug": "herren-T-Shirt-Black-Unnamed",
       "name": "Observer/Unnamed",
       "subtitle": "Du kennst ihn nicht. Aber er kennt dich schon",
-      "description": "Klassisches Herren-T-Shirt",
+      "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
       "price": 19.99,
       "image": "assets/images/T-Shirt/Cap/Cap-3.webp",
       "imageLarge": "assets/images/T-Shirt/Cap/Cap-3.webp",
@@ -536,7 +535,8 @@
     {
       "slug": "damen-T-Shirt-Black",
       "name": "Blume und ",
-      "description": "Klassisches Damen-T-Shirt aus 100% Baumwolle",
+      "subtitle": "Damen schwarz T-Shirt",
+      "description": "Tailliertes Damen T-Shirt aus 100% Baumvolle",
       "price": 19.99,
       "image": "assets\\images\\T-Shirt\\Damen\\T-B-Blum mit schmet/bild-1.webp",
       "imageLarge": "assets\\images\\T-Shirt\\Damen\\T-B-Blum mit schmet/bild-1.webp",
@@ -565,7 +565,8 @@
     {
       "slug": "damen-T-Shirt-Black",
       "name": "damen-T-Shirt-Black_color",
-      "description": "Klassisches Damen-T-Shirt aus 100% Baumwolle",
+      "subtitle": "Damen schwarz T-Shirt",
+      "description": "Tailliertes Damen T-Shirt aus 100% Baumvolle",
       "price": "20.99",
       "image": "assets\\images\\T-Shirt\\Damen\\T-B-Blume-1/Blumen-1-color.webp",
       "imageLarge": "assets\\images\\T-Shirt\\Damen\\T-B-Blume-1/Blumen-1-color.webp",
@@ -593,7 +594,8 @@
     {
       "slug": "damen-T-Shirt-Black",
       "name": "Free Spirit",
-      "description": "Klassisches Damen-T-Shirt aus 100% Baumwolle",
+      "subtitle": "Damen schwarz T-Shirt",
+      "description": "Tailliertes Damen T-Shirt aus 100% Baumvolle",
       "price": 19.99,
       "image": "assets/images/T-Shirt\\Damen\\T-B-Free spirit/bild-1.webp",
       "imageLarge": "assets/images/T-Shirt\\Damen\\T-B-Free spirit/bild-1.webp",
@@ -624,7 +626,7 @@
     {
       "slug": "damen-T-Shirt-White",
       "name": "Blumen und Schmetterling #3",
-      "description": "Klassisches Damen-T-Shirt aus 100% Baumwolle",
+      "description": "Tailliertes Damen T-Shirt aus 100% Baumvolle",
       "price": 19.99,
       "image": "assets/images/T-Shirt\\Damen\\T-W-Blum mit schmet/bild-1.webp",
       "imageLarge": "assets/images/T-Shirt\\Damen\\T-W-Blum mit schmet/bild-1.webp",
@@ -648,12 +650,13 @@
           "value": "S, M, L, XL"
         }
       ],
-      "category": "damen"
+      "category": "damen",
+      "subtitle": "Damen Weiß T-Shirt"
     },
     {
       "slug": "damen-T-Shirt-White",
       "name": "Blumen und Schmetterling #4",
-      "description": "Klassisches Damen-T-Shirt aus 100% Baumwolle",
+      "description": "Tailliertes Damen T-Shirt aus 100% Baumvolle",
       "price": 19.99,
       "image": "assets/images/T-Shirt\\Damen\\T-W-Blum mit schmet/bild-2.webp",
       "imageLarge": "assets/images/T-Shirt\\Damen\\T-W-Blum mit schmet/bild-2.webp",
@@ -675,7 +678,8 @@
           "value": "S, M, L, XL"
         }
       ],
-      "category": "damen"
+      "category": "damen",
+      "subtitle": "Damen Weiß T-Shirt"
     },
     {
       "slug": "tassen-White",
@@ -846,7 +850,7 @@
     {
       "slug": "damen-T-Shirt-White",
       "name": "Blumen und Schmetterling_color",
-      "description": "Klassisches Damen-T-Shirt aus 100% Baumwolle",
+      "description": "Tailliertes Damen T-Shirt aus 100% Baumvolle",
       "price": "20.99",
       "image": "assets\\images\\T-Shirt\\Damen\\T-W-Blum mit schmet\\Color/1.webp",
       "imageLarge": "assets\\images\\T-Shirt\\Damen\\T-W-Blum mit schmet\\Color/1.webp",
@@ -870,12 +874,13 @@
           "value": "S, M, L, XL"
         }
       ],
-      "category": "damen"
+      "category": "damen",
+      "subtitle": "Damen Weiß T-Shirt"
     },
     {
       "slug": "damen-T-Shirt-Black",
       "name": "Blumen und Schmetterling_color",
-      "description": "Klassisches Damen-T-Shirt aus 100% Baumwolle",
+      "description": "Tailliertes Damen T-Shirt aus 100% Baumvolle",
       "price": "20.99",
       "image": "assets\\images\\T-Shirt\\Damen\\T-B-Blum mit schmet\\Color/1.webp",
       "imageLarge": "assets\\images\\T-Shirt\\Daassets\\images\\T-Shirt\\Damen\\T-B-Blum mit schmet\\Color/1.webpmen\\T-B-Blum mit schmet/bild-1.webp",
@@ -896,6 +901,86 @@
         {
           "label": "Verfügbarkeit",
           "value": "S, M, L, XL"
+        }
+      ],
+      "category": "damen",
+      "subtitle": "Damen schwarz T-Shirt"
+    },
+    {
+      "slug": "damen-T-Shirt-White",
+      "name": "Schmetterling_color",
+      "description": "Tailliertes Damen T-Shirt aus 100% Baumvolle",
+      "price": "20.99",
+      "image": "assets\\images\\T-Shirt\\Damen\\T-W-schmett_color/1.webp",
+      "imageLarge": "assets\\images\\T-Shirt\\Damen\\T-W-schmett_color/1.webp",
+      "thumbs": [
+        "assets\\images\\T-Shirt\\Damen\\T-W-schmett_color/2.webp",
+        "assets\\images\\T-Shirt\\Damen\\T-W-schmett_color/3.webp",
+        "assets\\images\\T-Shirt\\Damen\\T-W-schmett_color/4.webp"
+      ],
+      "specs": [
+        {
+          "label": "Material",
+          "value": "Baumwolle 100%"
+        },
+        {
+          "label": "Schnitt",
+          "value": "Regular Fit"
+        },
+        {
+          "label": "Verfügbarkeit",
+          "value": "S, M, L, XL"
+        }
+      ],
+      "category": "damen",
+      "subtitle": "Damen Weiß T-Shirt"
+    },
+    {
+      "slug": "damen-T-Shirt-Black",
+      "name": "Schmetterling_color",
+      "description": "Tailliertes Damen T-Shirt aus 100% Baumvolle",
+      "price": "20.99",
+      "image": "assets\\images\\T-Shirt\\Damen\\T-B-schmett_color/1.webp",
+      "imageLarge": "assets\\images\\T-Shirt\\Damen\\T-B-schmett_color/1.webp",
+      "thumbs": [
+        "assets\\images\\T-Shirt\\Damen\\T-B-schmett_color/2.webp",
+        "assets\\images\\T-Shirt\\Damen\\T-B-schmett_color/3.webp",
+        "assets\\images\\T-Shirt\\Damen\\T-B-schmett_color/4.webp",
+        "assets\\images\\T-Shirt\\Damen\\T-B-schmett_color/5.webp"
+      ],
+      "specs": [
+        {
+          "label": "Material",
+          "value": "Baumwolle 100%"
+        },
+        {
+          "label": "Schnitt",
+          "value": "Regular Fit"
+        },
+        {
+          "label": "Verfügbarkeit",
+          "value": "S, M, L, XL"
+        }
+      ],
+      "category": "damen",
+      "subtitle": "Damen schwarz T-Shirt"
+    },
+    {
+      "slug": "damen T-Shirt_Blumen #2_color",
+      "name": "Blumen #2_color",
+      "subtitle": "Damen Weiß T-Shirt",
+      "description": "Tailliertes Damen T-Shirt aus 100% Baumvolle",
+      "price": "20.99",
+      "image": "assets\\images\\T-Shirt\\Damen\\T-W-Blume-1/Blume-2-1-color.webp",
+      "imageLarge": "assets\\images\\T-Shirt\\Damen\\T-W-Blume-1/Blume-2-1-color.webp",
+      "thumbs": [
+        "assets\\images\\T-Shirt\\Damen\\T-W-Blume-1/Blume-2-2-color.webp",
+        "assets\\images\\T-Shirt\\Damen\\T-W-Blume-1/Blume-2-color.webp"
+      ],
+      "specs": [
+        {
+          "label": "",
+          "value": ""
         }
       ],
       "category": "damen"
