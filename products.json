@@ -1,6 +1,6 @@
 {
-  "lastEdit": "2025-06-15T11:12:31.116Z",
-  "comment": "slug ändern",
+  "lastEdit": "2025-06-15T16:34:52.416Z",
+  "comment": "fotos tassen ++",
   "products": [
     {
       "slug": "damen t-shirt-white",
@@ -683,13 +683,14 @@
     },
     {
       "slug": "tasse-white",
-      "name": "Bodybilder_popart-komix",
-      "description": "Witzige Comic-Tasse für Fitnessfans – bringt gute Laune in dein Training! Klassische, runde Form aus weißer Keramik, brillanter Druck mit hoher Farbtreue. Spülmaschinenfest und alltagstauglich – ideal fürs Büro, Zuhause oder als Geschenk.",
+      "name": "Verliebte Katze",
+      "description": "Diese klassische Keramiktasse bringt mit ihrem verspielten Katzenmotiv und leuchtenden Farben sofort gute Laune. Ob als Geschenk oder zum Selbstverwöhnen – ein echter Hingucker für Katzenfreunde und Romantiker. Hochwertiger Sublimationsdruck auf weißer Tasse, spülmaschinenfest und alltagstauglich.",
       "price": 11.99,
-      "image": "assets\\images\\Tasse/bodybilder-1-1.webp",
-      "imageLarge": "assets\\images\\Tasse/bodybilder-1-1.webp",
+      "image": "assets\\images\\Tasse/cat_black-1-1.webp",
+      "imageLarge": "assets\\images\\Tasse/cat_black-1-1.webp",
       "thumbs": [
-        "assets\\images\\Tasse/bodybilder-1.webp"
+        "assets\\images\\Tasse/cat_black-1.webp",
+        "assets\\images\\Tasse/cat_black-1-2.webp"
       ],
       "specs": [
         {
@@ -702,146 +703,26 @@
         }
       ],
       "category": "tassen",
+      "subtitle": "Süß, frech & bereit zu schnurren"
+    },
+    {
+      "slug": "tasse-white",
+      "name": "Bodybilder_popart-komix",
+      "description": "Witzige Comic-Tasse für Fitnessfans – bringt gute Laune in dein Training! Klassische, runde Form aus weißer Keramik, brillanter Druck mit hoher Farbtreue. Spülmaschinenfest und alltagstauglich – ideal fürs Büro, Zuhause oder als Geschenk",
+      "price": 11.99,
+      "image": "assets\\images\\Tasse/bodybilder-1-1.webp",
+      "imageLarge": "assets\\images\\Tasse/bodybilder-1-1.webp",
+      "thumbs": [
+        "assets\\images\\Tasse/bodybilder-1.webp"
+      ],
+      "specs": [
+        {
+          "label": "Material",
+          "value": "tassen-White"
+        }
+      ],
+      "category": "tassen",
       "subtitle": "Dein täglicher Trainingspartner mit Humor!"
-    },
-    {
-      "slug": "tasse-white",
-      "name": "tassen-White",
-      "description": "tassen-White",
-      "price": 11.99,
-      "image": "assets/images/Tasse/bild-3.webp",
-      "imageLarge": "assets/images/Tasse/bild-3.webp",
-      "thumbs": [
-        "assets/images/Tasse/bild-3-1.webp",
-        "assets/images/Tasse/bild-3-2.webp"
-      ],
-      "specs": [
-        {
-          "label": "Material",
-          "value": "tassen-White"
-        },
-        {
-          "label": "Schnitt",
-          "value": ""
-        },
-        {
-          "label": "Verfügbarkeit",
-          "value": ""
-        }
-      ],
-      "category": "tassen"
-    },
-    {
-      "slug": "tasse-white",
-      "name": "tassen-White",
-      "description": "tassen-White",
-      "price": 11.99,
-      "image": "assets/images/Tasse/bodybilder-1.webp",
-      "imageLarge": "assets/images/Tasse/bodybilder-1.webp",
-      "thumbs": [
-        "assets/images/Tasse/bodybilder-2.webp",
-        "assets/images/Tasse/bodybilder-2.webp",
-        "assets/images/Tasse/bodybilder-2.webp"
-      ],
-      "specs": [
-        {
-          "label": "Material",
-          "value": "tassen-White"
-        },
-        {
-          "label": "Schnitt",
-          "value": ""
-        },
-        {
-          "label": "Verfügbarkeit",
-          "value": ""
-        }
-      ],
-      "category": "tassen"
-    },
-    {
-      "slug": "tasse-white",
-      "name": "tassen-White",
-      "description": "tassen-White",
-      "price": 11.99,
-      "image": "assets/images/Tasse/Frau freundin.webp",
-      "imageLarge": "assets/images/Tasse/Frau freundin.webp",
-      "thumbs": [
-        "assets/images/Tasse/Frau freundin.webp",
-        "assets/images/Tasse/Frau freundin.webp",
-        "assets/images/Tasse/Frau freundin.webp"
-      ],
-      "specs": [
-        {
-          "label": "Material",
-          "value": "tassen-White"
-        },
-        {
-          "label": "Schnitt",
-          "value": ""
-        },
-        {
-          "label": "Verfügbarkeit",
-          "value": ""
-        }
-      ],
-      "category": "tassen"
-    },
-    {
-      "slug": "tasse-white",
-      "name": "tassen-White",
-      "description": "tassen-White",
-      "price": 11.99,
-      "image": "assets/images/Tasse/moto-1.webp",
-      "imageLarge": "assets/images/Tasse/moto-1.webp",
-      "thumbs": [
-        "assets/images/Tasse/moto-1.webp",
-        "assets/images/Tasse/moto-2.webp",
-        "assets/images/Tasse/moto-1.webp"
-      ],
-      "specs": [
-        {
-          "label": "Material",
-          "value": "tassen-White"
-        },
-        {
-          "label": "Schnitt",
-          "value": ""
-        },
-        {
-          "label": "Verfügbarkeit",
-          "value": ""
-        }
-      ],
-      "category": "tassen"
-    },
-    {
-      "slug": "tasse-white",
-      "name": "tassen-White",
-      "description": "tassen-White",
-      "price": 11.99,
-      "image": "assets/images/Tasse/paar-1.webp",
-      "imageLarge": "assets/images/Tasse/paar-1.webp",
-      "thumbs": [
-        "assets/images/Tasse/paar-1.webp",
-        "assets/images/Tasse/paar-1.webp",
-        "assets/images/Tasse/paar-1.webp"
-      ],
-      "specs": [
-        {
-          "label": "Material",
-          "value": "tassen-White"
-        },
-        {
-          "label": "Schnitt",
-          "value": ""
-        },
-        {
-          "label": "Verfügbarkeit",
-          "value": ""
-        }
-      ],
-      "category": "tassen"
     },
     {
       "slug": "damen t-shirt-white",
@@ -980,6 +861,25 @@
         }
       ],
       "category": "damen"
+    },
+    {
+      "slug": "tasse-white",
+      "name": "Mister Moustache",
+      "description": "Witzige Tasse mit markantem Schnurrbart und subtiler Botschaft für echte Gentlemen. Ideal für den Mann mit Stil oder als humorvolles Geschenk zum Vatertag, Geburtstag oder Büro. Weiße, klassische Keramiktasse mit langlebigem Sublimationsdruck – spülmaschinenfest und alltagstauglich",
+      "price": 11.99,
+      "image": "assets\\images\\Tasse/F_T-1.webp",
+      "imageLarge": "assets\\images\\Tasse/F_T-1.webp",
+      "thumbs": [
+        "assets\\images\\Tasse/F_T-1-2.webp"
+      ],
+      "specs": [
+        {
+          "label": "Material",
+          "value": "tassen-White"
+        }
+      ],
+      "category": "tassen",
+      "subtitle": "Kein Held – aber immer zur Stelle"
     }
   ]
 }
