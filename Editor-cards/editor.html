@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>GN Produkte Editor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Шрифты и иконки -->
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <style>
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #676767;
+      color: #23272f;
+    }
+    .header {
+      padding: 18px 20px;
+      background: #171c22;
+      color: #fff;
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      box-shadow: 0 2px 6px #0001;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .header .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .header .logo .ti {
+      font-size: 2rem;
+      color: #70be4b;
+    }
+    .toolbar {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+    .toolbar button, .toolbar label {
+      background: #70be4b;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 18px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.14s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .toolbar button:hover, .toolbar label:hover {
+      background: #57a036;
+    }
+    .toolbar input[type="file"] {
+      display: none;
+    }
+    .main {
+      max-width: 1200px;
+      margin: 36px auto 0;
+      padding: 0 16px 80px 16px;
+    }
+    .categories {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+    .category-btn {
+      background: #fff;
+      color: #70be4b;
+      border: 2px solid #70be4b;
+      border-radius: 10px;
+      padding: 8px 22px;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.14s;
+      margin-bottom: 5px;
+    }
+    .category-btn.active, .category-btn:hover {
+      background: #70be4b;
+      color: #fff;
+      box-shadow: 0 2px 8px #70be4b22;
+    }
+    #product-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      min-height: 80px;
+    }
+    .product-card {
+      background: #b5b9c5;
+      border-radius: 18px;
+      box-shadow: 0 2px 10px #23272f0a;
+      width: 320px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      position: relative;
+      transition: box-shadow 0.16s;
+      height: 400px;   /* или другое подходящее значение */
+      min-height: 400px;
+      max-height: 440px;
+      /* overflow-y: auto;   Если нужен скролл внутри, раскомментируй */
+    }
+    .product-card:hover {
+      box-shadow: 0 8px 30px #70be4b22;
+    }
+    .product-img {
+      width: 100%;
+      height: 85px;
+      background: #e8eaf0;
+      border-radius: 7px;
+      object-fit: contain;
+      display: block;
+      margin-bottom: 5px;
+      box-shadow: 0 2px 8px #0002;
+    }
+    .product-title {
+      font-size: 0.99rem;
+      margin-bottom: 2px;
+      max-height: 30px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .product-subtitle {
+        font-size: 0.88rem;
+        margin-bottom: 3px;
+        max-height: 22px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .product-price {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #38a138;
+      margin-bottom: 2px;
+    }
+    .product-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: auto;
+    }
+    .product-actions button {
+      background: #f2f5fa;
+      color: #23272f;
+      border: none;
+      border-radius: 6px;
+      padding: 5px 7px;
+      font-size: 0.92rem;
+      cursor: pointer;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      transition: background 0.12s;
+    }
+    .product-actions button:hover {
+      background: #70be4b;
+      color: #fff;
+    }
+    .version-info {
+      margin-top: 32px;
+      font-size: 0.97rem;
+      color: #999;
+      background: #f1f7ee;
+      border-radius: 8px;
+      padding: 10px 18px;
+      max-width: 440px;
+    }
+
+        #product-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      min-height: 80px;
+      align-items: stretch;
+    }
+
+    .product-card  {
+      background: #b5b9c5;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px #23272f0a;
+      width: 220px;
+      height: 330px;
+      min-height: 330px;
+      max-height: 330px;
+      padding: 11px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: box-shadow 0.16s;
+      overflow: hidden;
+      box-sizing: border-box;
+
+    }
+    .thumbs-gallery {
+      display: flex;
+      gap: 4px;
+      max-height: 50px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      margin-bottom: 3px;
+      width: 100px;
+      height: 50px;
+      border-radius: 5px;
+      object-fit: cover;
+      align-items: end;
+    }
+
+    .product-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: auto;
+      justify-content: center;
+    }
+
+
+    .version-info strong { color: #23272f; }
+    @media (max-width: 900px) {
+      .product-card { width: 97vw; }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <span class="logo">
+      <i class="ti ti-edit"></i> GN Produkte Editor
+    </span>
+    <div class="toolbar">
+      <label>
+        <i class="ti ti-download"></i> Importieren
+        <input type="file" id="import-json" accept=".json">
+      </label>
+      <button type="button" id="export-json"><i class="ti ti-upload"></i>Exportieren </button>
+    </div>
+  </div>
+  <div class="main">
+    <div class="categories" id="category-bar"></div>
+    <div id="product-list"></div>
+    <div class="version-info" id="version-info" style="display:none"></div>
+  </div>
+  <script>
+  // --- Основные переменные ---
+  let products = [];
+  let categories = [];
+  let currentCategory = '';
+  let versionData = { lastEdit: '', comment: '' };
+  let selectedProducts = [];
+  let templateBtn;
+   
+  // --- Импорт JSON ---
+  document.getElementById('import-json').addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = function(evt) {
+      try {
+        let data = JSON.parse(evt.target.result);
+        if (Array.isArray(data)) {
+          products = data;
+          versionData = { lastEdit: '', comment: '' };
+        } else {
+          products = data.products || [];
+          versionData = {
+            lastEdit: data.lastEdit || '',
+            comment: data.comment || ''
+          }
+        }
+        selectedProducts = [];
+        getCategories();
+        showCategoryBar();
+        renderProducts();
+        showVersion();
+      } catch (err) {
+        alert("Fehler beim Importieren: " + err.message);
+      }
+    }
+    reader.readAsText(file, 'utf-8');
+  });
+
+  // --- Экспорт JSON ---
+    document.getElementById('export-json').addEventListener('click', function() {
+    let comment = prompt("Kurzer Kommentar zur Version (optional):", versionData.comment || '');
+    let outData = {
+      lastEdit: new Date().toISOString(),
+      comment: comment,
+      products
+    };
+    let blob = new Blob([JSON.stringify(outData, null, 2)], {type: "application/json"});
+    let url = URL.createObjectURL(blob);
+    let a = document.createElement('a');
+    a.href = url;
+    a.download = 'products.json';
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(() => {
+      document.body.removeChild(a);
+      window.URL.revokeObjectURL(url);
+    }, 500);
+    versionData.lastEdit = outData.lastEdit;
+    versionData.comment = comment;
+    showVersion();
+  });
+
+
+  // --- Категории ---
+  function getCategories() {
+    categories = [...new Set(products.map(p => p.category || 'Sonstige'))];
+    currentCategory = categories[0] || '';
+  }
+
+  function showCategoryBar() {
+    let bar = document.getElementById('category-bar');
+    bar.innerHTML = '';
+    categories.forEach(cat => {
+      let btn = document.createElement('button');
+      btn.className = 'category-btn' + (cat === currentCategory ? ' active' : '');
+      btn.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
+      btn.onclick = () => { 
+        currentCategory = cat; 
+        selectedProducts = [];
+        renderProducts(); 
+        showCategoryBar();
+        updateTemplateBtnState();
+      }
+      bar.appendChild(btn);
+    });
+    // --- Чекбокс "выбрать всё" ---
+    if (categories.includes(currentCategory)) {
+      let allBox = document.createElement('input');
+      allBox.type = 'checkbox';
+      allBox.style.marginLeft = '24px';
+      allBox.checked = areAllSelected();
+      allBox.title = "Alles in dieser Kategorie auswählen";
+      allBox.onchange = function() {
+        let filtered = products.filter(p => p.category === currentCategory);
+        if (allBox.checked) {
+          selectedProducts = filtered.map((p, i) => products.indexOf(p));
+        } else {
+          selectedProducts = [];
+        }
+        renderProducts();
+        showCategoryBar();
+        updateTemplateBtnState();
+      };
+      bar.appendChild(allBox);
+      let allLbl = document.createElement('span');
+      allLbl.textContent = ' Alles auswählen';
+      bar.appendChild(allLbl);
+    }
+          let addBtn = document.createElement('button');
+      addBtn.className = 'category-btn';
+      addBtn.innerHTML = '<i class="ti ti-plus"></i> Новый товар';
+      addBtn.style.background = '#38a138';
+      addBtn.style.color = '#fff';
+      addBtn.style.marginLeft = '16px';
+      addBtn.onclick = () => openNewProductModal(currentCategory);
+      bar.appendChild(addBtn);
+
+        templateBtn = document.createElement('button');
+      templateBtn.className = 'category-btn';
+      templateBtn.innerHTML = '<i class="ti ti-template"></i> Форма по шаблону';
+      templateBtn.style.background = '#4175d1';
+      templateBtn.style.color = '#fff';
+      templateBtn.style.marginLeft = '12px';
+      templateBtn.disabled = true;
+      templateBtn.onclick = onTemplateBtnClick;
+      bar.appendChild(templateBtn);
+
+      updateTemplateBtnState();
+
+  }
+
+  function areAllSelected() {
+    let filtered = products.filter(p => p.category === currentCategory);
+    return filtered.length > 0 && filtered.every((p, i) => selectedProducts.includes(products.indexOf(p)));
+  }
+
+  // --- Рендер товаров ---
+  function renderProducts() {
+    let list = document.getElementById('product-list');
+    list.innerHTML = '';
+    let filtered = products.filter(p => p.category === currentCategory);
+    if (filtered.length === 0) {
+      list.innerHTML = `<div style="color:#bbb;font-size:1.1rem;padding:36px">Keine Produkte in dieser Kategorie.</div>`;
+      return;
+    }
+    filtered.forEach((prod, idx) => {
+      let card = document.createElement('div');
+      card.className = 'product-card';
+      
+      // Чекбокс выбора
+      
+      let selectBox = document.createElement('input');
+      selectBox.type = 'checkbox';
+      selectBox.className = 'product-checkbox'; // ОБЯЗАТЕЛЬНО
+      selectBox.setAttribute('data-idx', products.indexOf(prod)); // ОБЯЗАТЕЛЬНО
+      selectBox.checked = selectedProducts.includes(products.indexOf(prod));
+      selectBox.style.position = 'absolute';
+      selectBox.style.top = '18px';
+      selectBox.style.right = '18px';
+      selectBox.onchange = () => {
+        let index = products.indexOf(prod);
+        if (selectBox.checked) {
+          if (!selectedProducts.includes(index)) selectedProducts.push(index);
+        } else {
+          selectedProducts = selectedProducts.filter(i => i !== index);
+        }
+        renderBulkEditPanel();
+        updateTemplateBtnState(); // <-- ДОБАВЬ вот это!
+      };
+      card.appendChild(selectBox);
+
+      // Картинка
+      let img = document.createElement('img');
+      img.className = 'product-img';
+      img.src = prod.image || '';
+      // Галерея миниатюр (если есть)
+      if (Array.isArray(prod.thumbs) && prod.thumbs.length > 0) {
+        let thumbsDiv = document.createElement('div');
+        thumbsDiv.className = 'thumbs-gallery';
+      
+        prod.thumbs.forEach((thumbUrl, tIdx) => {
+          let thumbImgWrap = document.createElement('span');
+          thumbImgWrap.style = 'position:relative;display:inline-block;';
+          let thumbImg = document.createElement('img');
+          thumbImg.src = thumbUrl;
+          thumbImg.style = 'width:20px;height:20px;object-fit:contain;border-radius:6px;border:1.5px solid #ddd;box-shadow:0 1px 5px #0001;cursor:pointer;margin-bottom:1px;';
+          thumbImg.title = 'Клик — увеличить';
+        
+          // Открыть в модалке по клику
+          thumbImg.onclick = () => showImageModal(thumbUrl);
+        
+          // Кнопка удалить миниатюру
+          let delThumbBtn = document.createElement('button');
+          delThumbBtn.innerHTML = '<i class="ti ti-trash"></i>';
+          delThumbBtn.style = 'position:absolute;top:-8px;right:-8px;background:#e15d5d;color:#fff;border:none;border-radius:50%;width:10px;height:10px;font-size:1rem;line-height:18px;display:flex;align-items:center;justify-content:center;cursor:pointer;';
+          delThumbBtn.onclick = (ev) => {
+            ev.stopPropagation();
+            prod.thumbs.splice(tIdx, 1);
+            renderProducts();
+            showCategoryBar();
+            updateTemplateBtnState();
+          };
+        
+          thumbImgWrap.appendChild(thumbImg);
+          thumbImgWrap.appendChild(delThumbBtn);
+          thumbsDiv.appendChild(thumbImgWrap);
+        });
+      
+        card.appendChild(thumbsDiv);
+      }
+
+      img.alt = prod.name || '';
+      card.appendChild(img);
+      // Название
+      let title = document.createElement('div');
+      title.className = 'product-title';
+      title.textContent = prod.name || '—';
+      card.appendChild(title);
+      // Подзаголовок (если есть)
+      if (prod.subtitle) {
+        let subtitle = document.createElement('div');
+        subtitle.className = 'product-subtitle';
+        subtitle.textContent = prod.subtitle;
+        card.appendChild(subtitle);
+      }
+      // Цена
+      let price = document.createElement('div');
+      price.className = 'product-price';
+      price.textContent = prod.price ? prod.price + ' €' : '';
+      card.appendChild(price);
+      // Кнопки действий
+      let actions = document.createElement('div');
+      actions.className = 'product-actions';
+      let editBtn = document.createElement('button');
+      editBtn.innerHTML = '<i class="ti ti-edit"></i> Bearbeiten';
+      editBtn.onclick = () => openEditModal(products.indexOf(prod));
+      actions.appendChild(editBtn);
+      let delBtn = document.createElement('button');
+      delBtn.innerHTML = '<i class="ti ti-trash"></i> Entfernen';
+      delBtn.onclick = () => deleteProduct(products.indexOf(prod));
+      actions.appendChild(delBtn);
+      card.appendChild(actions);
+      list.appendChild(card);
+    });
+  }
+
+  // --- Окно редактирования товара ---
+  function openEditModal(idx) {
+  const prod = products[idx];
+  const modalBg = document.createElement('div');
+  modalBg.style = 'position:fixed;top:0;left:0;width:100vw;height:100vh;background:#23272fcc;z-index:1000;display:flex;align-items:center;justify-content:center;overflow:auto;';
+  document.body.style.overflow = 'hidden'; // Отключаем скролл сайта
+
+  const modal = document.createElement('div');
+  modal.style = 'background:rgb(204 202 202);padding:32px 28px 18px 28px;border-radius:18px;box-shadow:0 10px 36px #23272f30;max-width:510px;min-width:280px;position:relative;max-height:88vh;overflow:auto;';
+  modal.innerHTML = `<div style="font-size:1.3rem;font-weight:700;margin-bottom:18px;color:#171c22"><i class="ti ti-edit"></i> Produkt bearbeiten</div>`;
+
+    // Форма
+    Object.entries(prod).forEach(([key, value]) => {
+    if (key === 'category') return; // не редактируем категорию
+    
+    // обёртка для поля
+    let field = document.createElement('div');
+    field.style = 'margin-bottom:14px;';
+    
+    // метка
+    let label = document.createElement('label');
+    label.textContent = key;
+    label.style = 'display:block;font-weight:600;font-size:0.99rem;margin-bottom:3px;';
+    field.appendChild(label);
+    
+    let input;
+    const isImageField = /image|thumb/i.test(key);
+    
+    // 1) Примитивы (строка или число)
+    if (typeof value === 'string' || typeof value === 'number') {
+      input = document.createElement('input');
+      input.type = typeof value === 'number' ? 'number' : 'text';
+      input.value = value;
+      input.style = 'width:76%;padding:7px 8px;font-size:1rem;border-radius:6px;border:1px solid #ccc';
+      input.oninput = () => {
+        prod[key] = input.type === 'number'
+          ? parseFloat(input.value)
+          : input.value;
+      };
+      field.appendChild(input);
+    
+      // кнопка «Выбрать файл» для image-полей
+      if (isImageField) {
+        let fileBtn = document.createElement('button');
+        fileBtn.textContent = 'Выбрать файл';
+        fileBtn.style = 'margin-left:10px;background:#70be4b;color:#fff;padding:5px 10px;border:none;border-radius:6px;cursor:pointer;';
+        let fileInput = document.createElement('input');
+        fileInput.type = 'file';
+        fileInput.accept = 'image/*';
+        fileInput.style = 'display:none';
+        fileBtn.onclick = e => { e.preventDefault(); fileInput.click(); };
+        fileInput.onchange = () => {
+          const file = fileInput.files[0];
+          if (file) {
+            const reader = new FileReader();
+            reader.onload = ev => {
+              preview.src = ev.target.result;
+              prod[key] = input.value = 'assets/images/' + file.name;
+            };
+            reader.readAsDataURL(file);
+          }
+        };
+        let preview = document.createElement('img');
+        preview.style = 'width:52px;height:52px;margin-left:10px;object-fit:cover;border-radius:5px;';
+        preview.src = prod[key] || '';
+        field.appendChild(fileBtn);
+        field.appendChild(fileInput);
+        field.appendChild(preview);
+      }
+    
+    // 2) Массивы (thumbs, specs и т.п.)
+    } else if (Array.isArray(value)) {
+      // thumbs
+      if (/thumb/i.test(key)) {
+        let listDiv = document.createElement('div');
+        listDiv.style = 'display:flex;flex-direction:column;gap:7px;';
+        function renderThumbs() {
+          listDiv.innerHTML = '';
+          prod[key].forEach((thumb, i) => {
+            let row = document.createElement('div');
+            row.style = 'display:flex;align-items:center;gap:7px;';
+            let inp = document.createElement('input');
+            inp.type = 'text';
+            inp.value = thumb;
+            inp.style = 'width:82%;padding:6px;border:1px solid #ccc;border-radius:5px;';
+            inp.oninput = () => prod[key][i] = inp.value;
+            let del = document.createElement('button');
+            del.innerHTML = '<i class="ti ti-x"></i>';
+            del.onclick = () => { prod[key].splice(i,1); renderThumbs(); };
+            row.appendChild(inp);
+            row.appendChild(del);
+            listDiv.appendChild(row);
+          });
+        }
+        renderThumbs();
+        let add = document.createElement('button');
+        add.textContent = '+ Добавить строку';
+        add.onclick = e => { e.preventDefault(); prod[key].push(''); renderThumbs(); };
+        field.appendChild(listDiv);
+        field.appendChild(add);
+      
+      // specs
+      } else if (/spec/i.test(key)) {
+        let specsDiv = document.createElement('div');
+        specsDiv.style = 'display:flex;flex-direction:column;gap:7px;';
+        function renderSpecs() {
+          specsDiv.innerHTML = '';
+          prod[key].forEach((pair, i) => {
+            let row = document.createElement('div');
+            row.style = 'display:flex;align-items:center;gap:7px;';
+            let l = document.createElement('input');
+            l.type = 'text'; l.value = pair.label || '';
+            l.oninput = () => prod[key][i].label = l.value;
+            let v = document.createElement('input');
+            v.type = 'text'; v.value = pair.value || '';
+            v.oninput = () => prod[key][i].value = v.value;
+            let d = document.createElement('button');
+            d.innerHTML = '<i class="ti ti-x"></i>';
+            d.onclick = () => { prod[key].splice(i,1); renderSpecs(); };
+            row.appendChild(l);
+            row.appendChild(v);
+            row.appendChild(d);
+            specsDiv.appendChild(row);
+          });
+        }
+        renderSpecs();
+        let addSpec = document.createElement('button');
+        addSpec.textContent = '+ Добавить строку';
+        addSpec.onclick = e => { e.preventDefault(); prod[key].push({label:'',value:''}); renderSpecs(); };
+        field.appendChild(specsDiv);
+        field.appendChild(addSpec);
+      
+      // прочие массивы
+      } else {
+        let ta = document.createElement('textarea');
+        ta.value = JSON.stringify(value, null, 1);
+        ta.rows = Math.max(2, value.length || 2);
+        ta.style = 'width:100%;padding:7px;border:1px solid #ccc;border-radius:6px;';
+        ta.oninput = () => {
+          try {
+            prod[key] = JSON.parse(ta.value);
+            ta.style.background = '#fff';
+          } catch {
+            ta.style.background = '#ffecec';
+          }
+        };
+        field.appendChild(ta);
+      }
+    
+    // 3) Всё остальное — простой текстовый input
+    } else {
+      input = document.createElement('input');
+      input.type = 'text';
+      input.value = value;
+      input.style = 'width:100%;padding:7px;border:1px solid #ccc;border-radius:6px;';
+      input.oninput = () => prod[key] = input.value;
+      field.appendChild(input);
+    }
+  
+    modal.appendChild(field);
+  });
+
+
+  // Кнопка добавить поле
+  let addFieldBtn = document.createElement('button');
+  addFieldBtn.textContent = '+ Feld hinzufügen';
+  addFieldBtn.style = 'margin-bottom:10px;background:#70be4b;color:#fff;padding:6px 12px;border:none;border-radius:6px;cursor:pointer;font-weight:600;';
+  addFieldBtn.onclick = () => {
+    let newKey = prompt("Name des neuen Felds (z.B. 'farbe', 'hersteller'):");
+    if (!newKey) return;
+    if (prod[newKey]) { alert('Feld existiert schon!'); return; }
+    prod[newKey] = '';
+    modalBg.remove();
+    openEditModal(idx); // Перезапуск модалки с новым полем
+  };
+  modal.appendChild(addFieldBtn);
+
+  // Сохранить/закрыть
+  let saveBtn = document.createElement('button');
+  saveBtn.textContent = 'Speichern';
+  saveBtn.style = 'margin-top:8px;background:#23272f;color:#fff;padding:7px 24px;border:none;border-radius:7px;font-size:1.1rem;font-weight:600;float:right;';
+  saveBtn.onclick = () => { 
+    document.body.style.overflow = ''; // Вернуть прокрутку
+    modalBg.remove(); 
+    renderProducts(); 
+    showCategoryBar();
+    updateTemplateBtnState();
+  };
+  modal.appendChild(saveBtn);
+
+  // Удалить поле
+  let delFieldBtn = document.createElement('button');
+  delFieldBtn.textContent = 'Feld entfernen';
+  delFieldBtn.style = 'margin:10px 6px 0 6px;background:#e15d5d;color:#fff;padding:6px 12px;border:none;border-radius:6px;font-weight:600;';
+  delFieldBtn.onclick = () => {
+    let removeKey = prompt('Welches Feld entfernen?');
+    if (removeKey && prod.hasOwnProperty(removeKey)) {
+      delete prod[removeKey];
+      modalBg.remove();
+      openEditModal(idx); // Перезапуск модалки без удалённого поля
+    } else {
+      alert('Ungültiger Feldname!');
+    }
+  };
+  modal.appendChild(delFieldBtn);
+
+  // Кнопка закрыть
+  let closeBtn = document.createElement('button');
+  closeBtn.innerHTML = '<i class="ti ti-x"></i>';
+  closeBtn.style = 'position:absolute;top:12px;right:18px;background:none;color:#aaa;border:none;font-size:1.45rem;cursor:pointer;';
+  closeBtn.onclick = () => {
+    document.body.style.overflow = '';
+    modalBg.remove();
+  };
+  modal.appendChild(closeBtn);
+
+  modalBg.appendChild(modal);
+  document.body.appendChild(modalBg);
+}
+
+  function openEditModalForTemplate(newProductObj) {
+  const prod = newProductObj;
+  const modalBg = document.createElement('div');
+  modalBg.style = 'position:fixed;top:0;left:0;width:100vw;height:100vh;background:#23272fcc;z-index:1000;display:flex;align-items:center;justify-content:center;overflow:auto;';
+  document.body.style.overflow = 'hidden'; // Отключаем скролл сайта
+
+  const modal = document.createElement('div');
+  modal.style = 'background:rgb(204 202 202);padding:32px 28px 18px 28px;border-radius:18px;box-shadow:0 10px 36px #23272f30;max-width:510px;min-width:280px;position:relative;max-height:88vh;overflow:auto;';
+  modal.innerHTML = `<div style="font-size:1.3rem;font-weight:700;margin-bottom:18px;color:#171c22"><i class="ti ti-edit"></i> Produkt bearbeiten</div>`;
+
+      // Форма
+      Object.entries(prod).forEach(([key, value]) => {
+    if (key === 'category') return; // не редактируем категорию
+    
+    // обёртка для поля
+    let field = document.createElement('div');
+    field.style = 'margin-bottom:14px;';
+    
+    // метка
+    let label = document.createElement('label');
+    label.textContent = key;
+    label.style = 'display:block;font-weight:600;font-size:0.99rem;margin-bottom:3px;';
+    field.appendChild(label);
+    
+    let input;
+    const isImageField = /image|thumb/i.test(key);
+    
+    // 1) Примитивы (строка или число)
+    if (typeof value === 'string' || typeof value === 'number') {
+      input = document.createElement('input');
+      input.type = typeof value === 'number' ? 'number' : 'text';
+      input.value = value;
+      input.style = 'width:76%;padding:7px 8px;font-size:1rem;border-radius:6px;border:1px solid #ccc';
+      input.oninput = () => {
+        prod[key] = input.type === 'number'
+          ? parseFloat(input.value)
+          : input.value;
+      };
+      field.appendChild(input);
+    
+      // кнопка «Выбрать файл» для image-полей
+      if (isImageField) {
+        let fileBtn = document.createElement('button');
+        fileBtn.textContent = 'Выбрать файл';
+        fileBtn.style = 'margin-left:10px;background:#70be4b;color:#fff;padding:5px 10px;border:none;border-radius:6px;cursor:pointer;';
+        let fileInput = document.createElement('input');
+        fileInput.type = 'file';
+        fileInput.accept = 'image/*';
+        fileInput.style = 'display:none';
+        fileBtn.onclick = e => { e.preventDefault(); fileInput.click(); };
+        fileInput.onchange = () => {
+          const file = fileInput.files[0];
+          if (file) {
+            const reader = new FileReader();
+            reader.onload = ev => {
+              preview.src = ev.target.result;
+              prod[key] = input.value = 'assets/images/' + file.name;
+            };
+            reader.readAsDataURL(file);
+          }
+        };
+        let preview = document.createElement('img');
+        preview.style = 'width:52px;height:52px;margin-left:10px;object-fit:cover;border-radius:5px;';
+        preview.src = prod[key] || '';
+        field.appendChild(fileBtn);
+        field.appendChild(fileInput);
+        field.appendChild(preview);
+      }
+    
+    // 2) Массивы (thumbs, specs и т.п.)
+    } else if (Array.isArray(value)) {
+      // thumbs
+      if (/thumb/i.test(key)) {
+        let listDiv = document.createElement('div');
+        listDiv.style = 'display:flex;flex-direction:column;gap:7px;';
+        function renderThumbs() {
+          listDiv.innerHTML = '';
+          prod[key].forEach((thumb, i) => {
+            let row = document.createElement('div');
+            row.style = 'display:flex;align-items:center;gap:7px;';
+            let inp = document.createElement('input');
+            inp.type = 'text';
+            inp.value = thumb;
+            inp.style = 'width:82%;padding:6px;border:1px solid #ccc;border-radius:5px;';
+            inp.oninput = () => prod[key][i] = inp.value;
+            let del = document.createElement('button');
+            del.innerHTML = '<i class="ti ti-x"></i>';
+            del.onclick = () => { prod[key].splice(i,1); renderThumbs(); };
+            row.appendChild(inp);
+            row.appendChild(del);
+            listDiv.appendChild(row);
+          });
+        }
+        renderThumbs();
+        let add = document.createElement('button');
+        add.textContent = '+ Добавить строку';
+        add.onclick = e => { e.preventDefault(); prod[key].push(''); renderThumbs(); };
+        field.appendChild(listDiv);
+        field.appendChild(add);
+      
+      // specs
+      } else if (/spec/i.test(key)) {
+        let specsDiv = document.createElement('div');
+        specsDiv.style = 'display:flex;flex-direction:column;gap:7px;';
+        function renderSpecs() {
+          specsDiv.innerHTML = '';
+          prod[key].forEach((pair, i) => {
+            let row = document.createElement('div');
+            row.style = 'display:flex;align-items:center;gap:7px;';
+            let l = document.createElement('input');
+            l.type = 'text'; l.value = pair.label || '';
+            l.oninput = () => prod[key][i].label = l.value;
+            let v = document.createElement('input');
+            v.type = 'text'; v.value = pair.value || '';
+            v.oninput = () => prod[key][i].value = v.value;
+            let d = document.createElement('button');
+            d.innerHTML = '<i class="ti ti-x"></i>';
+            d.onclick = () => { prod[key].splice(i,1); renderSpecs(); };
+            row.appendChild(l);
+            row.appendChild(v);
+            row.appendChild(d);
+            specsDiv.appendChild(row);
+          });
+        }
+        renderSpecs();
+        let addSpec = document.createElement('button');
+        addSpec.textContent = '+ Добавить строку';
+        addSpec.onclick = e => { e.preventDefault(); prod[key].push({label:'',value:''}); renderSpecs(); };
+        field.appendChild(specsDiv);
+        field.appendChild(addSpec);
+      
+      // прочие массивы
+      } else {
+        let ta = document.createElement('textarea');
+        ta.value = JSON.stringify(value, null, 1);
+        ta.rows = Math.max(2, value.length || 2);
+        ta.style = 'width:100%;padding:7px;border:1px solid #ccc;border-radius:6px;';
+        ta.oninput = () => {
+          try {
+            prod[key] = JSON.parse(ta.value);
+            ta.style.background = '#fff';
+          } catch {
+            ta.style.background = '#ffecec';
+          }
+        };
+        field.appendChild(ta);
+      }
+    
+    // 3) Всё остальное — простой текстовый input
+    } else {
+      input = document.createElement('input');
+      input.type = 'text';
+      input.value = value;
+      input.style = 'width:100%;padding:7px;border:1px solid #ccc;border-radius:6px;';
+      input.oninput = () => prod[key] = input.value;
+      field.appendChild(input);
+    }
+  
+    modal.appendChild(field);
+  });
+
+  // Кнопка добавить поле
+  let addFieldBtn = document.createElement('button');
+  addFieldBtn.textContent = '+ Feld hinzufügen';
+  addFieldBtn.style = 'margin-bottom:10px;background:#70be4b;color:#fff;padding:6px 12px;border:none;border-radius:6px;cursor:pointer;font-weight:600;';
+  addFieldBtn.onclick = () => {
+    let newKey = prompt("Name des neuen Felds (z.B. 'farbe', 'hersteller'):");
+    if (!newKey) return;
+    if (prod[newKey]) { alert('Feld existiert schon!'); return; }
+    prod[newKey] = '';
+    modalBg.remove();
+    openEditModalForTemplate(prod);
+  };
+  modal.appendChild(addFieldBtn);
+
+  // Сохранить/закрыть
+  let saveBtn = document.createElement('button');
+  saveBtn.textContent = 'Speichern';
+  saveBtn.style = 'margin-top:8px;background:#23272f;color:#fff;padding:7px 24px;border:none;border-radius:7px;font-size:1.1rem;font-weight:600;float:right;';
+  saveBtn.onclick = () => { 
+    products.push(prod);
+    document.body.style.overflow = ''; // Вернуть прокрутку
+    modalBg.remove(); 
+    renderProducts(); 
+    showCategoryBar();
+    updateTemplateBtnState();
+  };
+  modal.appendChild(saveBtn);
+
+  // Удалить поле
+  let delFieldBtn = document.createElement('button');
+  delFieldBtn.textContent = 'Feld entfernen';
+  delFieldBtn.style = 'margin:10px 6px 0 6px;background:#e15d5d;color:#fff;padding:6px 12px;border:none;border-radius:6px;font-weight:600;';
+  delFieldBtn.onclick = () => {
+    let removeKey = prompt('Welches Feld entfernen?');
+    if (removeKey && prod.hasOwnProperty(removeKey)) {
+      delete prod[removeKey];
+      modalBg.remove();
+      openEditModalForTemplate(prod);
+    } else {
+      alert('Ungültiger Feldname!');
+    }
+  };
+  modal.appendChild(delFieldBtn);
+
+  // Кнопка закрыть
+  let closeBtn = document.createElement('button');
+  closeBtn.innerHTML = '<i class="ti ti-x"></i>';
+  closeBtn.style = 'position:absolute;top:12px;right:18px;background:none;color:#aaa;border:none;font-size:1.45rem;cursor:pointer;';
+  closeBtn.onclick = () => {
+    document.body.style.overflow = '';
+    modalBg.remove();
+  };
+  modal.appendChild(closeBtn);
+
+  modalBg.appendChild(modal);
+  document.body.appendChild(modalBg);
+}
+  // --- Удаление товара ---
+  function deleteProduct(idx) {
+    if (!confirm('Produkt wirklich löschen?')) return;
+    products.splice(idx, 1);
+    selectedProducts = selectedProducts.filter(i => i !== idx);
+    renderProducts();
+    showCategoryBar();
+    updateTemplateBtnState();
+  }
+
+  // --- Массовое редактирование ---
+    function renderBulkEditPanel() {
+    let main = document.querySelector('.main');
+    let oldBulk = document.getElementById('bulk-edit-panel');
+    if (oldBulk) oldBulk.remove();
+
+    if (selectedProducts.length <= 1) return;
+
+    let selected = selectedProducts.map(i => products[i]);
+    let allKeys = Array.from(new Set(selected.flatMap(obj => Object.keys(obj))));
+    allKeys = allKeys.filter(k => k !== 'category');
+
+    let panel = document.createElement('div');
+    panel.id = 'bulk-edit-panel';
+    panel.style = 'background:#eaf6e3;padding:18px 18px 9px 18px;margin-bottom:24px;border-radius:12px;box-shadow:0 2px 10px #70be4b11;max-width:640px;';
+    panel.innerHTML = `<div style="font-size:1.08rem;font-weight:600;margin-bottom:6px;color:#38a138">
+        <i class="ti ti-pencil-minus"></i> Массовое редактирование для ${selectedProducts.length} товаров
+      </div>`;
+
+    let fieldSel = document.createElement('select');
+    fieldSel.style = 'padding:6px 10px;font-size:1rem;border-radius:6px;margin-right:10px;';
+    allKeys.forEach(k => {
+      let opt = document.createElement('option');
+      opt.value = k;
+      opt.textContent = k;
+      fieldSel.appendChild(opt);
+    });
+
+    let input = document.createElement('textarea');
+    input.placeholder = 'Новое значение';
+    input.rows = 2;
+    input.style = 'padding:7px 10px;font-size:1rem;border-radius:6px;width:220px;min-height:40px;resize:vertical;margin-right:10px;';
+
+    fieldSel.onchange = () => {
+      input.value = '';
+    };
+
+    let btn = document.createElement('button');
+    btn.textContent = 'Применить';
+    btn.style = 'background:#70be4b;color:#fff;padding:6px 20px;border:none;border-radius:6px;font-weight:600;font-size:1rem;cursor:pointer;';
+
+    btn.onclick = () => {
+      let key = fieldSel.value;
+      let val;
+      if (key === 'price') {
+        let f = parseFloat(input.value.replace(',', '.'));
+        val = isNaN(f) ? "0.00" : f.toFixed(2);
+      } else {
+        val = input.value;
+      }
+
+      selectedProducts.forEach(i => {
+        products[i][key] = val;
+      });
+      renderProducts();
+      showCategoryBar();
+      updateTemplateBtnState();
+      alert('Изменения применены!');
+    };
+
+      let flexRow = document.createElement('div');
+      flexRow.style = 'display:flex;align-items:flex-start;gap:10px;';
+
+      flexRow.appendChild(fieldSel);
+      flexRow.appendChild(input);
+      flexRow.appendChild(btn);
+
+      panel.appendChild(flexRow);
+
+
+    main.insertBefore(panel, document.getElementById('product-list'));
+  }
+
+
+  // --- Подключаем вызов панели к выбору чекбоксов и обновлению товаров ---
+  const oldRenderProducts = renderProducts;
+  renderProducts = function() {
+    oldRenderProducts();
+    renderBulkEditPanel();
+  };
+
+  // --- Версия ---
+  function showVersion() {
+    let info = document.getElementById('version-info');
+    if (!versionData.lastEdit && !versionData.comment) {
+      info.style.display = 'none';
+      return;
+    }
+    info.style.display = '';
+    info.innerHTML = `<strong>Letzte Änderung:</strong> ${versionData.lastEdit ? new Date(versionData.lastEdit).toLocaleString() : '—'}<br>
+      <strong>Kommentar:</strong> ${versionData.comment || '—'}`;
+  }
+
+  // Модальное окно просмотра изображения
+  function showImageModal(url) {
+    const modalBg = document.createElement('div');
+    modalBg.style = 'position:fixed;top:0;left:0;width:100vw;height:100vh;background:#23272fcc;z-index:1001;display:flex;align-items:center;justify-content:center;';
+    const modal = document.createElement('div');
+    modal.style = 'background:#fff;padding:22px 22px 10px 22px;border-radius:18px;box-shadow:0 10px 36px #23272f30;max-width:98vw;max-height:88vh;position:relative;display:flex;flex-direction:column;align-items:center;';
+    let img = document.createElement('img');
+    img.src = url;
+    img.style = 'max-width:82vw;max-height:74vh;border-radius:12px;box-shadow:0 4px 18px #0002;';
+    modal.appendChild(img);
+  
+    // Закрыть
+    let closeBtn = document.createElement('button');
+    closeBtn.innerHTML = '<i class="ti ti-x"></i>';
+    closeBtn.style = 'position:absolute;top:7px;right:12px;background:none;color:#aaa;border:none;font-size:1.5rem;cursor:pointer;';
+    closeBtn.onclick = () => modalBg.remove();
+  
+    modal.appendChild(closeBtn);
+    modalBg.appendChild(modal);
+    document.body.appendChild(modalBg);
+  }
+  
+  // Универсальные шаблоны для разных категорий
+    const TEMPLATES = {
+      herren: {
+        slug: "",
+        name: "",
+        subtitle: "",
+        description: "",
+        price: "",
+        image: "",
+        imageLarge: "",
+        thumbs: [],
+        specs: [{label:"", value:""}],
+        category: "herren"
+      },
+      damen: {
+        slug: "",
+        name: "",
+        subtitle: "",
+        description: "",
+        price: "",
+        image: "",
+        imageLarge: "",
+        thumbs: [],
+        specs: [{label:"", value:""}],
+        category: "damen"
+      },
+      tassen: {
+        slug: "",
+        name: "",
+        description: "",
+        price: "",
+        image: "",
+        imageLarge: "",
+        thumbs: [],
+        specs: [{label:"", value:""}],
+        category: "tassen"
+      }
+    };
+
+    function openNewProductModal(category) {
+      // Берём шаблон для категории
+      let template = JSON.parse(JSON.stringify(TEMPLATES[category] || TEMPLATES["herren"]));
+      // Модалка похожа на openEditModal, но для нового товара
+      const modalBg = document.createElement('div');
+      modalBg.style = 'position:fixed;top:0;left:0;width:100vw;height:100vh;background:#23272fcc;z-index:1000;display:flex;align-items:center;justify-content:center;';
+      document.body.style.overflow = 'hidden';
+    
+      const modal = document.createElement('div');
+      modal.style = 'background:#fff;padding:32px 28px 18px 28px;border-radius:18px;box-shadow:0 10px 36px #23272f30;max-width:510px;min-width:280px;position:relative;max-height:88vh;overflow:auto;';
+      modal.innerHTML = `<div style="font-size:1.3rem;font-weight:700;margin-bottom:18px;color:#171c22"><i class="ti ti-plus"></i> Новый товар</div>`;
+    
+      // --- Динамически рендерим поля (точно как в openEditModal) ---
+      Object.entries(template).forEach(([key, value]) => {
+        if (key === 'category') return; // категория задаётся автоматически
+
+        let field = document.createElement('div');
+        field.style = 'margin-bottom:14px;';
+        let label = document.createElement('label');
+        label.textContent = key;
+        label.style = 'display:block;font-weight:600;font-size:0.99rem;margin-bottom:3px;';
+
+        // --- Строка или число ---
+        if (typeof value === 'string' || typeof value === 'number') {
+          let input = document.createElement('input');
+          input.type = (typeof value === 'number' ? 'number' : 'text');
+          input.value = value;
+          input.style = 'width:76%;padding:7px 8px;font-size:1rem;border-radius:6px;border:1px solid #ccc';
+          input.oninput = () => { template[key] = (input.type === 'number' ? parseFloat(input.value) : input.value); };
+        
+          field.appendChild(label);
+          field.appendChild(input);
+        
+          // --- Кнопка "Выбрать файл" для image-полей ---
+          if (/image|thumb/i.test(key)) {
+            let fileBtn = document.createElement('button');
+            fileBtn.textContent = 'Выбрать файл';
+            fileBtn.style = 'margin:10px;background:#70be4b;color:#fff;padding:5px 10px;border:none;border-radius:6px;font-weight:500;cursor:pointer;';
+            fileBtn.onclick = (ev) => {
+              ev.preventDefault();
+              chooseImageForField(input);
+            };
+            field.appendChild(fileBtn);
+          }
+        }
+      
+        // --- Массивы (thumbs, specs и др.) ---
+        else if (Array.isArray(value)) {
+          field.appendChild(label);
+        
+          // --- thumbs ---
+          if (/thumb/i.test(key)) {
+            let listDiv = document.createElement('div');
+            listDiv.style = 'display:flex;flex-direction:column;gap:7px;';
+            function renderThumbs() {
+              listDiv.innerHTML = '';
+              template[key].forEach((thumb, i) => {
+                let row = document.createElement('div');
+                row.style = 'display:flex;align-items:center;gap:7px;';
+                let inp = document.createElement('input');
+                inp.type = 'text';
+                inp.value = thumb;
+                inp.style = 'width:69%;padding:6px;border-radius:5px;border:1px solid #ccc;';
+                inp.oninput = () => {
+                  template[key][i] = inp.value;
+                };
+                // Кнопка "Выбрать файл" для каждой миниатюры
+                let fileBtn = document.createElement('button');
+                fileBtn.textContent = 'Выбрать файл';
+                fileBtn.style = 'margin-left:3px;background:#70be4b;color:#fff;padding:4px 8px;border:none;border-radius:5px;font-weight:500;cursor:pointer;';
+                fileBtn.onclick = (ev) => {
+                  ev.preventDefault();
+                  chooseImageForField(inp);
+                };
+                // Кнопка удалить миниатюру
+                let delBtn = document.createElement('button');
+                delBtn.innerHTML = '<i class="ti ti-x"></i>';
+                delBtn.title = 'Удалить миниатюру';
+                delBtn.style = 'background:#e15d5d;color:#fff;border:none;border-radius:6px;width:28px;height:28px;font-size:1rem;cursor:pointer;';
+                delBtn.onclick = () => {
+                  template[key].splice(i, 1);
+                  renderThumbs();
+                };
+                row.appendChild(inp);
+                row.appendChild(fileBtn);
+                row.appendChild(delBtn);
+                listDiv.appendChild(row);
+              });
+            }
+            renderThumbs();
+            let addBtn = document.createElement('button');
+            addBtn.textContent = '+ Добавить строку';
+            addBtn.style = 'margin-top:7px;background:#70be4b;color:#fff;padding:4px 15px;border:none;border-radius:6px;font-weight:500;cursor:pointer;';
+            addBtn.onclick = (ev) => {
+              ev.preventDefault();
+              template[key].push('');
+              renderThumbs();
+            };
+            field.appendChild(listDiv);
+            field.appendChild(addBtn);
+          
+          // --- specs (характеристики) ---
+          } else if (/spec/i.test(key)) {
+            let specsDiv = document.createElement('div');
+            specsDiv.style = 'display:flex;flex-direction:column;gap:7px;';
+            function renderSpecs() {
+              specsDiv.innerHTML = '';
+              template[key].forEach((pair, i) => {
+                let row = document.createElement('div');
+                row.style = 'display:flex;align-items:center;gap:7px;';
+                let inpLabel = document.createElement('input');
+                inpLabel.type = 'text';
+                inpLabel.placeholder = 'Название параметра';
+                inpLabel.value = pair.label || '';
+                inpLabel.style = 'width:34%;padding:6px;border-radius:5px;border:1px solid #ccc;';
+                inpLabel.oninput = () => {
+                  template[key][i].label = inpLabel.value;
+                };
+                let inpVal = document.createElement('input');
+                inpVal.type = 'text';
+                inpVal.placeholder = 'Значение';
+                inpVal.value = pair.value || '';
+                inpVal.style = 'width:47%;padding:6px;border-radius:5px;border:1px solid #ccc;';
+                inpVal.oninput = () => {
+                  template[key][i].value = inpVal.value;
+                };
+                row.appendChild(inpLabel);
+                row.appendChild(inpVal);
+                let delBtn = document.createElement('button');
+                delBtn.innerHTML = '<i class="ti ti-x"></i>';
+                delBtn.title = 'Удалить строку';
+                delBtn.style = 'background:#e15d5d;color:#fff;border:none;border-radius:6px;width:28px;height:28px;font-size:1rem;cursor:pointer;';
+                delBtn.onclick = () => {
+                  template[key].splice(i, 1);
+                  renderSpecs();
+                };
+                row.appendChild(delBtn);
+                specsDiv.appendChild(row);
+              });
+            }
+            renderSpecs();
+            let addBtn = document.createElement('button');
+            addBtn.textContent = '+ Добавить строку';
+            addBtn.style = 'margin-top:7px;background:#70be4b;color:#fff;padding:4px 15px;border:none;border-radius:6px;font-weight:500;cursor:pointer;';
+            addBtn.onclick = (ev) => {
+              ev.preventDefault();
+              template[key].push({label:'', value:''});
+              renderSpecs();
+            };
+            field.appendChild(specsDiv);
+            field.appendChild(addBtn);
+          
+          // --- прочие массивы ---
+          } else {
+            let ta = document.createElement('textarea');
+            ta.value = JSON.stringify(value, null, 1);
+            ta.rows = Math.max(2, value.length || 2);
+            ta.style = 'width:100%;padding:7px 8px;font-size:0.98rem;border-radius:6px;border:1px solid #ccc;min-height:44px;';
+            ta.oninput = () => {
+              try {
+                template[key] = JSON.parse(ta.value || '[]');
+                ta.style.background = '#fff';
+              } catch {
+                ta.style.background = '#fff8f8';
+              }
+            };
+            field.appendChild(ta);
+          }
+        }
+        modal.appendChild(field);
+      });
+
+    
+      // --- Сохранить и закрыть ---
+      let saveBtn = document.createElement('button');
+      saveBtn.textContent = 'Добавить товар';
+      saveBtn.style = 'margin-top:12px;background:#38a138;color:#fff;padding:8px 24px;border:none;border-radius:7px;font-size:1.1rem;font-weight:600;float:right;';
+      saveBtn.onclick = () => {
+        // Валидировать, что имя и slug заполнены!
+        if (!template.name || !template.slug) {
+          alert('Введите хотя бы название и slug!');
+          return;
+        }
+        products.push(template);
+        document.body.style.overflow = '';
+        modalBg.remove();
+        renderProducts();
+        showCategoryBar();
+        updateTemplateBtnState();
+      };
+      modal.appendChild(saveBtn);
+    
+      // Кнопка закрыть
+      let closeBtn = document.createElement('button');
+      closeBtn.innerHTML = '<i class="ti ti-x"></i>';
+      closeBtn.style = 'position:absolute;top:12px;right:18px;background:none;color:#aaa;border:none;font-size:1.45rem;cursor:pointer;';
+      closeBtn.onclick = () => {
+        document.body.style.overflow = '';
+        modalBg.remove();
+      };
+      modal.appendChild(closeBtn);
+    
+      modalBg.appendChild(modal);
+      document.body.appendChild(modalBg);
+    }
+  function updateTemplateBtnState() {
+      const checked = document.querySelectorAll('.product-checkbox:checked');
+      templateBtn.disabled = (checked.length !== 1);
+  }
+
+  function onTemplateBtnClick() {
+      const checked = document.querySelectorAll('.product-checkbox:checked');
+      if (checked.length !== 1) {
+        alert('Выбери одну карточку!');
+        return;
+      }
+      // 1. Получить индекс выбранной карточки
+      const idx = +checked[0].getAttribute('data-idx');
+      // 2. Скопировать объект товара
+      const templateProduct = JSON.parse(JSON.stringify(products[idx]));
+      // 3. Модифицировать имя (+ "копия")
+      templateProduct.name = templateProduct.name ? templateProduct.name + " (копия)" : "Новый товар (копия)";
+      // 4. Можно также добавить, например, currentCategory, если нужно
+      // 5. Открыть окно редактирования (openEditModal), но как для нового товара
+      openEditModalForTemplate(templateProduct);
+    }
+
+
+
+  // --- Стартовое состояние ---
+  // products = []; versionData = { lastEdit: '', comment: '' };
+</script>
+
+</body>
+</html>
