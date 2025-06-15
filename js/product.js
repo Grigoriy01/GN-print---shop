@@ -16,6 +16,7 @@ function hideOverlaySpinner() {
 }
 
 function showInlineSpinner(el) {
+  if (!el) return
   if (el.nextSibling && el.nextSibling.classList && el.nextSibling.classList.contains('spinner-inline')) return;
   const spin = document.createElement('span');
   spin.className = "spinner spinner-inline";
@@ -131,7 +132,7 @@ function renderCart() {
         <img src="${item.image}" alt="${item.name}" class="cart-item-img">
         <div class="cart-item-info">
           <strong>${item.name}</strong><br>
-          Größe: ${item.size}<br>
+          ${item.size ? `Größe: ${item.size}<br>` : ""}
           Anzahl: <input type="number" class="cart-qty-input" 
                       data-slug="${item.slug}" data-size="${item.size}" 
                       min="1" value="${item.qty}" style="width:38px"><br>
@@ -373,11 +374,14 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="product-price desktop-only">
               €${Number(prod.price).toFixed(2)}
             </div>
-              <label>Verfügbarkeit Größe:<br>
-                <select id="sizeSelect" name="size" required>
-                  <option value="" disabled selected > Größe wählen</option>
-                </select>
-              </label>
+              ${prod.category !== "tassen" ? `
+                <label>Verfügbarkeit Größe:<br>
+                  <select id="sizeSelect" name="size" required>
+                    <option value="" disabled selected > Größe wählen</option>
+                  </select>
+                </label>
+              ` :""}
+              
             <div class="product-info_anzahl-label">
               <label>Anzahl<br>
               <input type="number" id="qtyInput" name="quantity" min="1" value="1" required>
@@ -399,36 +403,72 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       const selectEl = document.getElementById("sizeSelect");
-      selectEl.disabled = true;
-      let sizeSpinnerTimeout = setTimeout(() => showInlineSpinner(selectEl), 400); // если дольше 0.4 сек, только тогда покажет спиннер
+      if (selectEl) selectEl.disabled = true;
+      let sizeSpinnerTimeout = setTimeout(() => { if (selectEl);  showInlineSpinner(selectEl);
+      }, 400); // если дольше 0.4 сек, только тогда покажет спиннер
+
       fetch(`https://script.google.com/macros/s/AKfycbzXCPYfYM6ElYClBLPov7avnncE4DVYDj1hQPFenXCkpGQlLOndyjG9aSolqoeQXRkq/exec?slug=${slug}`)
         .then(r => r.json())
         .then(data => {
             clearTimeout(sizeSpinnerTimeout);
-            hideInlineSpinner(selectEl);
-            selectEl.disabled = false;
-            selectEl.innerHTML = `<option value="" disabled selected>Größe wählen</option>` +
-              data.sizes.map(s => `<option value="${s.name}" ${s.available ? "" : "disabled"}>${s.name}</option>`).join("");
+            if(selectEl){
+               hideInlineSpinner(selectEl);
+               selectEl.disabled = false;
+               selectEl.innerHTML = `<option value="" disabled selected>Größe wählen</option>` +
+                 data.sizes.map(s => `<option value="${s.name}" ${s.available ? "" : "disabled"}>${s.name}</option>`).join("");
 
-          selectEl.innerHTML = `<option value="" disabled selected>Größe wählen</option>` +
-            data.sizes.map(s => `<option value="${s.name}" ${s.available ? "" : "disabled"}>${s.name}</option>`).join("");
-        });
+        }
+      });
 
       container.querySelector(".add-cart-btn").addEventListener("click", () => {
-        const size = selectEl.value;
+        const slugsWithSize = 
+            ["damen t-shirt-white",
+             "damen t-shirt-black", 
+             "herren-t-shirt-black", 
+             "herren-t-shirt-white"]; // и твои нужные
+
+        const size = selectEl ? selectEl.value : null;
         const qty = Number(document.getElementById("qtyInput").value);
-        if (!size || qty < 1) return showToast("Größe & Menge wählen");
+        if (slugsWithSize.includes(prod.slug)) {
+          if (!size) {
+            showToast("Größe wählen!");
+            return; 
+          }
+        }
+        if (qty < 1) { 
+          showToast("Menge wählen!");
+          return;
+        }
         prod.selectedSize = size;
         prod.selectedQty = qty;
+        console.log("Добавляем в корзину:", {slug: prod.slug, size, qty});
         addToCartItem(prod, mainImgSrc);
       });
 
       container.querySelector(".btn-order").addEventListener("click", () => {
-        const size = selectEl.value;
+        const slugsWithSize = 
+            ["damen t-shirt-white",
+             "damen t-shirt-black", 
+             "herren-t-shirt-black", 
+             "herren-t-shirt-white"]; // и твои нужные
+        
+       
+        const size = selectEl ? selectEl.value : null;
         const qty = Number(document.getElementById("qtyInput").value);
-        if (!size || qty < 1) return showToast("Größe & Menge wählen");
+        if (slugsWithSize.includes(prod.slug)) {
+          if (!size) {
+            showToast("Größe wählen!");
+            return; 
+          }
+        }
+          if (qty < 1) { 
+          showToast("Menge wählen!");
+          return;
+        }
         prod.selectedSize = size;
         prod.selectedQty = qty;
+        console.log("Добавляем в корзину:", {slug: prod.slug, size, qty});
+
         addToCartItem(prod, mainImgSrc);
         renderCart();
         document.getElementById("cartPanel").classList.add("visible");
@@ -545,8 +585,8 @@ document.addEventListener("submit", (e) => {
         showToast("❌ Verbindung fehlgeschlagen (Proxy).");
         console.error("Proxy-Fehler:", err);
         clearTimeout(sizeSpinnerTimeout);
-        hideInlineSpinner(selectEl);
-        selectEl.disabled = false;
+        if (selectEl) hideInlineSpinner(selectEl);
+        if (selectEl) selectEl.disabled = false;
       });
     });
   }
