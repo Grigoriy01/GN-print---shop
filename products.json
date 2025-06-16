@@ -3,7 +3,7 @@
   "comment": "alle foto korregiert",
   "products": [
     {
-      "slug": "damen t-shirt-white-Lily Lineart Tee-color",
+      "slug": "damen-t-shirt-white-Lily-Lineart-Tee-color",
       "name": "Lily Lineart Tee-color",
       "subtitle": "Schlicht. Stilvoll. Natürlich.",
       "description": "Diese weiße Damen-T-Shirt kombiniert zeitlose Eleganz mit einem zarten floralen Lineart-Design. Die minimalistische Lilie auf der Brust steht für Ruhe, Natürlichkeit und innere Stärke – perfekt für Alltag, Freizeit oder als stilvolles Geschenk. Gefertigt aus weicher Baumwolle (100%), angenehm zu tragen, hochwertiger druck – waschbeständig und langlebig.",
@@ -22,7 +22,7 @@
       "category": "damen"
     },
     {
-      "slug": "damen t-shirt-white-Lily Lineart Tee",
+      "slug": "damen-t-shirt-white-Lily-Lineart-Tee",
       "name": "Lily Lineart Tee",
       "subtitle": "Schlicht. Stilvoll. Natürlich.",
       "description": "Diese weiße Damen-T-Shirt kombiniert zeitlose Eleganz mit einem zarten floralen Lineart-Design. Die minimalistische Lilie auf der Brust steht für Ruhe, Natürlichkeit und innere Stärke – perfekt für Alltag, Freizeit oder als stilvolles Geschenk. Gefertigt aus weicher Baumwolle (100%), angenehm zu tragen, hochwertiger druck – waschbeständig und langlebig.",
@@ -42,7 +42,7 @@
       "category": "damen"
     },
     {
-      "slug": "herren-t-shirt-black-Observer/Unnamed",
+      "slug": "herren-t-shirt-black-Observer-Unnamed",
       "name": "Observer/Unnamed",
       "subtitle": "Du kennst ihn nicht. Aber er kennt dich schon",
       "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
@@ -73,7 +73,7 @@
       "category": "herren"
     },
     {
-      "slug": "herren-t-shirt-black-Observer/Oculus",
+      "slug": "herren-t-shirt-black-Observer-Oculus",
       "name": "Observer/Oculus",
       "subtitle": "Null Emotion. Maximale Beobachtung",
       "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
@@ -104,7 +104,7 @@
       "category": "herren"
     },
     {
-      "slug": "herren-t-shirt-black-Observer/Der einsame Wächter",
+      "slug": "herren-t-shirt-black-Observer-Der einsame Wächter",
       "name": "Observer/Der einsame Wächter",
       "subtitle": "Die Stille ist seine Waffe.",
       "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
@@ -135,7 +135,7 @@
       "category": "herren"
     },
     {
-      "slug": "herren-t-shirt-black-Observer/Der kalte Blick",
+      "slug": "herren-t-shirt-black-Observer-Der kalte Blick",
       "name": "Observer/Der kalte Blick",
       "subtitle": "Ohne Worte. Ohne Emotion. Nur das Wesentliche",
       "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
@@ -166,7 +166,7 @@
       "category": "herren"
     },
     {
-      "slug": "herren-t-shirt-black-Observer/Der Beobachtungsmönch",
+      "slug": "herren-t-shirt-black-Observer-Der-Beobachtungsmönch",
       "name": "Observer/Der Beobachtungsmönch",
       "subtitle": "Die Stille ist sein Gelübde.",
       "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
@@ -197,7 +197,7 @@
       "category": "herren"
     },
     {
-      "slug": "herren-t-shirt-black-Observer/Jenseits des Blicks",
+      "slug": "herren-t-shirt-black-Observer-Jenseits-des-Blicks",
       "name": "Observer/Jenseits des Blicks",
       "subtitle": "Er sieht nicht nur. Er spürt.",
       "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
@@ -226,7 +226,7 @@
       "category": "herren"
     },
     {
-      "slug": "herren-t-shirt-black-Observer/Kalter Umriss",
+      "slug": "herren-t-shirt-black-Observer-Kalter-Umriss",
       "name": "Observer/Kalter Umriss",
       "subtitle": "Keine Bewegung. Nur ein Blick",
       "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
@@ -259,7 +259,7 @@
       "category": "herren"
     },
     {
-      "slug": "herren-t-shirt-black-Observer/Unsichtbarer Blick",
+      "slug": "herren-t-shirt-black-Observer-Unsichtbarer-Blick",
       "name": "Observer/Unsichtbarer Blick",
       "subtitle": "Du spürst ihn, doch siehst ihn nicht.",
       "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
@@ -291,7 +291,7 @@
       "category": "herren"
     },
     {
-      "slug": "herren-t-shirt-white-Am Rand der Traktion #1",
+      "slug": "herren-t-shirt-white-Am-Rand-der-Traktion-1",
       "name": "Am Rand der Traktion #1",
       "subtitle": "Wenn Kontrolle zur Kunst wird.",
       "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
@@ -322,7 +322,7 @@
       "category": "herren"
     },
     {
-      "slug": "herren-t-shirt-black-Am Rand der Traktion #1",
+      "slug": "herren-t-shirt-black-Am-Rand-der-Traktion-1",
       "name": "Am Rand der Traktion #1",
       "subtitle": "Wenn Kontrolle zur Kunst wird.",
       "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
@@ -352,7 +352,7 @@
       "category": "herren"
     },
     {
-      "slug": "herren-t-shirt-black-Am Rand der Traktion-#2",
+      "slug": "herren-t-shirt-black-Am-Rand der-Traktion--2",
       "name": "Am Rand der Traktion-#2",
       "subtitle": "Wenn Kontrolle zur Kunst wird.",
       "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
@@ -381,7 +381,7 @@
       "category": "herren"
     },
     {
-      "slug": "herren-t-shirt-white-Am Rand der Traktion-#2",
+      "slug": "herren-t-shirt-white-Am-Rand-der-Traktion--2",
       "name": "Am Rand der Traktion-#2",
       "subtitle": "Wenn Kontrolle zur Kunst wird.",
       "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
@@ -412,7 +412,7 @@
       "category": "herren"
     },
     {
-      "slug": "herren-t-shirt-white-Mustang ohne Regeln",
+      "slug": "herren-t-shirt-white-Mustang-ohne-Regeln",
       "name": "Mustang ohne Regeln",
       "subtitle": "Jeder Start ist wie ein Schuss.",
       "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
@@ -442,7 +442,7 @@
       "category": "herren"
     },
     {
-      "slug": "herren-t-shirt-black-Mustang ohne Regeln",
+      "slug": "herren-t-shirt-black-Mustang-ohne-Regeln",
       "name": "Mustang ohne Regeln",
       "subtitle": "Jeder Start ist wie ein Schuss.",
       "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
@@ -473,7 +473,7 @@
       "category": "herren"
     },
     {
-      "slug": "herren-t-shirt-black-Die DNA der Geschwindigkeit",
+      "slug": "herren-t-shirt-black-Die-DNA-der-Geschwindigkeit",
       "name": "Die DNA der Geschwindigkeit",
       "subtitle": "Genetik aus Aggression und Antrieb.",
       "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
@@ -503,7 +503,7 @@
       "category": "herren"
     },
     {
-      "slug": "herren-t-shirt-white-Die DNA der Geschwindigkeit",
+      "slug": "herren-t-shirt-white-Die-DNA-der-Geschwindigkeit",
       "name": "Die DNA der Geschwindigkeit",
       "subtitle": "Genetik aus Aggression und Antrieb.",
       "description": "Klassisches Herren-T-Shirt aus 100% Baumwolle",
@@ -533,7 +533,7 @@
       "category": "herren"
     },
     {
-      "slug": "damen t-shirt-black-Butterfly Bloom Tee",
+      "slug": "damen-t-shirt-black-Butterfly-Bloom-Tee",
       "name": "Butterfly Bloom Tee",
       "subtitle": "Leichtigkeit in jedem Stich",
       "description": "Diese elegante schwarze Damen-T-Shirt überzeugt durch ein zartes Lineart-Motiv mit Blume und Schmetterling – ein Symbol für Wandel, Freiheit und innere Balance. Ideal für alle, die minimalistisches Design mit Tiefe lieben. Hochwertiger Flexdruck auf weichem Stoff – angenehm zu tragen, waschbeständig und formstabil. Passt perfekt zu Jeans, Rock oder Leggings – im Alltag oder als Statement.",
@@ -563,7 +563,7 @@
       "category": "damen"
     },
     {
-      "slug": "damen t-shirt-black-Lily Lineart Tee-color",
+      "slug": "damen-t-shirt-black-Lily-Lineart-Tee-color",
       "name": "Lily Lineart Tee-color",
       "subtitle": "Schlicht. Stilvoll. Natürlich.",
       "description": "Diese schwarze Damen-T-Shirt kombiniert zeitlose Eleganz mit einem zarten floralen Lineart-Design. Die minimalistische Lilie auf der Brust steht für Ruhe, Natürlichkeit und innere Stärke – perfekt für Alltag, Freizeit oder als stilvolles Geschenk. Gefertigt aus weicher Baumwolle (100%), angenehm zu tragen, hochwertiger druck – waschbeständig und langlebig.",
@@ -592,7 +592,7 @@
       "category": "damen"
     },
     {
-      "slug": "damen t-shirt-black-Free Spirit",
+      "slug": "damen-t-shirt-black-Free-Spirit",
       "name": "Free Spirit",
       "subtitle": "Freiheit auf Stoff gebannt",
       "description": "Schwarzes Damen-T-Shirt mit starkem Statement: „FREE SPIRIT“ – begleitet von einer stilisierten Schmetterlingsgrafik. Für alle, die ihren freien Geist auch im Alltag zeigen möchten. Weiche, anschmiegsame Baumwolle, langlebiger Flexdruck, angenehm zu tragen. Perfekt für lässige Looks oder als Geschenk für selbstbewusste Frauen mit Haltung.",
@@ -617,7 +617,7 @@
       "category": "damen"
     },
     {
-      "slug": "damen t-shirt-white-Butterfly Bloom Tee",
+      "slug": "damen-t-shirt-white-Butterfly-Bloom-Tee",
       "name": "Butterfly Bloom Tee",
       "description": "Diese elegante weiße Damen-T-Shirt überzeugt durch ein zartes Lineart-Motiv mit Blume und Schmetterling – ein Symbol für Wandel, Freiheit und innere Balance. Ideal für alle, die minimalistisches Design mit Tiefe lieben. Hochwertiger Flexdruck auf weichem Stoff – angenehm zu tragen, waschbeständig und formstabil. Passt perfekt zu Jeans, Rock oder Leggings – im Alltag oder als Statement.",
       "price": 19.99,
@@ -647,7 +647,7 @@
       "subtitle": "Leichtigkeit in jedem Stich"
     },
     {
-      "slug": "damen t-shirt-white-Butterfly Bloom Tee-1",
+      "slug": "damen-t-shirt-white-Butterfly-Bloom-Tee-1",
       "name": "Blumen und Schmetterling #1",
       "description": "Diese elegante weiße Damen-T-Shirt überzeugt durch ein zartes Lineart-Motiv mit Blume und Schmetterling – ein Symbol für Wandel, Freiheit und innere Balance. Ideal für alle, die minimalistisches Design mit Tiefe lieben. Hochwertiger Flexdruck auf weichem Stoff – angenehm zu tragen, waschbeständig und formstabil. Passt perfekt zu Jeans, Rock oder Leggings – im Alltag oder als Statement.",
       "price": 19.99,
@@ -675,7 +675,7 @@
       "subtitle": "Leichtigkeit in jedem Stich"
     },
     {
-      "slug": "tasse-white-Verliebte Katze",
+      "slug": "damen-tasse-white-Verliebte-Katze",
       "name": "Verliebte Katze",
       "description": "Diese klassische Keramiktasse bringt mit ihrem verspielten Katzenmotiv und leuchtenden Farben sofort gute Laune. Ob als Geschenk oder zum Selbstverwöhnen – ein echter Hingucker für Katzenfreunde und Romantiker. Hochwertiger Sublimationsdruck auf weißer Tasse, spülmaschinenfest und alltagstauglich.",
       "price": 11.99,
@@ -718,7 +718,7 @@
       "subtitle": "Dein täglicher Trainingspartner mit Humor!"
     },
     {
-      "slug": "damen t-shirt-white-Color Breeze Tee",
+      "slug": "damen-t-shirt-white-Color-Breeze-Tee",
       "name": "Color Breeze Tee",
       "description": "Diese Damen-T-Shirt bringt Farbe in den Alltag – mit einem minimalistischen, aber farbenfrohen Motiv aus Blume und Schmetterling.\nIdeal für sonnige Tage, Spaziergänge oder einfach gute Laune.\nHochwertiger Sublimationsdruck auf angenehmem, atmungsaktivem Stoff. Waschbeständig, leicht taillierter Schnitt – perfekt für jeden Tag.",
       "price": "20.99",
@@ -748,7 +748,7 @@
       "subtitle": "Leicht, lebendig, lebensfroh"
     },
     {
-      "slug": "damen t-shirt-black-Color Breeze Tee",
+      "slug": "damen-t-shirt-black-Color-Breeze-Tee",
       "name": "Color Breeze Tee",
       "description": "Diese Damen-T-Shirt bringt Farbe in den Alltag – mit einem minimalistischen, aber farbenfrohen Motiv aus Blume und Schmetterling.\nIdeal für sonnige Tage, Spaziergänge oder einfach gute Laune.\nHochwertiger Sublimationsdruck auf angenehmem, atmungsaktivem Stoff. Waschbeständig, leicht taillierter Schnitt – perfekt für jeden Tag.",
       "price": "20.99",
@@ -777,7 +777,7 @@
       "subtitle": "Leicht, lebendig, lebensfroh"
     },
     {
-      "slug": "damen t-shirt-white-Papillon Minimal",
+      "slug": "damen-t-shirt-white-Papillon-Minimal",
       "name": "Papillon Minimal-color",
       "description": "Zarte, farbenfrohe Schmetterlingsgrafik auf klassischem dieses Shirt ist ein dezentes Statement für Freiheit, Leichtigkeit und Individualität.\nIdeal für jeden Tag, kombinierbar mit Jeans, Rock oder Shorts.\nAngenehmer Stoff (Baumwolle oder Polyester-Mix), hochwertiger druck, waschbeständig und langlebig – perfekt für alle, die Stil in der Einfachheit sehen.",
       "price": "20.99",
@@ -806,7 +806,7 @@
       "subtitle": "Farbtupfer mit Bedeutung"
     },
     {
-      "slug": "damen t-shirt-black-Papillon Minimal",
+      "slug": "damen-t-shirt-black-Papillon-Minimal",
       "name": "Papillon Minimal-color",
       "description": "Zarte, farbenfrohe Schmetterlingsgrafik auf klassischem dieses Shirt ist ein dezentes Statement für Freiheit, Leichtigkeit und Individualität.\nIdeal für jeden Tag, kombinierbar mit Jeans, Rock oder Shorts.\nAngenehmer Stoff (Baumwolle oder Polyester-Mix), hochwertiger druck, waschbeständig und langlebig – perfekt für alle, die Stil in der Einfachheit sehen.",
       "price": "20.99",
@@ -836,7 +836,7 @@
       "subtitle": "Farbtupfer mit Bedeutung"
     },
     {
-      "slug": "damen t-shirt-white-Lily Lineart Tee-color-1",
+      "slug": "damen-t-shirt-white-Lily-Lineart-Tee-color-1",
       "name": "Lily Lineart Tee-color#1",
       "subtitle": "Schlicht. Stilvoll. Natürlich.",
       "description": "Diese weiße Damen-T-Shirt kombiniert zeitlose Eleganz mit einem zarten floralen Lineart-Design. Die minimalistische Lilie auf der Brust steht für Ruhe, Natürlichkeit und innere Stärke – perfekt für Alltag, Freizeit oder als stilvolles Geschenk. Gefertigt aus weicher Baumwolle (100%), angenehm zu tragen, hochwertiger druck – waschbeständig und langlebig.",
@@ -856,7 +856,7 @@
       "category": "damen"
     },
     {
-      "slug": "tasse-white-Mister Moustache",
+      "slug": "tasse-white-Mister-Moustache",
       "name": "Mister Moustache",
       "description": "Witzige Tasse mit markantem Schnurrbart und subtiler Botschaft für echte Gentlemen. Ideal für den Mann mit Stil oder als humorvolles Geschenk zum Vatertag, Geburtstag oder Büro. Weiße, klassische Keramiktasse mit langlebigem Sublimationsdruck – spülmaschinenfest und alltagstauglich",
       "price": 11.99,
