@@ -496,6 +496,7 @@
     });
   }
 
+
   // --- Окно редактирования товара ---
   function openEditModal(idx) {
   const prod = products[idx];
@@ -531,10 +532,13 @@
       input.value = value;
       input.style = 'width:76%;padding:7px 8px;font-size:1rem;border-radius:6px;border:1px solid #ccc';
       input.oninput = () => {
-        prod[key] = input.type === 'number'
-          ? parseFloat(input.value)
-          : input.value;
+        let val = input.type === 'number' ? parseFloat(input.value) : input.value;
+        if (['image', 'imageLarge'].includes(key)) {
+          val = val.replace(/\\/g, "/").replace(/^\/+/, "");
+        }
+        prod[key] = input.value = val;
       };
+
       field.appendChild(input);
     
       // кнопка «Выбрать файл» для image-полей
@@ -553,7 +557,7 @@
             const reader = new FileReader();
             reader.onload = ev => {
               preview.src = ev.target.result;
-              prod[key] = input.value = 'assets/images/' + file.name;
+              prod[key] = input.value = 'assets/images/' + file.name.replace(/\\/g, "/").replace(/^\/+/, "");
             };
             reader.readAsDataURL(file);
           }
@@ -581,7 +585,11 @@
             inp.type = 'text';
             inp.value = thumb;
             inp.style = 'width:82%;padding:6px;border:1px solid #ccc;border-radius:5px;';
-            inp.oninput = () => prod[key][i] = inp.value;
+            inp.oninput = () => {
+              let v = inp.value.replace(/\\/g, "/").replace(/^\/+/, "");
+              prod[key][i] = inp.value = v;
+            };
+
             let del = document.createElement('button');
             del.innerHTML = '<i class="ti ti-x"></i>';
             del.onclick = () => { prod[key].splice(i,1); renderThumbs(); };
@@ -750,10 +758,13 @@
       input.value = value;
       input.style = 'width:76%;padding:7px 8px;font-size:1rem;border-radius:6px;border:1px solid #ccc';
       input.oninput = () => {
-        prod[key] = input.type === 'number'
-          ? parseFloat(input.value)
-          : input.value;
+        let val = input.type === 'number' ? parseFloat(input.value) : input.value;
+        if (['image', 'imageLarge'].includes(key)) {
+          val = val.replace(/\\/g, "/").replace(/^\/+/, "");
+        }
+        prod[key] = input.value = val;
       };
+
       field.appendChild(input);
     
       // кнопка «Выбрать файл» для image-полей
@@ -772,7 +783,7 @@
             const reader = new FileReader();
             reader.onload = ev => {
               preview.src = ev.target.result;
-              prod[key] = input.value = 'assets/images/' + file.name;
+              prod[key] = input.value = 'assets/images/' + file.name.replace(/\\/g, "/").replace(/^\/+/, "");
             };
             reader.readAsDataURL(file);
           }
@@ -800,7 +811,11 @@
             inp.type = 'text';
             inp.value = thumb;
             inp.style = 'width:82%;padding:6px;border:1px solid #ccc;border-radius:5px;';
-            inp.oninput = () => prod[key][i] = inp.value;
+            inp.oninput = () => {
+              let v = inp.value.replace(/\\/g, "/").replace(/^\/+/, "");
+              prod[key][i] = inp.value = v;
+            };
+
             let del = document.createElement('button');
             del.innerHTML = '<i class="ti ti-x"></i>';
             del.onclick = () => { prod[key].splice(i,1); renderThumbs(); };
@@ -1126,7 +1141,14 @@
           input.type = (typeof value === 'number' ? 'number' : 'text');
           input.value = value;
           input.style = 'width:76%;padding:7px 8px;font-size:1rem;border-radius:6px;border:1px solid #ccc';
-          input.oninput = () => { template[key] = (input.type === 'number' ? parseFloat(input.value) : input.value); };
+          input.oninput = () => {
+            let val = input.type === 'number' ? parseFloat(input.value) : input.value;
+            if (['image', 'imageLarge'].includes(key)) {
+              val = val.replace(/\\/g, "/").replace(/^\/+/, "");
+            }
+            prod[key] = input.value = val;
+          };
+
         
           field.appendChild(label);
           field.appendChild(input);
@@ -1162,8 +1184,10 @@
                 inp.value = thumb;
                 inp.style = 'width:69%;padding:6px;border-radius:5px;border:1px solid #ccc;';
                 inp.oninput = () => {
-                  template[key][i] = inp.value;
+                  let v = inp.value.replace(/\\/g, "/").replace(/^\/+/, "");
+                  prod[key][i] = inp.value = v;
                 };
+
                 // Кнопка "Выбрать файл" для каждой миниатюры
                 let fileBtn = document.createElement('button');
                 fileBtn.textContent = 'Выбрать файл';
