@@ -407,17 +407,34 @@ document.addEventListener("DOMContentLoaded", () => {
       let sizeSpinnerTimeout = setTimeout(() => { if (selectEl);  showInlineSpinner(selectEl);
       }, 400); // если дольше 0.4 сек, только тогда покажет спиннер
 
-      fetch(`https://script.google.com/macros/s/AKfycbzXCPYfYM6ElYClBLPov7avnncE4DVYDj1hQPFenXCkpGQlLOndyjG9aSolqoeQXRkq/exec?slug=${slug}`)
+      fetch(`https://script.google.com/macros/s/AKfycbzoYntkuxWZE41DyEY10NypzFUzAy7F_H1dhQYExzdt45Li6dYRZf7T_amUJkW-lNMq/exec?slug=${slug}`)
         .then(r => r.json())
         .then(data => {
+          console.log('Ответ от Google Script:', data);
             clearTimeout(sizeSpinnerTimeout);
-            if(selectEl){
-               hideInlineSpinner(selectEl);
-               selectEl.disabled = false;
-               selectEl.innerHTML = `<option value="" disabled selected>Größe wählen</option>` +
-                 data.sizes.map(s => `<option value="${s.name}" ${s.available ? "" : "disabled"}>${s.name}</option>`).join("");
+          if (selectEl) {
+              hideInlineSpinner(selectEl);
+              selectEl.disabled = false;
 
-        }
+              let options = '';
+              if (data.sizes) {
+                let sizesArr = [];
+                if (Array.isArray(data.sizes)) {
+                  sizesArr = data.sizes;
+                } else if (typeof data.sizes === "string") {
+                  sizesArr = data.sizes.split(",");
+                }
+                options = sizesArr
+                  .filter(size => typeof size === "string" && size.trim() !== "")
+                  .map(size => `<option value="${size.trim()}">${size.trim()}</option>`)
+                  .join('');
+              }
+            
+              selectEl.innerHTML =
+                '<option value="" disabled selected>Größe wählen</option>' + options;
+            }
+
+
       });
 
       container.querySelector(".add-cart-btn").addEventListener("click", () => {
