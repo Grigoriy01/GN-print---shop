@@ -1,5 +1,5 @@
 {
-  "lastEdit": "2025-06-17T14:55:08.800Z",
+  "lastEdit": "2025-06-17T15:20:26.480Z",
   "comment": "kontent",
   "products": [
     {
@@ -13,8 +13,17 @@
       "thumbs": [
         "assets/images/T-Shirt/Damen/T-W-Blume-1/Blume-3-color.webp"
       ],
-      "category": "damen",
-      "specs": "taillierte Passform"
+      "specs": [
+        {
+          "label": "Material",
+          "value": "Baumwolle 100%"
+        },
+        {
+          "label": "Schnitt",
+          "value": "taillierte Passform"
+        }
+      ],
+      "category": "damen"
     },
     {
       "slug": "damen-t-shirt-white-Lily-Lineart-Tee",
@@ -28,7 +37,16 @@
         "assets/images/T-Shirt/Damen/T-W-Blume-1/Blume-1-1.webp",
         "assets/images/T-Shirt/Damen/T-W-Blume-1/Blume-1-2.webp"
       ],
-      "specs": "taillierte Passform",
+      "specs": [
+        {
+          "label": "Material",
+          "value": "Baumwolle 100%"
+        },
+        {
+          "label": "Schnitt",
+          "value": "taillierte Passform"
+        }
+      ],
       "category": "damen"
     },
     {
@@ -536,7 +554,16 @@
         "assets/images/T-Shirt/Damen/T-B-Blum mit schmet/bild-4.webp",
         "assets/images/T-Shirt/Damen/T-B-Blum mit schmet/bild-5.webp"
       ],
-      "specs": "taillierte Passform",
+      "specs": [
+        {
+          "label": "Material",
+          "value": "Baumwolle 100%"
+        },
+        {
+          "label": "Schnitt",
+          "value": "taillierte Passform"
+        }
+      ],
       "category": "damen"
     },
     {
@@ -552,7 +579,16 @@
         "assets/images/T-Shirt/Damen/T-B-Blume-1/Blumen-1-2-color.webp",
         "assets/images/T-Shirt/Damen/T-B-Blume-1/Blumen-1-3-color.webp"
       ],
-      "specs": "taillierte Passform",
+      "specs": [
+        {
+          "label": "Material",
+          "value": "Baumwolle 100%"
+        },
+        {
+          "label": "Schnitt",
+          "value": "taillierte Passform"
+        }
+      ],
       "category": "damen"
     },
     {
@@ -568,7 +604,16 @@
         "assets/images/T-Shirt/Damen/T-B-Free spirit/bild-4.webp",
         "assets/images/T-Shirt/Damen/T-B-Free spirit/bild-5.webp"
       ],
-      "specs": "taillierte Passform",
+      "specs": [
+        {
+          "label": "Material",
+          "value": "Baumwolle 100%"
+        },
+        {
+          "label": "Schnitt",
+          "value": "taillierte Passform"
+        }
+      ],
       "category": "damen"
     },
     {
@@ -584,7 +629,16 @@
         "assets/images/T-Shirt/Damen/T-W-Blum mit schmet/bild-1-3.webp",
         "assets/images/T-Shirt/Damen/T-W-Blum mit schmet/bild-1-4.webp"
       ],
-      "specs": "taillierte Passform",
+      "specs": [
+        {
+          "label": "Material",
+          "value": "Baumwolle 100%"
+        },
+        {
+          "label": "Schnitt",
+          "value": "taillierte Passform"
+        }
+      ],
       "category": "damen",
       "subtitle": "Leichtigkeit in jedem Stich"
     },
@@ -599,7 +653,16 @@
         "assets/images/T-Shirt/Damen/T-W-Blum mit schmet/bild-2.webp",
         "assets/images/T-Shirt/Damen/T-W-Blum mit schmet/bild-2.webp"
       ],
-      "specs": "taillierte Passform",
+      "specs": [
+        {
+          "label": "Material",
+          "value": "Baumwolle 100%"
+        },
+        {
+          "label": "Schnitt",
+          "value": "taillierte Passform"
+        }
+      ],
       "category": "damen",
       "subtitle": "Leichtigkeit in jedem Stich"
     },
@@ -640,7 +703,11 @@
       "specs": [
         {
           "label": "Material",
-          "value": "tassen-White"
+          "value": "Keramik"
+        },
+        {
+          "label": "Farbe",
+          "value": "Weiß"
         }
       ],
       "category": "tassen",
@@ -659,7 +726,16 @@
         "assets/images/T-Shirt/Damen/T-W-Blum mit schmet/Color/4.webp",
         "assets/images/T-Shirt/Damen/T-W-Blum mit schmet/Color/5.webp"
       ],
-      "specs": "taillierte Passform",
+      "specs": [
+        {
+          "label": "Material",
+          "value": "Baumwolle 100%"
+        },
+        {
+          "label": "Schnitt",
+          "value": "taillierte Passform"
+        }
+      ],
       "category": "damen",
       "subtitle": "Leicht, lebendig, lebensfroh"
     },
@@ -669,13 +745,22 @@
       "description": "Diese Damen-T-Shirt bringt Farbe in den Alltag – mit einem minimalistischen, aber farbenfrohen Motiv aus Blume und Schmetterling.\nIdeal für sonnige Tage, Spaziergänge oder einfach gute Laune.\nHochwertiger Sublimationsdruck auf angenehmem, atmungsaktivem Stoff. Waschbeständig, leicht taillierter Schnitt – perfekt für jeden Tag.",
       "price": "20.99",
       "image": "assets/images/T-Shirt/Damen/T-B-Blum mit schmet/Color/1.webp",
-      "imageLarge": "assets/images/T-Shirt/Daassets/images/T-Shirt/Damen/T-B-Blum mit schmet/Color/1.webpmen/T-B-Blum mit schmet/bild-1.webp",
+      "imageLarge": "assets/images/T-Shirt/Damen/T-B-Blum mit schmet/Color/1.webp",
       "thumbs": [
         "assets/images/T-Shirt/Damen/T-B-Blum mit schmet/Color/2.webp",
         "assets/images/T-Shirt/Damen/T-B-Blum mit schmet/Color/3.webp",
         "assets/images/T-Shirt/Damen/T-B-Blum mit schmet/Color/4.webp"
       ],
-      "specs": "taillierte Passform",
+      "specs": [
+        {
+          "label": "Material",
+          "value": "Baumwolle 100%"
+        },
+        {
+          "label": "Schnitt",
+          "value": "taillierte Passform"
+        }
+      ],
       "category": "damen",
       "subtitle": "Leicht, lebendig, lebensfroh"
     },
@@ -691,7 +776,16 @@
         "assets/images/T-Shirt/Damen/T-W-schmett_color/3.webp",
         "assets/images/T-Shirt/Damen/T-W-schmett_color/4.webp"
       ],
-      "specs": "taillierte Passform",
+      "specs": [
+        {
+          "label": "Material",
+          "value": "Baumwolle 100%"
+        },
+        {
+          "label": "Schnitt",
+          "value": "taillierte Passform"
+        }
+      ],
       "category": "damen",
       "subtitle": "Farbtupfer mit Bedeutung"
     },
@@ -708,7 +802,16 @@
         "assets/images/T-Shirt/Damen/T-B-schmett_color/4.webp",
         "assets/images/T-Shirt/Damen/T-B-schmett_color/5.webp"
       ],
-      "specs": "taillierte Passform",
+      "specs": [
+        {
+          "label": "Material",
+          "value": "Baumwolle 100%"
+        },
+        {
+          "label": "Schnitt",
+          "value": "taillierte Passform"
+        }
+      ],
       "category": "damen",
       "subtitle": "Farbtupfer mit Bedeutung"
     },
@@ -724,7 +827,16 @@
         "assets/images/T-Shirt/Damen/T-W-Blume-1/Blume-2-2-color.webp",
         "assets/images/T-Shirt/Damen/T-W-Blume-1/Blume-2-color.webp"
       ],
-      "specs": "taillierte Passform",
+      "specs": [
+        {
+          "label": "Material",
+          "value": "Baumwolle 100%"
+        },
+        {
+          "label": "Schnitt",
+          "value": "taillierte Passform"
+        }
+      ],
       "category": "damen"
     },
     {
@@ -740,7 +852,11 @@
       "specs": [
         {
           "label": "Material",
-          "value": "tassen-White"
+          "value": "Keramik"
+        },
+        {
+          "label": "Farbe",
+          "value": "Weiß"
         }
       ],
       "category": "tassen",

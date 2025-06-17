@@ -914,6 +914,7 @@ height: 1.3rem;
 /* Адаптация product-detail для уменьшения ширины */
 .product-detail {
   display: flex;
+  justify-content: flex-end;
   align-items: flex-start;
   gap: 2rem;
   margin-top: 20px;

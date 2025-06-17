@@ -1,6 +1,17 @@
 // js/products.js
+
+function restoreScroll() {
+  const y = sessionStorage.getItem('lastScroll');
+  if (y !== null) {
+    window.scrollTo(0, +y);
+    sessionStorage.removeItem('lastScroll');
+  }
+}
+// Вызови restoreScroll() в самом конце после рендера галереи.
+
 document.addEventListener("DOMContentLoaded", () => {
   console.log("🛠 products.js запущен");
+
 
    fetch("products.json")
     .then(res => res.json())
@@ -38,8 +49,17 @@ document.addEventListener("DOMContentLoaded", () => {
             </a>
           </div>
         `;
+        const cardLink = card.querySelector("a[href^='product.html']");
+        if (cardLink) {
+          cardLink.addEventListener("click", () => {
+            sessionStorage.setItem('lastScroll', window.scrollY);
+          });
+        }
+
         container.appendChild(card);
       });
+      
+      setTimeout(restoreScroll, 0);
 
       console.log("Всего карточек .product-card:", document.querySelectorAll(".product-card").length);
     })
