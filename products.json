@@ -1,6 +1,6 @@
 {
-  "lastEdit": "2025-06-17T15:20:26.480Z",
-  "comment": "kontent",
+  "lastEdit": "2025-06-18T00:44:16.643Z",
+  "comment": "fotos tasse ++",
   "products": [
     {
       "slug": "damen-t-shirt-white-Lily-Lineart-Tee-color",
@@ -861,6 +861,327 @@
       ],
       "category": "tassen",
       "subtitle": "Kein Held – aber immer zur Stelle"
+    },
+    {
+      "slug": "tasse-white-Mister-Freundinnen-für-immer",
+      "name": "Freundinnen für immer",
+      "description": "Diese süße Tasse zeigt drei fröhliche Mädchen – ein Symbol für echte Freundschaft, Zusammenhalt und Spaß am Leben. Perfekt als Geschenk für beste Freundinnen oder als liebevoller Alltagsbegleiter mit einem Lächeln. Weiße Keramiktasse mit brillanter Farbwiedergabe im Sublimationsdruck. Klassische runde Form, spülmaschinenfest und alltagstauglich.",
+      "price": 11.99,
+      "image": "assets/images/Tasse/freundin/Frau freundin-2.webp",
+      "imageLarge": "assets/images/Tasse/freundin/Frau freundin-2.webp",
+      "thumbs": [
+        "assets/images/Tasse/freundin/Frau freundin-1.webp",
+        "assets/images/Tasse/freundin/Frau freundin-3.webp",
+        "assets/images/Tasse/freundin/Frau freundin-4.webp"
+      ],
+      "specs": [
+        {
+          "label": "Material",
+          "value": "Keramik"
+        },
+        {
+          "label": "Farbe",
+          "value": "Weiß"
+        }
+      ],
+      "category": "tassen",
+      "subtitle": "Lachen. Teilen. Zusammenhalten."
+    },
+    {
+      "slug": "tasse-white-Mister-Grinse-Laune Tasse",
+      "name": "Grinse-Laune Tasse",
+      "description": "Diese Tasse bringt dich garantiert zum Schmunzeln – mit einem charmant-chaotischen Charakter, der für gute Laune am Frühstückstisch sorgt. Ideal als Geschenk für Humor-Fans, kreative Köpfe oder als kleine Belohnung für sich selbst. Weiße Keramiktasse in klassischer Form, brillanter Sublimationsdruck, spülmaschinenfest und farbecht.",
+      "price": 11.99,
+      "image": "assets/images/Tasse/grintch-she/Grinch_she-1.webp",
+      "imageLarge": "assets/images/Tasse/grintch-she/Grinch_she-1.webp",
+      "thumbs": [
+        "assets/images/Tasse/grintch-she/Grinch_she-1-1.webp",
+        "assets/images/Tasse/grintch-she/paar-1.webp"
+      ],
+      "specs": [
+        {
+          "label": "Material",
+          "value": "Keramik"
+        },
+        {
+          "label": "Farbe",
+          "value": "Weiß"
+        }
+      ],
+      "category": "tassen",
+      "subtitle": "Frech, wild & unwiderstehlich süß"
+    },
+    {
+      "slug": "tasse-white-Mister-Ride Wild – Biker Mug",
+      "name": "Ride Wild – Biker Mug",
+      "description": "Diese Tasse ist purer Adrenalinkick: eine stylische Bikerin im Splash-Art-Stil, voller Energie und Farbe. Perfekt für Motorradfans, Abenteurerinnen und alle, die morgens Koffein & Kick brauchen. Weiße Keramiktasse mit farbintensivem Sublimationsdruck – spülmaschinenfest, robust und bereit für die nächste Runde.",
+      "price": 11.99,
+      "image": "assets/images/Tasse/moto-1/moto-1-1.webp",
+      "imageLarge": "assets/images/Tasse/moto-1/moto-1-1.webp",
+      "thumbs": [
+        "assets/images/Tasse/moto-1/moto-1.webp"
+      ],
+      "specs": [
+        {
+          "label": "Material",
+          "value": "Keramik"
+        },
+        {
+          "label": "Farbe",
+          "value": "Weiß"
+        }
+      ],
+      "category": "tassen",
+      "subtitle": "Für alle, die Freiheit spüren wollen"
+    },
+    {
+      "slug": "tasse-white-Mister-Inner Worlds Mug",
+      "name": "Inner Worlds Mug",
+      "description": "Diese künstlerische Tasse zeigt zwei Gesichter, verschmolzen in einem farbenprächtigen Spiel aus Formen und Emotionen. Ideal für Kreative, Denker, Coaches oder alle, die Kunst im Alltag lieben. Hochwertiger Sublimationsdruck auf klassischer Keramiktasse – farbintensiv, spülmaschinenfest und inspirierend ab dem ersten Schluck.",
+      "price": 11.99,
+      "image": "assets/images/Tasse/Inner Worlds Mug/2.webp",
+      "imageLarge": "assets/images/Tasse/Inner Worlds Mug/2.webp",
+      "thumbs": [
+        "assets/images/Tasse/Inner Worlds Mug/1.webp",
+        "assets/images/Tasse/Inner Worlds Mug/3.webp"
+      ],
+      "specs": [
+        {
+          "label": "Material",
+          "value": "Keramik"
+        },
+        {
+          "label": "Farbe",
+          "value": "Weiß"
+        }
+      ],
+      "category": "tassen",
+      "subtitle": "Zwei Köpfe – ein Kaleidoskop der Gedanken"
+    },
+    {
+      "slug": "tasse-white-Mister-Blütenruhe",
+      "name": "Blütenruhe",
+      "description": "Diese stilvolle Tasse bringt florale Eleganz auf deinen Frühstückstisch. Das detailreiche Blumenmotiv strahlt Ruhe, Frische und Natürlichkeit aus – perfekt für eine bewusste Auszeit oder als liebevolles Geschenk. Weiße Keramiktasse mit farbbrillantem Sublimationsdruck – spülmaschinenfest, klassisch in Form und angenehm in der Hand.",
+      "price": 11.99,
+      "image": "assets/images/Tasse/Blütenruhe/1.webp",
+      "imageLarge": "assets/images/Tasse/Blütenruhe/1.webp",
+      "thumbs": [
+        "assets/images/Tasse/Blütenruhe/2.webp",
+        "assets/images/Tasse/Blütenruhe/3.webp",
+        "assets/images/Tasse/Blütenruhe/4.webp"
+      ],
+      "specs": [
+        {
+          "label": "Material",
+          "value": "Keramik"
+        },
+        {
+          "label": "Farbe",
+          "value": "Weiß"
+        }
+      ],
+      "category": "tassen",
+      "subtitle": "Ein Hauch von Natur für deinen Tag"
+    },
+    {
+      "slug": "tasse-white-Mister-Happy-Flower",
+      "name": "Happy Flower",
+      "description": "Diese fröhliche Tasse mit handgezeichnetem Blumenmotiv bringt sofort gute Laune – egal ob im Homeoffice, beim Frühstück oder als Geschenk für liebe Menschen. Das Design wirkt spielerisch und kreativ – ideal für Optimist:innen und kreative Seelen. Weiße Keramiktasse mit hochwertigem Sublimationsdruck, robust, farbecht und spülmaschinengeeignet.",
+      "price": 11.99,
+      "image": "assets/images/Tasse/Happy Flower/1.webp",
+      "imageLarge": "assets/images/Tasse/Happy Flower/1.webp",
+      "thumbs": [
+        "assets/images/Tasse/Happy Flower/2.webp",
+        "assets/images/Tasse/Happy Flower/3.webp",
+        "assets/images/Tasse/Happy Flower/4.webp",
+        "assets/images/Tasse/Happy Flower/5.webp"
+      ],
+      "specs": [
+        {
+          "label": "Material",
+          "value": "Keramik"
+        },
+        {
+          "label": "Farbe",
+          "value": "Weiß"
+        }
+      ],
+      "category": "tassen",
+      "subtitle": "Ein Lächeln aus Farbe"
+    },
+    {
+      "slug": "tasse-white-Mister-Color-Bloom",
+      "name": "Color Bloom",
+      "description": "Diese kunstvolle Tasse zeigt eine farbenprächtige Blume im Aquarellstil – lebendig, leicht und inspirierend. Ideal für Künstler:innen, Tagträumer:innen oder einfach alle, die Farbe in ihren Alltag bringen möchten. Weiße Keramiktasse mit hochwertigem Sublimationsdruck, brillant in Farbe, spülmaschinenfest und langlebig.",
+      "price": 11.99,
+      "image": "assets/images/Tasse/Color Bloom/3.webp",
+      "imageLarge": "assets/images/Tasse/Color Bloom/3.webp",
+      "thumbs": [
+        "assets/images/Tasse/Color Bloom/1.webp",
+        "assets/images/Tasse/Color Bloom/2.webp",
+        "assets/images/Tasse/Color Bloom/4.webp",
+        "assets/images/Tasse/Color Bloom/5.webp"
+      ],
+      "specs": [
+        {
+          "label": "Material",
+          "value": "Keramik"
+        },
+        {
+          "label": "Farbe",
+          "value": "Weiß"
+        }
+      ],
+      "category": "tassen",
+      "subtitle": "Blühende Farben für deine Stimmung"
+    },
+    {
+      "slug": "tasse-white-Mister-Blooming-Grace",
+      "name": "Blooming Grace",
+      "description": "Diese Tasse präsentiert eine kunstvoll illustrierte Blume mit faszinierenden Farbverläufen – ein echtes Statement für Stil und Schönheit. Ideal für alle, die den Tag mit Ästhetik und Leichtigkeit beginnen möchten. Weiße Keramiktasse in klassischer Form, brillanter Sublimationsdruck, spülmaschinengeeignet und farbbeständig – ein Highlight auf jedem Tisch.",
+      "price": 11.99,
+      "image": "assets/images/Tasse/Blooming Grace/1.webp",
+      "imageLarge": "assets/images/Tasse/Blooming Grace/1.webp",
+      "thumbs": [
+        "assets/images/Tasse/Blooming Grace/1.webp",
+        "assets/images/Tasse/Blooming Grace/2.webp",
+        "assets/images/Tasse/Blooming Grace/3.webp",
+        "assets/images/Tasse/Blooming Grace/4.webp"
+      ],
+      "specs": [
+        {
+          "label": "Material",
+          "value": "Keramik"
+        },
+        {
+          "label": "Farbe",
+          "value": "Weiß"
+        }
+      ],
+      "category": "tassen",
+      "subtitle": "Florale Kunst mit Charakter"
+    },
+    {
+      "slug": "tasse-white-Mister-Vintage-Rider",
+      "name": "Vintage Rider",
+      "description": "Diese Tasse mit detailverliebter Vintage-Motorrad-Illustration ist wie gemacht für Liebhaber klassischer Maschinen und nostalgischer Roadtrips. Ein Must-have für Motorradfans, Schrauber oder als stilvolles Geschenk mit Charakter. Weiße Keramiktasse mit hochwertigem Sublimationsdruck – robust, spülmaschinengeeignet und bereit für den nächsten Koffein-Boxenstopp.",
+      "price": 11.99,
+      "image": "assets/images/Tasse/Vintage Rider/1.webp",
+      "imageLarge": "assets/images/Tasse/Vintage Rider/1.webp",
+      "thumbs": [
+        "assets/images/Tasse/Vintage Rider/3.webp",
+        "assets/images/Tasse/Vintage Rider/2.webp"
+      ],
+      "specs": [
+        {
+          "label": "Material",
+          "value": "Keramik"
+        },
+        {
+          "label": "Farbe",
+          "value": "Weiß"
+        }
+      ],
+      "category": "tassen",
+      "subtitle": "Zeitlos. Cool. Unverkennbar."
+    },
+    {
+      "slug": "tasse-white-Mister-Color-Ride",
+      "name": "Color Ride",
+      "description": "Diese Tasse bringt den Vibe offener Straßen und künstlerischer Freiheit direkt auf deinen Tisch. Der kraftvolle Motorrad-Print im Splash-Art-Stil macht sie zum perfekten Begleiter für Abenteuerlustige, Kreative und Motorradfans. Weiße Keramiktasse, hochwertiger Sublimationsdruck mit intensiven Farben – robust, spülmaschinengeeignet und voller Charakter.",
+      "price": 11.99,
+      "image": "assets/images/Tasse/Color Ride/3.webp",
+      "imageLarge": "assets/images/Tasse/Color Ride/3.webp",
+      "thumbs": [
+        "assets/images/Tasse/Color Ride/1.webp",
+        "assets/images/Tasse/Color Ride/2.webp"
+      ],
+      "specs": [
+        {
+          "label": "Material",
+          "value": "Keramik"
+        },
+        {
+          "label": "Farbe",
+          "value": "Weiß"
+        }
+      ],
+      "category": "tassen",
+      "subtitle": "Kunst trifft Geschwindigkeit"
+    },
+    {
+      "slug": "tasse-white-Mister-Miss-Grinchy-Mood",
+      "name": "Miss Grinchy Mood",
+      "description": "Diese Tasse bringt Charakter auf den Punkt – mit einer selbstbewussten grünen Diva, die weiß, was sie will (vor allem Kaffee!). Perfekt für alle, die einen Schuss Humor mit ins Büro oder den Alltag bringen wollen. Weiße Keramiktasse mit brillantem Sublimationsdruck – spülmaschinenfest, langlebig und absolut stimmungsvoll.",
+      "price": 11.99,
+      "image": "assets/images/Tasse/Miss Grinchy Mood/1.webp",
+      "imageLarge": "assets/images/Tasse/Miss Grinchy Mood/1.webp",
+      "thumbs": [
+        "assets/images/Tasse/Miss Grinchy Mood/2.webp",
+        "assets/images/Tasse/Miss Grinchy Mood/3.webp"
+      ],
+      "specs": [
+        {
+          "label": "Material",
+          "value": "Keramik"
+        },
+        {
+          "label": "Farbe",
+          "value": "Weiß"
+        }
+      ],
+      "category": "tassen",
+      "subtitle": "Charmant. Giftgrün. Unverwechselbar."
+    },
+    {
+      "slug": "tasse-white-Mister-Grinchy-Cozy",
+      "name": "Grinchy Cozy",
+      "description": "Diese Tasse bringt gute Laune in graue Tage – mit einer grünen Winterheldin, die weiß, wie man den Tag mit Stil und einem Hauch Frechheit beginnt. Perfekt als Geschenk für Freund:innen, Kolleg:innen oder einfach für dich selbst. Weiße Keramiktasse, hochwertiger Sublimationsdruck mit satten Farben – spülmaschinenfest und alltagstauglich.",
+      "price": 11.99,
+      "image": "assets/images/Tasse/Grinchy Cozy/1.webp",
+      "imageLarge": "assets/images/Tasse/Grinchy Cozy/1.webp",
+      "thumbs": [
+        "assets/images/Tasse/Grinchy Cozy/2.webp",
+        "assets/images/Tasse/Grinchy Cozy/3.webp",
+        "assets/images/Tasse/Grinchy Cozy/4.webp"
+      ],
+      "specs": [
+        {
+          "label": "Material",
+          "value": "Keramik"
+        },
+        {
+          "label": "Farbe",
+          "value": "Weiß"
+        }
+      ],
+      "category": "tassen",
+      "subtitle": "Warm, frech & unwiderstehlich charmant"
+    },
+    {
+      "slug": "tasse-white-Mister-Miss-Minimal-Grinch",
+      "name": "Miss Minimal Grinch",
+      "description": "Diese Tasse ist perfekt für alle, die ihre Kaffeepause mit einem Augenzwinkern genießen. Das reduzierte Design der grünen Heldin kombiniert frechen Charme mit klarem Stil – modern, witzig und einzigartig. Weiße Keramiktasse mit langlebigem Sublimationsdruck in leuchtendem Grün. Spülmaschinenfest, alltagstauglich und garantiert auffällig.",
+      "price": 11.99,
+      "image": "assets/images/Tasse/Miss Minimal Grinch/1.webp",
+      "imageLarge": "assets/images/Tasse/Miss Minimal Grinch/1.webp",
+      "thumbs": [
+        "assets/images/Tasse/Miss Minimal Grinch/2.webp",
+        "assets/images/Tasse/Miss Minimal Grinch/3.webp",
+        "assets/images/Tasse/Miss Minimal Grinch/4.webp"
+      ],
+      "specs": [
+        {
+          "label": "Material",
+          "value": "Keramik"
+        },
+        {
+          "label": "Farbe",
+          "value": "Weiß"
+        }
+      ],
+      "category": "tassen",
+      "subtitle": "Weniger Farbe. Mehr Charakter."
     }
   ]
 }
