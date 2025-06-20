@@ -438,19 +438,15 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       container.querySelector(".add-cart-btn").addEventListener("click", () => {
-        const slugsWithSize = 
-            ["damen t-shirt-white",
-             "damen t-shirt-black", 
-             "herren-t-shirt-black", 
-             "herren-t-shirt-white"]; // и твои нужные
-
-        const size = selectEl ? selectEl.value : null;
+        const sizeSelect = document.getElementById("sizeSelect");
+        const needSize = !!sizeSelect && sizeSelect.options.length > 1;
+        const size = sizeSelect ? sizeSelect.value : null;
         const qty = Number(document.getElementById("qtyInput").value);
-        if (slugsWithSize.includes(prod.slug)) {
-          if (!size) {
-            showToast("Größe wählen!");
-            return; 
-          }
+
+        if (needSize && !size) {
+          showToast("Größe wählen!");
+          sizeSelect.focus();
+          return;
         }
         if (qty < 1) { 
           showToast("Menge wählen!");
@@ -463,20 +459,15 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       container.querySelector(".btn-order").addEventListener("click", () => {
-        const slugsWithSize = 
-            ["damen t-shirt-white",
-             "damen t-shirt-black", 
-             "herren-t-shirt-black", 
-             "herren-t-shirt-white"]; // и твои нужные
-        
-       
-        const size = selectEl ? selectEl.value : null;
+        const sizeSelect = document.getElementById("sizeSelect");
+        const needSize = !!sizeSelect && sizeSelect.options.length > 1;
+        const size = sizeSelect ? sizeSelect.value : null;
         const qty = Number(document.getElementById("qtyInput").value);
-        if (slugsWithSize.includes(prod.slug)) {
-          if (!size) {
-            showToast("Größe wählen!");
-            return; 
-          }
+              
+        if (needSize && !size) {
+          showToast("Größe wählen!");
+          sizeSelect.focus();
+          return;
         }
           if (qty < 1) { 
           showToast("Menge wählen!");
