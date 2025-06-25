@@ -25,6 +25,8 @@
         <div class="cart-icon" id="cartToggle" title="Warenkorb öffnen">🛒
           <span id="cartCount" class="cart-count hidden">0</span>
         </div> 
+
+       
         
         <!-- Кнопка-гамбургер для мобильного -->
         <button class="nav-toggle" aria-label="Menü öffnen">
@@ -35,47 +37,39 @@
           <ul>
             <li><a href="index.html">Startseite</a></li>
             <li><a href="catalog.html">Katalog</a></li>
-            <li><a href="über uns.html">über uns</a></li>
             <li><a href="#kontakt">Kontakt</a></li>
           </ul>
         </nav>
-      </div>
-      
-     
-        
+      </div> 
     </header>
 
-  <!-- Контейнер для динамического рендера -->
   <main>
-    <div class="product-detail-container">
-      <!-- JS заполнит этот блок -->
+    <div class="about-container">
+      <h2 class="about-title">Über uns . .</h2>
+      <p class="about-title_text">„Ein Startup-Projekt – vollständig handgefertigt, mit besonderer Liebe zum Detail“</p>
+      <h3>Wellkomen</h3>
+      <div class="about-item">
+        <div class="about-item_content">
+          <p>Du befindest dich auf der Website eines Projekts,<br>
+             das aus einer einfachen Idee und dem Wunsch entstanden ist, etwas Besonderes zu schaffen.<br>
+             Es ist keine etablierte Marke mit großem Team – sondern ein Startup, geboren aus Leidenschaft.<br>
+             Hier ist alles – von den T-Shirt-Prints bis zur Website – von Hand gemacht,<br> ohne Agenturen oder große Crews.
+             Nur Ideen, Technik und der Wille, etwas wirklich Cooles auf die Beine zu stellen.<br>
+             Jedes Detail ist das Ergebnis von persönlicher Hingabe, <br>
+             sorgfältiger Arbeit und eines Weges, der gerade erst beginnt.
+          </p>
+        </div>
+        <div class="about-item_img"about-container>
+          <img src="assets/images/about-1.webp" alt="info bilde">
+          <img src="assets/images/about-2.webp" alt="info bilde">
+          <img src="assets/images/about-3.webp" alt="info bilde">
+          <img src="assets/images/about-4.webp" alt="info bilde">
+        </div>
+      </div>  
     </div>
-  </main>
-
   
-  <section id="orderSection" class="order-section hidden">
-  <!-- сюда мы динамически вставим форму при клике -->
-  </section>
 
-    <!-- Панель корзины -->
-  <div id="cartPanel" class="cart-panel hidden">
-    <div class="cart-header">
-      <button id="cartClose">×</button>
-      <h2>Ihre Bestellung</h2>
-    </div>
-    <div id="cartContent">
-      <p>Ihr Warenkorb ist leer.</p>
-    </div>
-    <!-- Форма заказа -->
-    <div class="order-form-wrapper hidden">
-      <!-- JS подставит сюда форму -->
-    </div>
-  </div>
-
-  <!-- Панель подтверждения -->
-  <div id="confirmPanel" class="confirm-panel hidden">
-    <!-- JS будет наполнять содержимым -->
-  </div>
+  </main>
 
 
    <!-- Подвал с контактами -->

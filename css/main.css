@@ -21,6 +21,9 @@
 /* Плавный скролл по якорям */
 html {
   scroll-behavior: smooth;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -28,6 +31,15 @@ body {
   background-color: var(--color-bg);
   color: var(--color-text);
   line-height: 1.5;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1 0 auto;
 }
 
 /* Кнопка «Наверх» */
@@ -369,6 +381,7 @@ textarea.invalid {
   background: #111;
   color: #ccc;
   text-align: center;
+  flex-shrink: 0;
 }
 .site-footer a {
   color: #aaa;
@@ -1525,3 +1538,86 @@ height: 1.3rem;
     pointer-events: none !important;
     user-select: none;
   }
+
+  /* uber uns*/
+  .about-container{
+    padding: 1rem 2rem;
+
+  }
+  .about-title_text {
+    font-size: 1.1rem;
+    margin-left: 40px;
+    text-align: center;
+  }
+  .about-container h2 {
+    font-style: italic;
+  }
+  .about-container h3 {
+    text-align: center;
+    margin: 1rem 0;
+    font-size: 1.8rem;
+  }
+  .about-item_content {
+    margin: 0 auto;
+    max-width: 700px;
+    width: 100%;
+    border: 2px solid #212020;
+    border-radius: 14px;
+    background: #3a3939;
+    padding: 1.5rem 1rem;
+    box-shadow: 0 2px 12px rgba(60,60,60,0.5);
+  }
+  .about-item_content p {
+    font-size: 1.2rem;
+    font-style: normal;
+    
+  }
+
+  .about-item_img {
+    display: flex;
+    width: 100%;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    gap: 2rem;
+  }
+  .about-item_img img {
+    display: block;
+    max-width: 200px;
+    max-height: 100%;
+    border-radius: 8px;
+
+
+  }
+
+  @media (max-width: 700px) {
+  .about-item_content {
+    max-width: 98vw;     /* почти на всю ширину экрана */
+    padding: 1rem 0.7rem;
+    font-size: 1.05rem;  /* чуть меньше шрифт, если текст кажется крупным */
+    margin: 1.2rem auto;
+  }
+  .about-item_content p {
+    font-size: 1.05rem;  /* подстрой под читаемость */
+  }
+  .about-item_img {
+    flex-direction: column;
+    height: auto;
+    gap: 1rem;
+    margin: 1rem 0 0 0;
+  }
+  .about-item_img img {
+    max-width: 96vw;   /* делаем каждое фото на всю ширину, если надо — 80vw */
+    height: auto;
+    margin: 0 auto;
+  }
+  .about-container {
+    padding: 0.5rem 0.4rem;
+  }
+  .about-title_text {
+    margin-left: 0;
+    font-size: 1rem;
+  }
+}
+
