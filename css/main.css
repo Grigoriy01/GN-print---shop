@@ -142,7 +142,7 @@ main {
 }
 .category-nav a {
   font-weight: 600;
-  color: #353333;
+  color:#d0d0d0;
   font-size:medium;
 }
 .nav-toggle {    /* Кнопка-гамбургер — по умолчанию скрыта */
