@@ -87,6 +87,7 @@ main {
 
 .header-tagline {
   position: absolute;
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
   font-size: 1.2rem;
@@ -1078,8 +1079,6 @@ height: 1.3rem;
   }
 
   .site-nav ul a {
-    gap: 1rem;
-    font-size: 1.2rem ;
     display: flex;
   }
 }
