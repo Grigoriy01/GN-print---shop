@@ -7,6 +7,7 @@
   --color-accent: #181818;
   --color-accent-hover: #357abd;
   --color-danger: #e74c3c;
+  --color-button-menu: #525252;
   --radius: 4px;
 }
 
@@ -122,12 +123,12 @@ main {
   text-decoration: none;
   font-weight: 500;
   font-size: 0.9rem;
-  color:#797676;
+  color:#d0d0d0;
   padding: 5px 5px;
 }
 
 .site-nav a {
-  background-color: #242222;
+  background-color: var(--color-button-menu) ;
   border-bottom-left-radius: 10px;
   border-top-right-radius: 10px;
 
